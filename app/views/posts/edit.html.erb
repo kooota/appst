@@ -1,0 +1,23 @@
+<div class="contents row">
+  <div class="container2">
+    <%= form_for @post, method: :patch do |f|%>
+      <div class="titleBox new">
+        <h3>
+          編集する
+        </h3>
+      </div>
+      <%= f.text_field :title, class:"postContent", placeholder:"サービス名" %>
+      <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明(32文字以内)", maxlength:32 %>
+      <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL" %>
+
+      <%= f.text_field :image, class:"postContent", placeholder:"サービス画像URL" %>
+
+      <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
+      <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
+      <%= f.text_area :content, class:"postContent",placeholder:"サービス概要"  %>
+      <%= f.text_field :twitter, class:"postContent",placeholder:"Twiiterアカウント"  %>
+      <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント"  %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container1">
+  <div class="content clearfix">
+    <div class="date">
+      <h3>5月30日に投稿されたサービス一覧</h3>
+    </div>
+
+  <div class="postsList">
+    <%= render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like} %>
+    </div>
+  </div>
+</div>

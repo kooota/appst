@@ -1,0 +1,74 @@
+<div class="container1">
+  <div class="content clearfix">
+
+    <div class="service-header clearfix">
+      <div class="header-content clearfix">
+        <div class="service-thumnail">
+          <div class="thumnail-content">
+            <%= image_tag @post.image, class:"img" %>
+          </div>
+        </div>
+
+        <div class="header-info">
+          <div class="service-title">
+            <%=@post.title %>
+          </div>
+          <div class="service-subtitle">
+            <%=@post.subtitle %>
+          </div>
+          <div class="service-category">
+            <span><%= @post.category.name %></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="main-container">
+      <div class="primary-content">
+
+        <section class="box-thumnail">
+          <div class="canvas">
+            <%= image_tag @post.image, class:"img" %>
+          </div>
+          <div class="thumnails">
+          </div>
+        </section>
+
+        <div class="box-title">
+          <h2><i class="fas fa-star"></i>サービスについて</h2>
+        </div>
+        <section class="box-about">
+          <div class="description">
+            <%= @post.content %>
+          </div>
+        </section>
+
+        <div class="box-title">
+          <h2><i class="fas fa-star"></i>関連リンク</h2>
+        </div>
+        <section class="box-related">
+          <div class="relateds">
+          </div>
+        </section>
+
+        <div class="box-title">
+          <h2><i class="fas fa-star"></i>コメント</h2>
+        </div>
+        <section class="box-comment">
+          <%= render partial: "comments", locals:{ post: @post, comments: @comments} %>
+        </section>
+      </div>
+    </div>
+
+    <aside>
+       <div class="sub-content">
+        <%= render partial: "side", locals: {post: @post, posts: @posts} %>
+       </div>
+    </aside>
+
+
+
+  </div>
+</div>

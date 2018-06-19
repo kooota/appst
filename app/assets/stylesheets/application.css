@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+  margin: 0 auto;
+  background-color: #0B3861;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, body {
+  margin: 0;
+  font-size: 16px;
+
+}
+
+
+body {
+  font-family: "Lato",  sans-serif;
+  color:#434343;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header {
+  height:50px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+footer {
+  background-color: #242424;
+  height: 100px;
+}
+
+
+/*検索*/
+.search {
+  width: 33%;
+  float: left;
+  line-height: 50px;
+}
+
+
+/*ヘッダーロゴ*/
+.atLogo {
+  float: left;
+  line-height: 45px;
+  width: 33%;
+  text-align: center;
+}
+
+.logo-img {
+  height: 35px;
+  vertical-align: middle;
+}
+
+/*ヘッダーアクション*/
+
+.userNav {
+  width: 33%;
+  float: left;
+  line-height: 50px;
+  display: inline-flex;
+  justify-content: flex-end;
+  font-size: 12px;
+}
+
+
+.postProduct span {
+  margin-right: 10px;
+}
+
+.signIn {
+  margin-right: 10px;
+}
+
+.signUp span {
+  background-color: #4277EC;
+  padding: 4px 6px;
+  border-radius: 3px;
+}
+
+.box-userImg1 {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 5px 10px 0 0;
+}
+
+.userImg {
+  height: 100%;
+  cursor :pointer;
+  transition: all 0.5s;
+  }
+
+
+.accshow {
+  line-height: 30px;
+}
+
+.accshow a {
+  display: block;
+  color: #434343;
+}
+
+/*チェックは隠す*/
+.accbox input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.accbox .accshow {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.cssacc:checked + .accshow {
+    height: auto;
+    background: #eaeaea;
+    opacity: 1;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.mypage {
+  line-height: 20px;
+  font-size: 16px;
+  color: #434343;
+  padding: 2px 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+
+.logout {
+  padding: 2px 10px;
+  border-bottom: 1px solid #d8d8d8; 
+}

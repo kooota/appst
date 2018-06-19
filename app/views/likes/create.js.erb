@@ -1,0 +1,2 @@
+$(".likes-count-<%=post.id%>").html("<%= j(render partial: 'like', locals: { post: @post, likes: @likes, like: @like}) %>");
+

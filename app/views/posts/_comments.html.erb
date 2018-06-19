@@ -1,0 +1,58 @@
+          <% if current_user %>
+            <%= form_tag("/posts/#{post.id}/comments", method: :post) do %>
+              <textarea cols="30" name="content" placeholder="このプロダクトについての感想をコメントする" rows="2"></textarea>
+              <input type="submit" value="SENT">
+            <% end %>
+
+          <% else %>
+
+            <div class="comment-notice">
+              <h2>コメントするにはログインが必要です。</h2>
+              <%= link_to "ログイン", new_user_session_path %>/
+              <%= link_to "アカウント登録", new_user_registration_path %>
+            </div>
+
+          <% end %>
+
+          <% if comments %>
+            <% comments.each do |comment| %>
+              <div class="comment_area">
+                <div class="spotlight clearfix">
+
+                  <div class="box-userImg">
+                    <div class="userImg">
+                      <%= link_to "/users/#{comment.user.id}" do %>
+                        <%= image_tag comment.user.image %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="userInfo clearfix">
+                    <%= link_to "/users/#{comment.user.id}" do %>
+                      <div class="username">
+                        <span><%= comment.user.nickname %></span>
+                      </div>
+                    <% end %>
+                    <div>
+
+                      <div class="company">
+                        <span><%= comment.user.company %></span>
+                      </div>
+                      <div class="position">
+                        <span><%= comment.user.position %></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="user-comment">
+                    <%= comment.content %>
+                  </div>
+                <% if user_signed_in? %>
+                  <% if comment.user_id == current_user.id %>
+                   <div class="destroy">
+                    <%= link_to "コメントを削除する", "/posts/#{post.id}/comments/#{comment.id}", method: :delete %>
+                   </div>
+                  <% end %>
+                <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>

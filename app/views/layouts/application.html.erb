@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apst</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <div class="header clearfix">
+
+      <div class="search">
+        <div class="searchContainer">
+          <span class="searchIcon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="" name="" class="headerSearch">
+        </div>
+      </div>
+
+      <div class="atLogo">
+        <%= link_to "/" do %>
+          <%= image_tag "apst-logo.jpg", class:"logo-img" %>
+        <% end %>
+      </div>
+
+
+      <div class="userNav">
+        <% if user_signed_in? %>
+
+          <div class="postProduct">
+            <%= link_to "/posts/new" do %>
+              <span>投稿する</span>
+            <% end %>
+          </div>
+
+
+
+      <div class="accbox">
+          <div class="box-userImg1">
+            <label for="label1">
+              <div class="userImg">
+                <%= image_tag current_user.image %>
+              </div>
+            </label>
+            <input type="checkbox" id="label1" class="cssacc" />
+            <div class="accshow">
+            <div class="mypage">
+              <%= link_to "/users/#{current_user.id}" do%>
+                <span><%= current_user.nickname %></span>
+                <div style="font-size: 11px;">
+                  マイページ
+                </div>
+              <% end %>
+            </div>
+
+             <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
+            </div>
+          </div>
+        </div>
+
+
+        <% else %>
+
+          <div class="signIn">
+            <%= link_to new_user_registration_path do %>
+              <span>アカウント登録</span>
+            <% end %>
+          </div>
+          <div class="signUp">
+            <%= link_to new_user_session_path do %>
+              <span>ログイン</span>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
+  </header>
+
+<%= yield %>
+
+  <footer>
+  </footer>
+
+</body>
+</html>

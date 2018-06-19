@@ -1,0 +1,107 @@
+<div class="links clearfix">
+  <% if @post.service_url %>
+    <div class="website-link clearfix">
+      <%= link_to post.service_url, target:"_blank" do %>
+        <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
+        <div class="sideinfo">
+          <div class="side-link">
+            Website
+          </div>
+          <div class="side-url">
+            <%= post.service_url %>
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+  <% end %>
+    </div>
+
+  <% if @post.appstore_url %>
+    <div class="appstore-link clearfix">
+      <%= link_to post.appstore_url, target:"_blank" do %>
+        <span class="link-icon"><i class="fab fa-app-store"></i></span>
+        <div class="sideinfo">
+          <div class="side-link">
+            App Store
+          </div>
+          <div class="side-url">
+            iPhone, iPad
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+  <% end %>
+    </div>
+
+  <% if @post.googleplay_url %>
+    <div class="googleplay-link clearfix">
+      <%= link_to post.googleplay_url, target:"_blank" do %>
+        <span class="link-icon"><i class="fab fa-android"></i></span>
+        <div class="sideinfo">
+          <div class="side-link">
+            Google Play
+          </div>
+          <div class="side-url">
+            Android
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="social-box">
+  <div class="social">
+    SNS
+  </div>
+
+  <div class="sns-list">
+    <% if @post.twitter %>
+        <%= link_to "https://twitter.com/#{@post.twitter}" do %>
+          <span class="twitter"><i class="fab fa-twitter"></i></span>
+        <% end %>
+    <% end %>
+    <% if @post.facebook %>
+        <%= link_to "https://facebook.com/#{@post.facebook}" do %>
+          <span class="facebook"><i class="fab fa-facebook"></i></span>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="related-box">
+  <div class="relateds">
+    関連するサービス
+  </div>
+
+  <div class="related-list">
+
+      <% posts.each do |posts| %>
+        <%= link_to "/posts/#{posts.id}" do %>
+          <div class="item clearfix">
+            <div class="side-thumnail">
+              <div class="side-thumnail-content">
+                <%= image_tag posts.image, class:"img" %>
+              </div>
+            </div>
+            <div class="side-info">
+              <div class="side-service-title">
+                <%=posts.title %>
+              </div>
+              <div class="side-service-subtitle">
+                <%=posts.subtitle %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+</div>
+
+
+
+  </div>
+
+</div>
+
+

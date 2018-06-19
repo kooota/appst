@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="container2">
+    <%= form_for @user, method: :patch do |f|%>
+      <div class="titleBox new">
+        <h3>
+          プロフィールを編集する
+        </h3>
+      </div>
+      <%= f.text_field :nickname, class:"postContent", placeholder:"アカウント名" %>
+      <%= f.text_field :company, class:"postContent", placeholder:"会社名" %>
+      <%= f.text_field :position, class:"postContent", placeholder:"職種" %>
+
+      <%= f.text_field :image, class:"postContent", placeholder:"プロフィール画像URL" %>
+
+      <%= f.text_area :introduction, class:"postContent",placeholder:"自己紹介" %>
+      <%= f.text_field :twitter, class:"postContent",placeholder:"Twitterアカウント" %>
+      <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント" %>
+      <%= f.text_field :note, class:"postContent",placeholder:"noteアカウント"  %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+</div>
