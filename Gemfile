@@ -45,8 +45,10 @@ group :development do
   gem 'spring'
   gem 'capistrano' #追加
   gem 'capistrano-bundler' #追加
-  gem 'capistrano-rbenv' #追加
+  gem 'capistrano-rbenv', github:"capistrano/rbenv" #追加
   gem 'capistrano-rails' #追加
+  gem 'rb-readline'
+  gem 'unicorn'
 end
 
 gem 'pry-rails'
