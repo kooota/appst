@@ -1,0 +1,11 @@
+# Logfile created on 2018-06-19 15:51:06 +0900 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-06-19 15:51:06 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3ea7a45a] Running [ -d /usr/local/rbenv/versions/2.3.1 ] as root@160.16.144.160
+ DEBUG [3ea7a45a] Command: [ -d /usr/local/rbenv/versions/2.3.1 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-06-19 15:59:28 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1a664c4c] Running [ -d /usr/local/rbenv/versions/2.3.1 ] as root@160.16.144.160
+ DEBUG [1a664c4c] Command: [ -d /usr/local/rbenv/versions/2.3.1 ]
