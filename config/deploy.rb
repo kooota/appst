@@ -18,3 +18,10 @@ set :keep_releases, 5
 namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
+
+desc 'execute before deploy'
+task :db_create do
+  on roles(:db) do |host|
+    execute "mysql -uroot -e 'CREATE DATABASE IF NOT EXISTS apst_development;'"
+  end
+end
