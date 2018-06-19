@@ -51,6 +51,16 @@ group :development do
   gem 'unicorn'
 end
 
+group :production do
+  gem 'rb-readline'
+  gem 'unicorn'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+end
+
+
 gem 'pry-rails'
 gem 'compass-rails', '~> 2.0'
 gem 'sprockets', '2.11.0'

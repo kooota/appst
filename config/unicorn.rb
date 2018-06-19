@@ -1,4 +1,3 @@
-
 worker_processes 2
 
 listen  Dir.pwd + '/tmp/unicorn.sock'
