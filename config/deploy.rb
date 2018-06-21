@@ -17,6 +17,9 @@ set :keep_releases, 5
 
 namespace :deploy do
   after :finishing, 'deploy:cleanup'
+  task :restart do
+    invole 'unicorn:restart'
+  end
 end
 
 desc 'execute before deploy'

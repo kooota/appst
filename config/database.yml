@@ -53,3 +53,5 @@ production:
   database: apst_production
   username: apst
   password: <%= ENV['APST_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8

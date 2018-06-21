@@ -49,15 +49,11 @@ group :development do
   gem 'capistrano-rails' #追加
   gem 'rb-readline'
   gem 'unicorn'
+  gem 'capistrano3-unicorn'
 end
 
 group :production do
-  gem 'rb-readline'
-  gem 'unicorn'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  'unicorn'
 end
 
 

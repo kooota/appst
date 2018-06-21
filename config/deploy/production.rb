@@ -61,7 +61,8 @@
 #   }
 
 
-set :stage, :development
+set :stage, :production
+set :rails_env, 'production'
 
 role :app, %w{root@160.16.144.160}
 role :web, %w{root@160.16.144.160}
