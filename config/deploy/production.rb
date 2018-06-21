@@ -67,7 +67,7 @@ role :app, %w{root@160.16.144.160}
 role :web, %w{root@160.16.144.160}
 role :db,  %w{root@160.16.144.160}
 
-server '160.16.144.160',
+server ' mydomain.com',
 user: 'root',
 roles: %w{web app db},
 ssh_options: {
