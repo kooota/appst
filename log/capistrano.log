@@ -2728,3 +2728,18 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [a3c8c4b4] Running /usr/bin/env chmod 700 /tmp/git-ssh-appst-development-kotakarasawa.sh as root@160.16.144.160
  DEBUG [a3c8c4b4] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env chmod 700 /tmp/git-ssh-appst-development-kotakarasawa.sh )
   INFO [a3c8c4b4] Finished in 0.314 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-06-21 14:02:37 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [661e7358] Running /usr/bin/env mkdir -p /tmp as root@ 160.16.144.160
+  INFO [8cfeb7d4] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [661e7358] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+ DEBUG [8cfeb7d4] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO [8cfeb7d4] Finished in 5.130 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-appst-development-kotakarasawa.sh 0.0%
+  INFO Uploading /tmp/git-ssh-appst-development-kotakarasawa.sh 100.0%
+  INFO [42ceed0e] Running /usr/bin/env chmod 700 /tmp/git-ssh-appst-development-kotakarasawa.sh as root@160.16.144.160
+ DEBUG [42ceed0e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env chmod 700 /tmp/git-ssh-appst-development-kotakarasawa.sh )
+  INFO [42ceed0e] Finished in 0.113 seconds with exit status 0 (successful).
