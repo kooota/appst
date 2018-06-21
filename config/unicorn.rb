@@ -3,8 +3,8 @@
 worker_processes 2
 app_path = '/var/www/app/appst'
 
-listen  '#{app_path}/tmp/unicorn.sock'
-pid     '#{app_path}/tmp/unicorn.pid'
+listen  '/var/www/app/appst/current/socks/unicorn.sock'
+pid     '/var/www/app/appst/current/socks/unicorn.pid'
 
 log = Dir.pwd + '/log/unicorn.log'
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
