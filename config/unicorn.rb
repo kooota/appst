@@ -2,8 +2,8 @@
 
 worker_processes 2
 
-listen  Dir.pwd + '/var/run/unicorn.sock'
-pid     Dir.pwd + '/var//run/unicorn.pid'
+listen  Dir.pwd + '/tmp/unicorn.sock'
+pid     Dir.pwd + '/tmp/unicorn.pid'
 
 log = Dir.pwd + '/log/unicorn.log'
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
