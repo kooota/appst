@@ -5,8 +5,8 @@ worker_processes 2
 # listen  '/var/www/app/appst/current/socks/unicorn.sock'
 # pid     '/var/www/app/appst/current/socks/unicorn.pid'
 
-listen  '/var/run/socks/unicorn.sock'
-pid     '/var/run/socks/unicorn.pid'
+listen  '/var/www/app/appst/current/socks/unicorn.sock'
+pid     '/var/www/app/appst/current/unicorn.pid'
 
 
 log = Dir.pwd + '/log/unicorn.log'
