@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 worker_processes 2
-app_path = '/var/www/app/appst'
 
 listen  '/var/www/app/appst/current/socks/unicorn.sock'
 pid     '/var/www/app/appst/current/socks/unicorn.pid'
