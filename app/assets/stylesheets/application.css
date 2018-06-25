@@ -87,6 +87,8 @@ footer {
   text-align: center;
 }
 
+
+
 .logo-img {
   height: 35px;
   vertical-align: middle;
@@ -129,6 +131,8 @@ footer {
   height: 100%;
   cursor :pointer;
   transition: all 0.5s;
+  overflow: auto;
+  border-radius: 50%;
   }
 
 
