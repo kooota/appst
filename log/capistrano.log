@@ -10480,3 +10480,9 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
   INFO [db4e4ce3] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
  DEBUG [db4e4ce3] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-06-25 17:16:26 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [09a4fcfe] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [09a4fcfe] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
