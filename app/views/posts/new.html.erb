@@ -16,7 +16,7 @@
       <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
       <%= f.text_area :content, class:"postContent",placeholder:"サービス概要", required: "required"%>
 
-      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"]],class:"postContent", prompt:"カテゴリーを選択", required: "required"%>
+      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "4"], ["メディア", "5"],["ファイナンス", "6"],["教育", "7"],["キャリア", "8"],["ビジネス", "9"],["ユーティリティ", "10"],["食・グルメ", "11"],["ファッション", "12"],["EC", "13"],["ヘルスケア・フィットネス", "14"],],class:"postContent", prompt:"カテゴリーを選択", required: "required"%>
 
       <%= f.fields_for :relateds do |i| %>
         <%= i.text_field :related_link, class:"postContent",placeholder:"関連記事"  %>
