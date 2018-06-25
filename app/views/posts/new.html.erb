@@ -6,17 +6,17 @@
           プロダクトを投稿する
         </h3>
       </div>
-      <%= f.text_field :title, class:"postContent", placeholder:"サービス名" %>
-      <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明(32文字以内)", maxlength:32 %>
-      <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL" %>
+      <%= f.text_field :title, class:"postContent", placeholder:"サービス名", required: "required"%>
+      <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明(32文字以内)", maxlength:32, required: "required"%>
+      <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL", required: "required" %>
 
-      <%= f.text_field :image, class:"postContent", placeholder:"サービス画像URL" %>
+      <%= f.text_field :image, class:"postContent", placeholder:"サービス画像URL", required: "required" %>
 
       <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
       <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
-      <%= f.text_area :content, class:"postContent",placeholder:"サービス概要"  %>
+      <%= f.text_area :content, class:"postContent",placeholder:"サービス概要", required: "required"%>
 
-      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"]],class:"postContent", prompt:"カテゴリーを選択" %>
+      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"]],class:"postContent", prompt:"カテゴリーを選択", required: "required"%>
 
       <%= f.fields_for :relateds do |i| %>
         <%= i.text_field :related_link, class:"postContent",placeholder:"関連記事"  %>

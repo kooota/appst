@@ -18,6 +18,7 @@
           <div class="post-date clearfix">
           <%= link_to "/categories/#{post.category_id}" do %>
             <div class="category">
+              <span><%= post.category.name %></span>
             </div>
           <% end %>
             <div class="service-link">
