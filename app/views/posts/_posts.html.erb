@@ -18,7 +18,6 @@
           <div class="post-date clearfix">
           <%= link_to "/categories/#{post.category_id}" do %>
             <div class="category">
-              <span><%= post.category.name %></span>
             </div>
           <% end %>
             <div class="service-link">
@@ -30,7 +29,7 @@
 
           <div class="overview">
             <div id="likes-count" class="likes-count-<%= post.id %>">
-              <%= render partial: "/likes/like", locals: {post: post, likes: @likes, like: @like} %>
+              <%= render partial: "/likes/like", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
 
             </div>
             <%= link_to "/posts/#{post.id}" do %>
