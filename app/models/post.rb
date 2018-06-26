@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
 
 
   def like_user(user_id)
