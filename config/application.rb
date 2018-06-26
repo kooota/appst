@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Apst
+module Appst
   class Application < Rails::Application
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     # Settings in config/environments/* take precedence over those specified here.
