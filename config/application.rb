@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Apst
   class Application < Rails::Application
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -20,8 +21,6 @@ module Apst
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :ja
-
-    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
