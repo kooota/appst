@@ -20,11 +20,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     Post.create(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image],image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
   end
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to action: "show" unless @post.user_id == current_user.id
   end
 
   def update
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :category_id, user_id: current_user.id)
+    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cathe,  :category_id, user_id: current_user.id)
   end
 
   def move_to_index
