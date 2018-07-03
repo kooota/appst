@@ -13,16 +13,18 @@
         <div class="user-info">
           <div class="user-name">
             <span><%= @user.name %></span>
-            <% if @user.nickname %>
+
+            <% unless @user.nickname == "" || @user.nicname.nil? %>
               <%= link_to "https://twitter.com/#{@user.nickname}", target:"_blank" do %>
                 <span class="twitter"><i class="fab fa-twitter"></i></span>
               <% end %>
             <% end %>
-            <% if @user.facebook %>
+            <% unless @user.facebook == "" || @user.facebook.nil? %>
               <%= link_to "https://facebook.com/#{@user.facebook}",target:"_blank" do %>
                 <span class="facebook"><i class="fab fa-facebook"></i></span>
               <% end %>
             <% end %>
+
           </div>
           <div class="user-company">
             <span><%= @user.company %></span>
