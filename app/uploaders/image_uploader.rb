@@ -48,13 +48,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # process convert: "jpg"
 
   # 拡張子 jpg jpeg gif png のみ許可
-  def extension_white_list
-    %w(jpg jpeg gif png)
-  end
+  # def extension_white_list
+  #   %w(jpg jpeg gif png)
+  # end
 
   # ファイル名は original.jpg で保存 (jpeg変換しているので拡張子は固定)
-  def filename
-    "original.jpg" if original_filename
-  end
+  # def filename
+  #   "original.jpg" if original_filename
+  # end
 
 end

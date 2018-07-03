@@ -4,12 +4,35 @@
 
 .titleBox{padding: 20px 0;}
 
+.titleBox h3 {font-size:20px;}
+
+.titleBox h4 {font-size:16px;}
+
 .nav {
   font-size: 14px;
 }
 
 a.nav {color: #3cbce1}
 a.nav:visited {color: #3cbce1}
+
+.twitter-login {
+  width: 40%;
+  padding: 10px 10px;
+  background-color: #1DA1F2;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.separate {
+  border-top: 1px solid #e3e4e8;
+  height: 1px;
+
+}
+
+
 
 .new_user {font-size: 12px;}
 
@@ -59,7 +82,7 @@ a.nav:visited {color: #3cbce1}
 }
 
 .user-name {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 40px;
 }
 .twitter {

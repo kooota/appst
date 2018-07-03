@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @name = @user.name
     @nickname = @user.nickname
     # like = @user.like_posts
     @post = @user.like_posts
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
   private
   def update_params
-    params.require(:user).permit(:nickname, :company, :position, :introduction, :twitter, :facebook, :image, :note,:image_cache)
+    params.require(:user).permit(:name, :company, :position, :description, :twitter, :facebook, :image, :note,:image_cache)
   end
 
 

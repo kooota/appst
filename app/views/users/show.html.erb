@@ -12,12 +12,16 @@
 
         <div class="user-info">
           <div class="user-name">
-            <span><%= @user.nickname %></span>
-            <%= link_to "https://twitter.com/#{@user.twitter}", target:"_blank" do %>
-              <span class="twitter"><i class="fab fa-twitter"></i></span>
+            <span><%= @user.name %></span>
+            <% if @user.nickname %>
+              <%= link_to "https://twitter.com/#{@user.nickname}", target:"_blank" do %>
+                <span class="twitter"><i class="fab fa-twitter"></i></span>
+              <% end %>
             <% end %>
-            <%= link_to "https://facebook.com/#{@user.facebook}",target:"_blank" do %>
-              <span class="facebook"><i class="fab fa-facebook"></i></span>
+            <% if @user.facebook %>
+              <%= link_to "https://facebook.com/#{@user.facebook}",target:"_blank" do %>
+                <span class="facebook"><i class="fab fa-facebook"></i></span>
+              <% end %>
             <% end %>
           </div>
           <div class="user-company">
@@ -25,7 +29,7 @@
             <span><%= @user.position %></span>
           </div>
           <div class="user-introduction">
-            <span><%= @user.introduction %></span>
+            <span><%= @user.description %></span>
           </div>
         </div>
 
@@ -40,7 +44,7 @@
 
 
     <div class="date">
-      <h3><%= @nickname %> FAVORITES</h3>
+      <h3><%= @name %> FAVORITES</h3>
     </div>
 
   <div class="postsList">
