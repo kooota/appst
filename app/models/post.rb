@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
+
   has_many :likes, dependent: :destroy
   has_many :comments
+  has_many :relateds
 
   belongs_to :user
   belongs_to :category

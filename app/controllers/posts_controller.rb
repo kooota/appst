@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-
   # before_action :move_to_index, except: :index
+  require 'metainspector'
 
   def index
     @post = Post.includes(:user).all.order("created_at DESC")
@@ -17,6 +17,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id)
     @comments = @post.comments.includes(:user)
+    # if @post.relateds
+    #   @post.relateds.each do |related|
+    #     related = related.related_link
+    #     @related_link = MetaInspector.new(related)
+    #   end
+    # end
   end
 
   def create
