@@ -1,4 +1,4 @@
-<div class="show-container1">
+<div class="container1">
   <div class="content clearfix">
 
     <div class="service-header clearfix">
@@ -41,7 +41,7 @@
         </div>
         <section class="box-about">
           <div class="description">
-            <%= @post.content %>
+            <%= simple_format(@post.content) %>
           </div>
         </section>
 

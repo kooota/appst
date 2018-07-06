@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     Post.create(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image],image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
   end
 
