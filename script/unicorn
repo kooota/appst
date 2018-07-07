@@ -1,4 +1,7 @@
 #!/bin/bash
+# chkconfig: 345 90 20
+# description: Rails application
+# processname: unicorn
 
 set -e
 
