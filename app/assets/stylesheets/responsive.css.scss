@@ -21,7 +21,7 @@
 // post#index, user#show
   .container1 {
     width: 100%;
-    padding: 70px 20px 20px 20px;
+    // padding: 70px 20px 20px 20px;
   .date h3 {
     font-size: 16px
   }
@@ -29,9 +29,24 @@
     width: 100%;
   }
 
+  .postsList {
+    width: 100%;
+  }
+
   .post-in {
     height: 370px;
   }
+
+  .post-date {
+    .category {
+      padding: 4px 10px;
+    }
+  }
+
+  .fas.fa-link {
+    padding: 6px;
+  }
+
   .post-thumnail {
     height: 180px;
   }
@@ -60,6 +75,10 @@
   .canvas img {
     width: 100%;
     height: auto;
+  }
+
+  section {
+    padding: 10px;
   }
 
   form textarea {
@@ -105,12 +124,22 @@
 // posts#new, posts#create, post#edit
 .contents.row {
 
-.container2 {
-  width: 100%;
-  padding: 20px 0;
-}}
+  .container2 {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .container {
+    .twitter-login {
+      width: 100%;
+    }
+  }
+}
+
+
 
 }
+
 
 
 
