@@ -32,6 +32,31 @@
           <div class="canvas">
             <%= image_tag @post.image, class:"img" %>
           </div>
+
+          <!-- sp contents-->
+            <div class="mobile-header-content clearfix">
+              <div class="service-thumnail">
+                <div class="thumnail-content">
+                  <%= image_tag @post.image, class:"img" %>
+                </div>
+              </div>
+
+              <div class="header-info">
+                <div class="service-title">
+                  <%=@post.title %>
+                </div>
+                <div class="service-subtitle">
+                  <%=@post.subtitle %>
+                </div>
+                <%= link_to "/categories/#{@post.category_id}" do %>
+                  <div class="service-category">
+                    <span><%= @post.category.name %></span>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <!-- sp contents-->
+
           <div class="thumnails">
           </div>
         </section>

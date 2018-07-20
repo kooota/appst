@@ -75,13 +75,14 @@
 
 <% end %>
 
+
+<% unless @posts.blank? %>
 <div class="related-box">
   <div class="relateds">
     関連するサービス
   </div>
 
   <div class="related-list">
-
       <% posts.each do |posts| %>
         <%= link_to "/posts/#{posts.id}" do %>
           <div class="item clearfix">
@@ -101,11 +102,9 @@
           </div>
         <% end %>
       <% end %>
-</div>
-
-
-
   </div>
+</div>
+<% end %>
 
 </div>
 

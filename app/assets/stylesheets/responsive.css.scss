@@ -52,6 +52,19 @@
   }
 
 //posts#show
+
+  .service-header {
+    display: none;
+  }
+
+  .mobile-header-content {
+    padding: 0 15px;
+  }
+
+  .header-info {
+    margin: 0;
+  }
+
   .main-container {
     width: 100%;
     margin: 0;
@@ -99,9 +112,11 @@
   .user-image {
     width:100px;
     height: 100px;
-    margin: 10px 105px;}
+    margin: 10px auto;
+  }
   .user-image-container {
-    margin: 0;
+    margin: 0 auto;
+    width: 100%;
   }
   .user-image img {margin: 0}
   .user-info {
@@ -114,9 +129,11 @@
   }
   .edit-btn {
     display: block;
-    margin: 4px 130px 0 130px;
+    margin: 4px  146px 0;
     padding: 15px 8px;
   }
+
+
 
 }
 
@@ -138,8 +155,13 @@
 
 
 
+
+
 }
 
+@media (min-width: 1100px) {
+  .mobile-header-content {display:none;}
+}
 
 
 
