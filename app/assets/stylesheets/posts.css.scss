@@ -283,6 +283,39 @@ section {
   border-radius: 100px;
 }
 
+.people-container {
+  padding: 10px 0 0 0;
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.poster-box, .developer-box, .people-userImg, .poster-name, .developer-name {float:left;}
+
+.pos-div {
+  display: block;
+  font-size:12px;
+  margin-bottom: 5px;
+}
+
+.poster-box {
+  width: auto;
+  padding: 0 20px 10px 0;
+  border-right: 1px solid #d8d8d8;
+}
+
+.poster-name, .developer-name {
+  margin: 8px 0 0 8px;}
+
+.developer-box {
+  width: auto;
+  padding-left: 20px;
+}
+
+.people-userImg {
+  width: 40px;
+  height: 40px;
+}
 
 .username{
   padding: 5px;

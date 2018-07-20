@@ -62,7 +62,7 @@
         </section>
 
         <div class="box-title">
-          <h2><i class="fas fa-check-circle"></i>サービスについて</h2>
+          <h2><i class="fas fa-check-circle"></i>サービス概要</h2>
         </div>
         <section class="box-about">
           <div class="description">
@@ -84,6 +84,37 @@
           <h2><i class="fas fa-comments"></i>コメント</h2>
         </div>
         <section class="box-comment">
+          <div class="people-container clearfix">
+            <div class="poster-box">
+              <span class="pos-div">このサービスを投稿してくれた人</span>
+              <div class="poster">
+                <%= link_to "/users/#{@post.user.id}" do %>
+                  <div class="people-userImg">
+                    <%= image_tag @post.user.image, class:"userImg" %>
+                  </div>
+                  <div class="poster-name">
+                    <%= @post.user.name %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+<!--             <div class="developer-box">
+              <span class="pos-div">サービス提供者</span>
+              <div class="developer">
+                <%= link_to "/users/#{@post.user.id}" do %>
+                  <div class="people-userImg">
+                    <%= image_tag @post.user.image, class:"userImg" %>
+                  </div>
+                  <div class="developer-name">
+                    <%= @post.user.name %>
+                  </div>
+                <% end %>
+              </div>
+            </div> -->
+          </div>
+
+
           <%= render partial: "comments", locals:{ post: @post, comments: @comments} %>
         </section>
       </div>
