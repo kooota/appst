@@ -48,9 +48,11 @@
           <div class="service-subtitle">
             <%=@post.subtitle %>
           </div>
+          <%= link_to "/categories/#{@post.category_id}" do %>
           <div class="service-category">
             <span><%= @post.category.name %></span>
           </div>
+          <% end %>
         </div>
 
       </div>
