@@ -227,6 +227,8 @@ form input[type="submit"] {
 }
 
 
+.user-introduction p, .user-comment p {margin: 0;}
+
 
 .main-container {
   padding: 0 15px;
@@ -473,3 +475,38 @@ section {
   font-size: 12px;
   line-height: 15px;
 }
+
+
+
+
+
+/*------------------------------------- 19.0 - Advertisement-----------------------------------------------*/
+
+/* ダブルレクタングル
+----------------------------------------------------*/
+.kiziad { padding:0px;}
+ 
+.adleft {float:left; width:336px;}
+.adright {float:right; width:336px;}
+ 
+/* clear */
+.clear {clear:both;}
+.clear hr {display:none;}
+ 
+/* 大画面用の設定 */
+@media screen and (min-width: 1081px) {
+ .kiziad {width:680px;}
+}
+ 
+/* モバイル画面用の設定 */
+@media screen and (max-width: 1080px) { 
+ .kiziad {padding:0; width:300px; margin:0 auto;}
+ .adright {display:none;}
+ .adleft {width:300px;}
+}
+
+.sponsor-text { text-align: center; color: #bbb;}
+
+/* インフィード
+----------------------------------------------------*/
+.ads.GoogleActiveViewClass { margin-bottom: 16px;}

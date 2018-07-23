@@ -31,7 +31,7 @@
             <span><%= @user.position %></span>
           </div>
           <div class="user-introduction">
-            <span><%= @user.description %></span>
+            <span><%= simple_format(@user.description) %></span>
           </div>
         </div>
 
