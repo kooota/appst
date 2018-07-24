@@ -45,6 +45,9 @@ class PostsController < ApplicationController
     redirect_to "/"
   end
 
+  def pryvacy
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cathe,  :category_id, user_id: current_user.id)

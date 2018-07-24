@@ -61,12 +61,12 @@
 
   <div class="sns-list">
     <% unless @post.twitter == "" || @post.twitter.nil?  %>
-        <%= link_to "https://twitter.com/#{@post.twitter}" do %>
+        <%= link_to "https://twitter.com/#{@post.twitter}", target:"_blank" do %>
           <span class="twitter"><i class="fab fa-twitter"></i></span>
         <% end %>
     <% end %>
     <% unless @post.facebook == "" || @post.facebook.nil?  %>
-        <%= link_to "https://facebook.com/#{@post.facebook}" do %>
+        <%= link_to "https://facebook.com/#{@post.facebook}", target:"_blank" do %>
           <span class="facebook"><i class="fab fa-facebook"></i></span>
         <% end %>
     <% end %>

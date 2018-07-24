@@ -71,7 +71,13 @@
   font-size: 12px;
   padding: 5px;
   height: 45px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
+
+
 
 .post-date {
   padding: 10px 10px;
@@ -129,7 +135,6 @@
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
-
 
 
 form input, form textarea {
