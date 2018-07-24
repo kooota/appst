@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to action: "show" unless current_user.id
+    redirect_to action: "show" unless user_signed_in? && @user.id == current_user.id
   end
 
   def update

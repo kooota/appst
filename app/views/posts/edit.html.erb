@@ -16,6 +16,7 @@
       <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
       <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
       <%= f.text_area :content, class:"postContent",placeholder:"サービス概要"  %>
+      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア・フィットネス", "9"],["コミュニティ", "15"],["ライフスタイル", "16"]],class:"postContent", prompt:"カテゴリーを選択", required: "required" %>
       <%= f.text_field :twitter, class:"postContent",placeholder:"Twiiterアカウント"  %>
       <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント"  %>
       <%= f.submit "更新" %>
