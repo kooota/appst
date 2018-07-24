@@ -34,13 +34,13 @@
             <span><%= simple_format(@user.description) %></span>
           </div>
         </div>
-
+        <% if user_signed_in? && current_user.id == @user.id %>
           <div class="user-edit">
             <%= link_to "/users/#{@user.id}/edit" do %>
               <span class="edit-btn">EDIT</span>
             <% end %>
           </div>
-
+        <% end %>
       </div>
     </div>
 
