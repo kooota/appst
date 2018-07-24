@@ -511,6 +511,7 @@ section {
  .ad-top {padding:0; width:300px; margin:0 auto;}
  .adright {display:none;}
  .adleft {width:300px;}
+ .ad-side {padding:0; width:300px; margin: 0 auto}
 }
 
 .sponsor-text { text-align: center; color: #bbb;}
@@ -518,3 +519,14 @@ section {
 /* インフィード
 ----------------------------------------------------*/
 .ads.GoogleActiveViewClass { margin-bottom: 16px;}
+
+/*------------------------------------- 19.0 - Pryvacy-----------------------------------------------*/
+
+.pryvacy-content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.pryvacy-content p {font-size:14px;}
+
+.pryvacy {font-size: 20px;}
