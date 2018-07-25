@@ -40,7 +40,7 @@
 
 .post {
   display: inline-block;
-  width: 24%;
+  width: 25%;
   padding: 20px;
   float: left;
 }
@@ -69,6 +69,51 @@
   border: 1px solid #f6f8fa;
 }
 
+.fas.fa-angle-down {
+  padding: 5px;
+}
+
+.more {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 15px;
+  z-index: 2;
+  height: 100px;
+  width: 80px;
+  text-align: right;
+  &:hover ul.more_list {
+    display: block;
+  }
+  ul.more_list {
+    position: absolute;
+    text-align: left;
+    width: 80px;
+    right: 0;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    li {
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        border-bottom: 0;
+      }
+      .more-edit, .more-delete {
+        display: block;
+        padding: 5px;
+        &:hover {
+          background-color: inherit;
+          color: #99cccc;
+        }
+      }
+    }
+  }
+}
+
+
 .post-title {
   padding: 10px 5px 5px 5px;
   font-size: 16px;
@@ -88,7 +133,7 @@
 
 
 .post-date {
-  padding: 10px 10px;
+  padding: 5px 10px;
   left: 0;
   bottom: 95px;
 }
@@ -155,7 +200,7 @@ form input, form textarea {
 
 form input[type="submit"] {
   // background-color: #57c3e9;
-  background-color: #99cccc;
+  background-color: #80CACA;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -181,8 +226,8 @@ form input[type="submit"] {
 .btn {
   padding: 8px 20px;
   font-size: 14px;
-  border: 2px solid #57c3e9;
-  color: #57c3e9;
+  border: 2px solid #99cccc;
+  color: #99cccc;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -278,7 +323,7 @@ section {
 
 .box-comment form {
   padding: 10px;
-  background-color: #d8d8d8;
+  background-color: #efefef;
   border-radius: 5px;
 }
 
@@ -349,7 +394,7 @@ section {
 }
 
 .comment-notice {
-  background-color: #d8d8d8;
+  background-color: #efefef;
   text-align: center;
   padding: 10px;
   border-radius: 5px;
@@ -361,11 +406,11 @@ section {
 
 .comment-notice a {
   font-size: 14px;
-  color: #3cbce1;
+  color: #80CACA;
 }
 
 .comment-notice a:visited {
-  color: #3cbce1;
+  color: #80CACA;
 }
 
 

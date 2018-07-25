@@ -7,6 +7,21 @@
             <%= image_tag post.image, class:"post-img" %>
           </div>
 
+        <% if user_signed_in? && current_user.id == post.user_id %>
+          <div class="more">
+              <span><i class="fas fa-angle-down"></i></span>
+              <ul class="more_list">
+                  <li class="more-edit">
+                    <%= link_to '編集', "/posts/#{post.id}/edit", method: :get, class:"more-edit" %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete" %>
+                  </li>
+              </ul>
+            </div>
+        <% end %>
+
+
           <div class="post-title">
             <span><%= post.title %></span>
           </div>
@@ -40,9 +55,6 @@
              </div>
             <% end %>
          </div>
-           <div class="destroy">
-            <%= link_to "削除", "/posts/#{post.id}", method: :delete %>
-           </div>
          </div>
         </div>
       <% end %>

@@ -53,6 +53,10 @@ a:link {
   color: inherit;
 }
 
+a:hover {
+  color: #99cccc;
+}
+
 .clearfix:after {
   content: "";
   display: block;
