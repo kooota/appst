@@ -492,7 +492,7 @@ section {
 ----------------------------------------------------*/
 .ad-top, .ad-side { padding:0px;}
 
-.ad-side {margin-top: 10px;}
+.ad-side {margin-top: 10px; width:336px;}
 
 .adleft {float:left; width:336px;}
 .adright {float:right; width:336px;}
@@ -507,7 +507,7 @@ section {
 }
 
 /* モバイル画面用の設定 */
-@media screen and (max-width: 1080px) { 
+@media screen and (max-width: 1080px) {
  .ad-top {padding:0; width:300px; margin:0 auto;}
  .adright {display:none;}
  .adleft {width:300px;}

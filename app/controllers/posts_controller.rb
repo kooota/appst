@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     redirect_to "/"
   end
 
-  def pryvacy
+  def privacy
   end
 
   private
