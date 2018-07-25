@@ -499,7 +499,7 @@ section {
 /* ダブルレクタングル
 ----------------------------------------------------*/
 .ad-top {
-  margin: 60px auto 10px;
+  margin: 0px auto;
 }
 
 .ad-top, .ad-side {
@@ -527,10 +527,10 @@ section {
 
 /* モバイル画面用の設定 */
 @media screen and (max-width: 1080px) {
- .ad-top {padding:0; width:300px;}
+ .ad-top {padding:0; width:300px; margin: 60px auto 10px;}
  .adright {display:none;}
  .adleft {width:300px;}
- .ad-side {width:300px; margin: 0 auto}
+ .ad-side {width:300px; margin: 10px auto 0}
 }
 
 .sponsor-text { text-align: center; color: #bbb;}
