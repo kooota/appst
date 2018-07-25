@@ -14,6 +14,13 @@
 //   padding: 70px 0px 20px 0px;
 // }
 
+.mainview {
+  background-color: #99cccc;
+  margin-top: 50px;
+  text-align: center;
+  padding: 50px;
+}
+
 .container2 {
   width: 80%;
   margin: 0 auto;
@@ -22,7 +29,7 @@
   padding: 20px 40px;
 }
 
-.date {
+.date, .fav {
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -42,7 +49,7 @@
 
 .post-in {
   height: 300px;
-  border: 1px solid #f6f8fa;
+  border: 3px solid #f6f8fa;
   border-radius: 5px;
   width: 100%;
   box-shadow: #e3e4e8 0 4px 0;
@@ -147,7 +154,8 @@ form input, form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57c3e9;
+  // background-color: #57c3e9;
+  background-color: #99cccc;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -500,6 +508,8 @@ section {
 /* clear */
 .clear {clear:both;}
 .clear hr {display:none;}
+
+#google_image_div {margin-top:20px;}
 
 /* 大画面用の設定 */
 @media screen and (min-width: 1081px) {

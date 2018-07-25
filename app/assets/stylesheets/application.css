@@ -62,7 +62,8 @@ a:link {
 .header {
   height:50px;
   margin: 0 auto;
-  width: 80%;
+  /*width: 80%;*/
+  width: 70%;
 }
 
 footer {
@@ -107,8 +108,9 @@ ul {
 .atLogo {
   float: left;
   line-height: 45px;
-  width: 33%;
-  text-align: center;
+  /*width: 33%;*/
+  width:50%;
+  /*text-align: center;*/
 }
 
 
@@ -121,7 +123,8 @@ ul {
 /*ヘッダーアクション*/
 
 .userNav {
-  width: 33%;
+  /*width: 33%;*/
+  width:50%;
   float: left;
   line-height: 50px;
   display: inline-flex;

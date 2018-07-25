@@ -8,7 +8,7 @@
     width: 100%;
 
   .search {display: none;}
-  .atLogo {width: 50%; height:100%;}
+  .atLogo {width: 50%; height:100%; text-align: center;}
   .userNav {width: 50%;height:100%;
   .signUp {margin-right: 10px;}}
   .cssacc:checked + .accshow{
@@ -18,11 +18,38 @@
 }}
 
 
+  .mainview {
+    width: 100%;
+    margin: 50px  0 10px 0;
+    background-color: #99cccc;
+    padding:60px 40px;
+  }
+  .mainview h1 {
+    padding: 10px;
+    font-size:24px;
+    text-align: center;
+  }
+
+  .top-logo img {
+    width: 100%;
+  }
+
+  .mainview p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+
 // post#index, user#show
   .container1 {
     width: 100%;
-    // padding: 70px 20px 20px 20px;
-  .date h3 {
+    padding: 0px 0px 20px 0px;
+
+  .date {
+    margin-top: 70px;
+  }
+
+  .date h3, .fav h3 {
     font-size: 16px
   }
   .post {
@@ -103,12 +130,21 @@
     width: 100%;
   }
 
+  .ad-top {
+    margin: 60px auto 10px auto;
+  }
 
 
 // user#show
+  .user-header {
+    padding: 0;
+    margin-top: 50px;
+  }
   .user-header-content {
     height:auto;
-    padding: 20px 0;}
+    padding: 20px 0;
+    border-radius: 0px;
+  }
   .user-image {
     width:100px;
     height: 100px;
@@ -122,10 +158,14 @@
   .user-info {
     width:100%;
     text-align: center;
-    margin: 0;}
+    margin: 0;
+    padding: 0 20px;
+  }
+
   .user-edit {
     line-height: 0;
     text-align: center;
+    width: 100%;
   }
   .edit-btn {
     display: block;
@@ -140,6 +180,7 @@
 
 // posts#new, posts#create, post#edit
 .contents.row {
+  margin: 40px auto 0;
 
   .container2 {
     width: 100%;
@@ -162,6 +203,3 @@
 @media (min-width: 1100px) {
   .mobile-header-content {display:none;}
 }
-
-
-
