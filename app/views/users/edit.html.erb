@@ -9,8 +9,8 @@
       <%= f.text_field :name, class:"postContent", placeholder:"アカウント名" %>
       <%= f.text_field :company, class:"postContent", placeholder:"会社名" %>
       <%= f.text_field :position, class:"postContent", placeholder:"職種" %>
-
-      <%= f.file_field :image, class:"postContent", placeholder:"サービス画像"  %>
+      <%= image_tag @user.image %>
+      <%= f.file_field :image, class:"postContent", placeholder:"プロフィール画像"  %>
       <%= f.hidden_field :image_cache %>
 
       <%= f.text_area :description, class:"postContent",placeholder:"自己紹介",rows:"5"  %>

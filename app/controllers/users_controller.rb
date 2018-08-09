@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user.image.cache! unless @user.image.blank?
     redirect_to action: "show" unless user_signed_in? && @user.id == current_user.id
   end
 

@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   get "/privacy" => "posts#privacy"
+
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
+
 end

@@ -31,6 +31,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @post.image.cache! unless @post.image.blank?
     redirect_to action: "show" unless @post.user_id == current_user.id
   end
 
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cathe,  :category_id, user_id: current_user.id)
+    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cache,  :category_id, user_id: current_user.id)
   end
 
   def move_to_index

@@ -1,61 +1,56 @@
-    <% @post.each do |post| %>
-      <%= link_to "/posts/#{post.id}" do %>
-        <div class="post">
-         <div class="post-in">
-
-          <div class="post-thumnail">
-            <%= image_tag post.image, class:"post-img" %>
-          </div>
-
-        <% if user_signed_in? && current_user.id == post.user_id %>
-          <div class="more">
-              <span><i class="fas fa-angle-down"></i></span>
-              <ul class="more_list">
-                  <li class="more-edit">
-                    <%= link_to '編集', "/posts/#{post.id}/edit", method: :get, class:"more-edit" %>
-                  </li>
-                  <li>
-                    <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete" %>
-                  </li>
-              </ul>
-            </div>
-        <% end %>
-
-
-          <div class="post-title">
-            <span><%= post.title %></span>
-          </div>
-
-          <div class="post-subtitle">
-            <span><%= post.subtitle %></span>
-          </div>
-
-          <div class="post-date clearfix">
+<% @post.each do |post| %>
+  <%= link_to "/posts/#{post.id}" do %>
+    <div class="post">
+      <div class="post-in">
+        <div class="post-thumnail">
+          <%= image_tag post.image, class:"post-img" %>
+        </div>
+      <% if user_signed_in? && current_user.id == post.user_id %>
+        <div class="more">
+          <span><i class="fas fa-angle-down"></i></span>
+          <ul class="more_list">
+            <li class="more-edit">
+              <%= link_to '編集', "/posts/#{post.id}/edit", method: :get, class:"more-edit" %>
+            </li>
+            <li>
+              <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+  <% end %>
+  <%= link_to "/posts/#{post.id}" do %>
+        <div class="post-title">
+          <span><%= post.title %></span>
+        </div>
+        <div class="post-subtitle">
+          <span><%= post.subtitle %></span>
+        </div>
+        <div class="post-date clearfix">
           <%= link_to "/categories/#{post.category_id}" do %>
             <div class="category">
               <span><%= post.category.name %></span>
             </div>
           <% end %>
-            <div class="service-link">
-              <%= link_to post.service_url, target:"_blank" do %>
-              <i class="fas fa-link"></i>
-              <% end %>
-            </div>
-          </div>
-
-          <div class="overview">
-            <div id="likes-count" class="likes-count-<%= post.id %>">
-              <%= render partial: "/likes/like", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
-
-            </div>
-            <%= link_to "/posts/#{post.id}" do %>
-              <div class="comments-count">
-               <i class="fas fa-comment-alt"></i>
-               <span><%= post.comments.count %> </span>
-             </div>
+          <div class="service-link">
+            <%= link_to post.service_url, target:"_blank" do %>
+            <i class="fas fa-link"></i>
             <% end %>
-         </div>
-         </div>
+          </div>
         </div>
-      <% end %>
-    <% end %>
+        <div class="overview">
+          <div id="likes-count" class="likes-count-<%= post.id %>">
+            <%= render partial: "/likes/like", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
+
+          </div>
+          <%= link_to "/posts/#{post.id}" do %>
+            <div class="comments-count">
+              <i class="fas fa-comment-alt"></i>
+              <span><%= post.comments.count %> </span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

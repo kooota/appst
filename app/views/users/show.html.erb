@@ -72,7 +72,9 @@
               </ul>
             </div>
         <% end %>
+    <% end %>
 
+    <%= link_to "/posts/#{post.id}" do %>
 
         <div class="post-title">
           <span><%= post.title %></span>
