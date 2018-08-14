@@ -1,7 +1,7 @@
           <% if current_user %>
             <%= form_tag("/posts/#{post.id}/comments", method: :post) do %>
               <textarea cols="30" name="content" placeholder="このプロダクトについての感想をコメントする" rows="2" required="required"></textarea>
-              <input type="submit" value="送信">
+              <input type="submit" value="送信" style="background-color: #80CACA;">
             <% end %>
 
           <% else %>
