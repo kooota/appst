@@ -22,3 +22,39 @@
 .far.fa-heart {
   color: #FF0461 ;
 }
+
+
+.show-likes-count {
+  float: left;
+  width: 100%;
+}
+
+#show-like-buttons {
+  width:100%;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.like-icon {
+  height: 58px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-text, .num-of-like {
+  font-size: 20px;
+  color: #434343;
+}
+
+.heart-in-show {
+  margin-right: 5px;
+}
+
+.like-text {
+  margin-right: 30px;
+}

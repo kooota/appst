@@ -1,4 +1,11 @@
 <div class="links clearfix">
+
+    <div class="website-link show-fav clearfix">
+      <div class="likes-count-<%= post.id %> show-likes-count">
+        <%= render partial: "/likes/sidelike", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
+      </div>
+    </div>
+
   <% if @post.service_url %>
     <div class="website-link clearfix">
       <%= link_to post.service_url, target:"_blank" do %>
@@ -14,7 +21,6 @@
         <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
       <% end %>
   <% end %>
-    </div>
 
   <% unless @post.appstore_url == "" || @post.appstore_url.nil?  %>
     <div class="appstore-link clearfix">

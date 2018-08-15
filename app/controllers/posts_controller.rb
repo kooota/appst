@@ -17,6 +17,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id)
     @comments = @post.comments.includes(:user)
+    @likes = Like.all
+    @like = Like.where(post_id: params[:post_id])
     # if @post.relateds
     #   @post.relateds.each do |related|
     #     related = related.related_link

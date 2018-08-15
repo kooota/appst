@@ -1,2 +1,10 @@
-$(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
 
+var url = location.href;
+
+if (url =="http://localhost:3000/") {
+  $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
+} else {
+  $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/sidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
+}
+
+// $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
