@@ -22,9 +22,10 @@
           </div>
       <% else %>
         <%= link_to new_user_session_path do %>
-          <span class="like-icon"><i class="far fa-heart heart-in-show"></i></span>
-          <span>
-            <%= post.likes.count %>
+          <span class="like-icon">
+            <i class="far fa-heart heart-in-show"></i>
+            <span class="like-text">LIKE</span>
+            <span class="num-of-like"><%= post.likes.count %></span>
           </span>
         <% end %>
       <% end %>
