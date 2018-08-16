@@ -25127,3 +25127,235 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [4a1db999] Running /usr/bin/env echo "Branch prepare (at e54a78e31b7e7ae7b497be6eba8d0de4fadc54a6) deployed as release 20180816041506 by kotakarasawa" >> /var/www/app/appst/revisions.log as root@160.16.144.160
  DEBUG [4a1db999] Command: cd /var/www/app/appst/releases && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "Branch prepare (at e54a78e31b7e7ae7b497be6eba8d0de4fadc54a6) deployed as release 20180816041506 by kotakarasawa" >> /var/www/app/appst/revisions.log )
   INFO [4a1db999] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 13:26:25 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [90b7b1c8] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [90b7b1c8] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO [90b7b1c8] Finished in 7.782 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-appst-production-kotakarasawa.sh 0.0%
+  INFO Uploading /tmp/git-ssh-appst-production-kotakarasawa.sh 100.0%
+  INFO [e1b07033] Running /usr/bin/env chmod 700 /tmp/git-ssh-appst-production-kotakarasawa.sh as root@160.16.144.160
+ DEBUG [e1b07033] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env chmod 700 /tmp/git-ssh-appst-production-kotakarasawa.sh )
+  INFO [e1b07033] Finished in 0.328 seconds with exit status 0 (successful).
+  INFO [bdaa41bb] Running /usr/bin/env git ls-remote https://github.com/kooota/appst HEAD as root@160.16.144.160
+ DEBUG [bdaa41bb] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git ls-remote https://github.com/kooota/appst HEAD )
+ DEBUG [bdaa41bb] 	74117971f1e559d4a97e341dc28c0a0a69f3c452	HEAD
+  INFO [bdaa41bb] Finished in 1.063 seconds with exit status 0 (successful).
+  INFO [5e5271c1] Running /usr/bin/env mkdir -p /var/www/app/appst/shared /var/www/app/appst/releases as root@160.16.144.160
+ DEBUG [5e5271c1] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/shared /var/www/app/appst/releases )
+  INFO [5e5271c1] Finished in 0.333 seconds with exit status 0 (successful).
+  INFO [eebeb0a2] Running /usr/bin/env mkdir -p /var/www/app/appst/shared/log /var/www/app/appst/shared/tmp/pids /var/www/app/appst/shared/tmp/cache /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/shared/bundle /var/www/app/appst/shared/public/system /var/www/app/appst/shared/public/assets as root@160.16.144.160
+ DEBUG [eebeb0a2] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/shared/log /var/www/app/appst/shared/tmp/pids /var/www/app/appst/shared/tmp/cache /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/shared/bundle /var/www/app/appst/shared/public/system /var/www/app/appst/shared/public/assets )
+  INFO [eebeb0a2] Finished in 0.358 seconds with exit status 0 (successful).
+ DEBUG [d9fcc255] Running [ -f /var/www/app/appst/current/REVISION ] as root@160.16.144.160
+ DEBUG [d9fcc255] Command: [ -f /var/www/app/appst/current/REVISION ]
+ DEBUG [d9fcc255] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [1d9301c7] Running /usr/bin/env cat /var/www/app/appst/current/REVISION 2>/dev/null as root@160.16.144.160
+ DEBUG [1d9301c7] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env cat /var/www/app/appst/current/REVISION 2>/dev/null )
+ DEBUG [1d9301c7] 	e54a78e31b7e7ae7b497be6eba8d0de4fadc54a6
+ DEBUG [1d9301c7] Finished in 0.425 seconds with exit status 0 (successful).
+ DEBUG [c65c7c7f] Running [ -f /var/www/app/appst/repo/HEAD ] as root@160.16.144.160
+ DEBUG [c65c7c7f] Command: [ -f /var/www/app/appst/repo/HEAD ]
+ DEBUG [c65c7c7f] Finished in 0.535 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/app/appst/repo
+ DEBUG [7527bfe0] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [7527bfe0] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [7527bfe0] Finished in 0.509 seconds with exit status 0 (successful).
+  INFO [8c6ec471] Running /usr/bin/env git remote set-url origin https://github.com/kooota/appst as root@160.16.144.160
+ DEBUG [8c6ec471] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git remote set-url origin https://github.com/kooota/appst )
+  INFO [8c6ec471] Finished in 0.489 seconds with exit status 0 (successful).
+  INFO [fad8c2fd] Running /usr/bin/env git remote update --prune as root@160.16.144.160
+ DEBUG [fad8c2fd] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [fad8c2fd] 	Fetching origin
+ DEBUG [fad8c2fd] 	remote: Counting objects: 9, done.[K
+remote: Compressing objects:  50% (1/2)   [Kremote: Compressing objects: 100% (2/2)   [Kremote: Compressing objects: 100% (2/2), done.[K
+remote: Total 9 (delta 7), reused 9 (delta 7), pack-reused 0[K
+ DEBUG [fad8c2fd] 	Unpacking objects:  11% (1/9)   Unpacking objects:  22% (2/9)   Unpacking objects:  33% (3/9)   Unpacking objects:  44% (4/9)   Unpacking objects:  55% (5/9)   Unpacking objects:  66% (6/9)   
+ DEBUG [fad8c2fd] 	Unpacking objects:  77% (7/9)   
+ DEBUG [fad8c2fd] 	Unpacking objects:  88% (8/9)   
+ DEBUG [fad8c2fd] 	Unpacking objects: 100% (9/9)   Unpacking objects: 100% (9/9), done.
+ DEBUG [fad8c2fd] 	From https://github.com/kooota/appst
+   e54a78e..7411797  prepare    -> prepare
+  INFO [fad8c2fd] Finished in 2.302 seconds with exit status 0 (successful).
+ DEBUG [ad9c0d81] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [ad9c0d81] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [ad9c0d81] Finished in 0.293 seconds with exit status 0 (successful).
+  INFO [f77a11d6] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636 as root@160.16.144.160
+ DEBUG [f77a11d6] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636 )
+  INFO [f77a11d6] Finished in 0.319 seconds with exit status 0 (successful).
+  INFO [0532b022] Running /usr/bin/env git archive prepare | /usr/bin/env tar -x -f - -C /var/www/app/appst/releases/20180816042636 as root@160.16.144.160
+ DEBUG [0532b022] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git archive prepare | /usr/bin/env tar -x -f - -C /var/www/app/appst/releases/20180816042636 )
+  INFO [0532b022] Finished in 2.571 seconds with exit status 0 (successful).
+ DEBUG [af3ab18c] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [af3ab18c] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [af3ab18c] Finished in 0.347 seconds with exit status 0 (successful).
+ DEBUG [dddcce00] Running /usr/bin/env git rev-list --max-count=1 prepare as root@160.16.144.160
+ DEBUG [dddcce00] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git rev-list --max-count=1 prepare )
+ DEBUG [dddcce00] 	74117971f1e559d4a97e341dc28c0a0a69f3c452
+ DEBUG [dddcce00] Finished in 0.329 seconds with exit status 0 (successful).
+ DEBUG [3ecc997a] Running if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [3ecc997a] Command: if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi
+ DEBUG [3ecc997a] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [dbe0e5e4] Running /usr/bin/env echo "74117971f1e559d4a97e341dc28c0a0a69f3c452" > REVISION as root@160.16.144.160
+ DEBUG [dbe0e5e4] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "74117971f1e559d4a97e341dc28c0a0a69f3c452" > REVISION )
+  INFO [dbe0e5e4] Finished in 0.320 seconds with exit status 0 (successful).
+  INFO [1fcf6dd6] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636 /var/www/app/appst/releases/20180816042636/tmp /var/www/app/appst/releases/20180816042636/public as root@160.16.144.160
+ DEBUG [1fcf6dd6] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636 /var/www/app/appst/releases/20180816042636/tmp /var/www/app/appst/releases/20180816042636/public )
+  INFO [1fcf6dd6] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG [3a471307] Running [ -L /var/www/app/appst/releases/20180816042636/log ] as root@160.16.144.160
+ DEBUG [3a471307] Command: [ -L /var/www/app/appst/releases/20180816042636/log ]
+ DEBUG [3a471307] Finished in 0.575 seconds with exit status 1 (failed).
+ DEBUG [64eb74cc] Running [ -d /var/www/app/appst/releases/20180816042636/log ] as root@160.16.144.160
+ DEBUG [64eb74cc] Command: [ -d /var/www/app/appst/releases/20180816042636/log ]
+ DEBUG [64eb74cc] Finished in 0.436 seconds with exit status 0 (successful).
+  INFO [e20e8a63] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/log as root@160.16.144.160
+ DEBUG [e20e8a63] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/log )
+  INFO [e20e8a63] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO [53b01477] Running /usr/bin/env ln -s /var/www/app/appst/shared/log /var/www/app/appst/releases/20180816042636/log as root@160.16.144.160
+ DEBUG [53b01477] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/log /var/www/app/appst/releases/20180816042636/log )
+  INFO [53b01477] Finished in 0.473 seconds with exit status 0 (successful).
+ DEBUG [6ff91ea6] Running [ -L /var/www/app/appst/releases/20180816042636/tmp/pids ] as root@160.16.144.160
+ DEBUG [6ff91ea6] Command: [ -L /var/www/app/appst/releases/20180816042636/tmp/pids ]
+ DEBUG [6ff91ea6] Finished in 0.497 seconds with exit status 1 (failed).
+ DEBUG [c5ec31e2] Running [ -d /var/www/app/appst/releases/20180816042636/tmp/pids ] as root@160.16.144.160
+ DEBUG [c5ec31e2] Command: [ -d /var/www/app/appst/releases/20180816042636/tmp/pids ]
+ DEBUG [c5ec31e2] Finished in 0.473 seconds with exit status 0 (successful).
+  INFO [8417845f] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/tmp/pids as root@160.16.144.160
+ DEBUG [8417845f] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/tmp/pids )
+  INFO [8417845f] Finished in 0.343 seconds with exit status 0 (successful).
+  INFO [4b54b363] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/pids /var/www/app/appst/releases/20180816042636/tmp/pids as root@160.16.144.160
+ DEBUG [4b54b363] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/pids /var/www/app/appst/releases/20180816042636/tmp/pids )
+  INFO [4b54b363] Finished in 0.359 seconds with exit status 0 (successful).
+ DEBUG [f832799b] Running [ -L /var/www/app/appst/releases/20180816042636/tmp/cache ] as root@160.16.144.160
+ DEBUG [f832799b] Command: [ -L /var/www/app/appst/releases/20180816042636/tmp/cache ]
+ DEBUG [f832799b] Finished in 0.319 seconds with exit status 1 (failed).
+ DEBUG [20e44c2e] Running [ -d /var/www/app/appst/releases/20180816042636/tmp/cache ] as root@160.16.144.160
+ DEBUG [20e44c2e] Command: [ -d /var/www/app/appst/releases/20180816042636/tmp/cache ]
+ DEBUG [20e44c2e] Finished in 0.320 seconds with exit status 0 (successful).
+  INFO [94bc0348] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/tmp/cache as root@160.16.144.160
+ DEBUG [94bc0348] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20180816042636/tmp/cache )
+  INFO [94bc0348] Finished in 0.339 seconds with exit status 0 (successful).
+  INFO [64778ba5] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/cache /var/www/app/appst/releases/20180816042636/tmp/cache as root@160.16.144.160
+ DEBUG [64778ba5] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/cache /var/www/app/appst/releases/20180816042636/tmp/cache )
+  INFO [64778ba5] Finished in 0.352 seconds with exit status 0 (successful).
+ DEBUG [4b179552] Running [ -L /var/www/app/appst/releases/20180816042636/tmp/sockets ] as root@160.16.144.160
+ DEBUG [4b179552] Command: [ -L /var/www/app/appst/releases/20180816042636/tmp/sockets ]
+ DEBUG [4b179552] Finished in 0.354 seconds with exit status 1 (failed).
+ DEBUG [3ccd57bb] Running [ -d /var/www/app/appst/releases/20180816042636/tmp/sockets ] as root@160.16.144.160
+ DEBUG [3ccd57bb] Command: [ -d /var/www/app/appst/releases/20180816042636/tmp/sockets ]
+ DEBUG [3ccd57bb] Finished in 0.357 seconds with exit status 1 (failed).
+  INFO [d6b0133e] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/releases/20180816042636/tmp/sockets as root@160.16.144.160
+ DEBUG [d6b0133e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/releases/20180816042636/tmp/sockets )
+  INFO [d6b0133e] Finished in 0.360 seconds with exit status 0 (successful).
+ DEBUG [1b348409] Running [ -L /var/www/app/appst/releases/20180816042636/bundle ] as root@160.16.144.160
+ DEBUG [1b348409] Command: [ -L /var/www/app/appst/releases/20180816042636/bundle ]
+ DEBUG [1b348409] Finished in 0.367 seconds with exit status 1 (failed).
+ DEBUG [6d8affe0] Running [ -d /var/www/app/appst/releases/20180816042636/bundle ] as root@160.16.144.160
+ DEBUG [6d8affe0] Command: [ -d /var/www/app/appst/releases/20180816042636/bundle ]
+ DEBUG [6d8affe0] Finished in 0.359 seconds with exit status 1 (failed).
+  INFO [ae7e4050] Running /usr/bin/env ln -s /var/www/app/appst/shared/bundle /var/www/app/appst/releases/20180816042636/bundle as root@160.16.144.160
+ DEBUG [ae7e4050] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/bundle /var/www/app/appst/releases/20180816042636/bundle )
+  INFO [ae7e4050] Finished in 0.351 seconds with exit status 0 (successful).
+ DEBUG [4af6bb7e] Running [ -L /var/www/app/appst/releases/20180816042636/public/system ] as root@160.16.144.160
+ DEBUG [4af6bb7e] Command: [ -L /var/www/app/appst/releases/20180816042636/public/system ]
+ DEBUG [4af6bb7e] Finished in 0.354 seconds with exit status 1 (failed).
+ DEBUG [4e23497e] Running [ -d /var/www/app/appst/releases/20180816042636/public/system ] as root@160.16.144.160
+ DEBUG [4e23497e] Command: [ -d /var/www/app/appst/releases/20180816042636/public/system ]
+ DEBUG [4e23497e] Finished in 0.319 seconds with exit status 1 (failed).
+  INFO [ab2f939a] Running /usr/bin/env ln -s /var/www/app/appst/shared/public/system /var/www/app/appst/releases/20180816042636/public/system as root@160.16.144.160
+ DEBUG [ab2f939a] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/public/system /var/www/app/appst/releases/20180816042636/public/system )
+  INFO [ab2f939a] Finished in 0.332 seconds with exit status 0 (successful).
+ DEBUG [b2ed4009] Running [ -L /var/www/app/appst/releases/20180816042636/public/assets ] as root@160.16.144.160
+ DEBUG [b2ed4009] Command: [ -L /var/www/app/appst/releases/20180816042636/public/assets ]
+ DEBUG [b2ed4009] Finished in 0.347 seconds with exit status 1 (failed).
+ DEBUG [4a756507] Running [ -d /var/www/app/appst/releases/20180816042636/public/assets ] as root@160.16.144.160
+ DEBUG [4a756507] Command: [ -d /var/www/app/appst/releases/20180816042636/public/assets ]
+ DEBUG [4a756507] Finished in 0.322 seconds with exit status 1 (failed).
+  INFO [c6fdab88] Running /usr/bin/env ln -s /var/www/app/appst/shared/public/assets /var/www/app/appst/releases/20180816042636/public/assets as root@160.16.144.160
+ DEBUG [c6fdab88] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/public/assets /var/www/app/appst/releases/20180816042636/public/assets )
+  INFO [c6fdab88] Finished in 0.345 seconds with exit status 0 (successful).
+ DEBUG [65bdf3e8] Running if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [65bdf3e8] Command: if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi
+ DEBUG [65bdf3e8] Finished in 0.390 seconds with exit status 0 (successful).
+ DEBUG [fe1a80f1] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/app/appst/shared/bundle as root@160.16.144.160
+ DEBUG [fe1a80f1] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/app/appst/shared/bundle )
+ DEBUG [fe1a80f1] 	[33mThe git source `git://github.com/capistrano/rbenv.git` uses the `git` protocol, which transmits data without encryption. Disable this warning with `bundle config git.allow_insecure true`, or switch to the `https` protocol to keep your data secure.[0m
+ DEBUG [fe1a80f1] 	[33mYour Gemfile lists the gem unicorn (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.[0m
+ DEBUG [fe1a80f1] 	[31mThe following gems are missing[0m
+[31m * debug_inspector (0.0.3)[0m
+[31m * binding_of_caller (0.8.0)[0m
+[31m * byebug (10.0.2)[0m
+[31m * capistrano3-unicorn (0.2.1)[0m
+ DEBUG [fe1a80f1] 	[31m * spring (2.0.2)[0m
+[31m * web-console (2.3.0)[0m
+[33mInstall missing gems with `bundle install`[0m
+ DEBUG [fe1a80f1] Finished in 1.001 seconds with exit status 1 (failed).
+  INFO [d0045067] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/app/appst/shared/bundle --without development test --deployment --quiet as root@160.16.144.160
+ DEBUG [d0045067] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/app/appst/shared/bundle --without development test --deployment --quiet )
+  INFO [d0045067] Finished in 1.125 seconds with exit status 0 (successful).
+ DEBUG [dae6f35f] Running if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [dae6f35f] Command: if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi
+ DEBUG [dae6f35f] Finished in 0.451 seconds with exit status 0 (successful).
+  INFO [ac8ec349] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as root@160.16.144.160
+ DEBUG [ac8ec349] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+  INFO [ac8ec349] Finished in 4.599 seconds with exit status 0 (successful).
+ DEBUG [6880aeae] Running if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [6880aeae] Command: if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi
+ DEBUG [6880aeae] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO [be7303f0] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636/assets_manifest_backup as root@160.16.144.160
+ DEBUG [be7303f0] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20180816042636/assets_manifest_backup )
+  INFO [be7303f0] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [e3522d82] Running /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/.sprockets-manifest* as root@160.16.144.160
+ DEBUG [e3522d82] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/.sprockets-manifest* )
+ DEBUG [e3522d82] 	ls: cannot access /var/www/app/appst/releases/20180816042636/public/assets/.sprockets-manifest*: No such file or directory
+ DEBUG [e3522d82] Finished in 0.319 seconds with exit status 2 (failed).
+ DEBUG [562e619b] Running /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/manifest*.* as root@160.16.144.160
+ DEBUG [562e619b] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/manifest*.* )
+ DEBUG [562e619b] 	/var/www/app/appst/releases/20180816042636/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json
+ DEBUG [562e619b] Finished in 0.454 seconds with exit status 0 (successful).
+ DEBUG [e263462f] Running /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/manifest*.* as root@160.16.144.160
+ DEBUG [e263462f] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20180816042636/public/assets/manifest*.* )
+ DEBUG [e263462f] 	/var/www/app/appst/releases/20180816042636/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json
+ DEBUG [e263462f] Finished in 0.379 seconds with exit status 0 (successful).
+  INFO [88c3c44c] Running /usr/bin/env cp /var/www/app/appst/releases/20180816042636/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json /var/www/app/appst/releases/20180816042636/assets_manifest_backup as root@160.16.144.160
+ DEBUG [88c3c44c] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env cp /var/www/app/appst/releases/20180816042636/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json /var/www/app/appst/releases/20180816042636/assets_manifest_backup )
+  INFO [88c3c44c] Finished in 0.641 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [ca2ab733] Running if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [ca2ab733] Command: if test ! -d /var/www/app/appst/releases/20180816042636; then echo "Directory does not exist '/var/www/app/appst/releases/20180816042636'" 1>&2; false; fi
+ DEBUG [ca2ab733] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO [eb55aa4d] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as root@160.16.144.160
+ DEBUG [eb55aa4d] Command: cd /var/www/app/appst/releases/20180816042636 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [eb55aa4d] Finished in 4.487 seconds with exit status 0 (successful).
+  INFO [d48ccce3] Running /usr/bin/env ln -s /var/www/app/appst/releases/20180816042636 /var/www/app/appst/releases/current as root@160.16.144.160
+ DEBUG [d48ccce3] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/releases/20180816042636 /var/www/app/appst/releases/current )
+  INFO [d48ccce3] Finished in 0.326 seconds with exit status 0 (successful).
+  INFO [1feecf72] Running /usr/bin/env mv /var/www/app/appst/releases/current /var/www/app/appst as root@160.16.144.160
+ DEBUG [1feecf72] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mv /var/www/app/appst/releases/current /var/www/app/appst )
+  INFO [1feecf72] Finished in 0.357 seconds with exit status 0 (successful).
+ DEBUG [b88c8a24] Running /usr/bin/env ls -x /var/www/app/appst/releases as root@160.16.144.160
+ DEBUG [b88c8a24] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls -x /var/www/app/appst/releases )
+ DEBUG [b88c8a24] 	20180809041825	20180814091408	20180815140832	20180816040706	20180816041506
+20180816042636
+ DEBUG [b88c8a24] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 160.16.144.160
+ DEBUG [7991ccde] Running [ -d /var/www/app/appst/current ] as root@160.16.144.160
+ DEBUG [7991ccde] Command: [ -d /var/www/app/appst/current ]
+ DEBUG [7991ccde] Finished in 0.316 seconds with exit status 0 (successful).
+ DEBUG [c7c84348] Running /usr/bin/env readlink /var/www/app/appst/current as root@160.16.144.160
+ DEBUG [c7c84348] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env readlink /var/www/app/appst/current )
+ DEBUG [c7c84348] 	/var/www/app/appst/releases/20180816042636
+ DEBUG [c7c84348] Finished in 0.324 seconds with exit status 0 (successful).
+  INFO [b6cf5b64] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20180809041825 as root@160.16.144.160
+ DEBUG [b6cf5b64] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20180809041825 )
+  INFO [b6cf5b64] Finished in 1.113 seconds with exit status 0 (successful).
+ DEBUG [c265c4cf] Running if test ! -d /var/www/app/appst/releases; then echo "Directory does not exist '/var/www/app/appst/releases'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [c265c4cf] Command: if test ! -d /var/www/app/appst/releases; then echo "Directory does not exist '/var/www/app/appst/releases'" 1>&2; false; fi
+ DEBUG [c265c4cf] Finished in 0.586 seconds with exit status 0 (successful).
+  INFO [d4563301] Running /usr/bin/env echo "Branch prepare (at 74117971f1e559d4a97e341dc28c0a0a69f3c452) deployed as release 20180816042636 by kotakarasawa" >> /var/www/app/appst/revisions.log as root@160.16.144.160
+ DEBUG [d4563301] Command: cd /var/www/app/appst/releases && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "Branch prepare (at 74117971f1e559d4a97e341dc28c0a0a69f3c452) deployed as release 20180816042636 by kotakarasawa" >> /var/www/app/appst/revisions.log )
+  INFO [d4563301] Finished in 0.459 seconds with exit status 0 (successful).
