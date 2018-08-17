@@ -26,7 +26,9 @@
   <% unless @post.appstore_url == "" || @post.appstore_url.nil?  %>
     <div class="appstore-link clearfix">
       <%= link_to post.appstore_url, target:"_blank" do %>
-        <span class="link-icon"><i class="fab fa-app-store"></i></span>
+        <span class="link-icon">
+          <i class="fab fa-app-store"></i>
+        </span>
         <div class="sideinfo">
           <div class="side-link">
             App Store
@@ -44,7 +46,9 @@
   <% unless @post.googleplay_url == "" || @post.googleplay_url.nil?  %>
     <div class="googleplay-link clearfix">
       <%= link_to post.googleplay_url, target:"_blank" do %>
-        <span class="link-icon"><i class="fab fa-android"></i></span>
+        <span class="link-icon">
+          <i class="fab fa-android"></i>
+        </span>
         <div class="sideinfo">
           <div class="side-link">
             Google Play
