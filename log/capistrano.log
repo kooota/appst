@@ -26302,3 +26302,15 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [6853c7cc] Running /usr/bin/env echo "Branch prepare (at 8103baf600ed248c23371a04aa77e2cc250e829d) deployed as release 20180817055503 by kotakarasawa" >> /var/www/app/appst/revisions.log as root@160.16.144.160
  DEBUG [6853c7cc] Command: cd /var/www/app/appst/releases && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "Branch prepare (at 8103baf600ed248c23371a04aa77e2cc250e829d) deployed as release 20180817055503 by kotakarasawa" >> /var/www/app/appst/revisions.log )
   INFO [6853c7cc] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-03 11:10:23 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [41c87b84] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [41c87b84] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-03 11:14:01 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [7e2c7b5d] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [7e2c7b5d] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
