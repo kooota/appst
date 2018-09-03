@@ -130,6 +130,11 @@
   -webkit-line-clamp: 2;
 }
 
+.side-url {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 
 .post-date {
@@ -463,6 +468,7 @@ section {
 
 .sideinfo {
   float: left;
+  width: 62%;
 }
 
 .side-link {
