@@ -26583,3 +26583,9 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [4fa16d9d] Running /usr/bin/env echo "Branch prepare (at 5f999af5dcca6fc39c92542c87f5352a8d6788b0) deployed as release 20180903024343 by kotakarasawa" >> /var/www/app/appst/revisions.log as root@160.16.144.160
  DEBUG [4fa16d9d] Command: cd /var/www/app/appst/releases && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "Branch prepare (at 5f999af5dcca6fc39c92542c87f5352a8d6788b0) deployed as release 20180903024343 by kotakarasawa" >> /var/www/app/appst/revisions.log )
   INFO [4fa16d9d] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-09-07 16:07:01 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [bec9702e] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [bec9702e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
