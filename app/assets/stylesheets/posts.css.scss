@@ -573,7 +573,9 @@ section {
 
 /* 大画面用の設定 */
 @media screen and (min-width: 1081px) {
- .ad-top {width:680px;}
+ .ad-top {
+    // width:680px;
+    display:none;
 }
 
 /* モバイル画面用の設定 */
