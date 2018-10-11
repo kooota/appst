@@ -1,7 +1,8 @@
 <% @post.each do |post| %>
+
   <%= link_to "/posts/#{post.id}" do %>
     <div class="post">
-      <div class="post-in">
+      <div class="post-in clearfix">
         <div class="post-thumnail">
           <%= image_tag post.image, class:"post-img" %>
         </div>
@@ -19,6 +20,7 @@
         </div>
       <% end %>
   <% end %>
+
   <%= link_to "/posts/#{post.id}" do %>
         <div class="post-title">
           <span><%= post.title %></span>
@@ -26,6 +28,7 @@
         <div class="post-subtitle">
           <span><%= post.subtitle %></span>
         </div>
+
         <div class="post-date clearfix">
           <%= link_to "/categories/#{post.category_id}" do %>
             <div class="category">
@@ -38,10 +41,10 @@
             <% end %>
           </div>
         </div>
+
         <div class="overview">
           <div id="likes-count" class="likes-count-<%= post.id %>">
             <%= render partial: "/likes/like", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
-
           </div>
           <%= link_to "/posts/#{post.id}" do %>
             <div class="comments-count">
@@ -50,6 +53,34 @@
             </div>
           <% end %>
         </div>
+
+        <div class="sp-overview clearfix">
+          <%= link_to "/users/#{post.user.id}" do %>
+          <div class="sp-post-user-image">
+            <span><%= image_tag post.user.image, class:"post-user-image" %></span>
+          </div>
+          <% end %>
+
+          <div class="sp-post-date clearfix">
+            <%= link_to "/categories/#{post.category_id}" do %>
+              <div class="category">
+                <span><%= post.category.name %></span>
+              </div>
+            <% end %>
+          </div>
+          <div class="sp-likes-comments clearfix">
+             <div id="sp-likes-count" class="sp-likes-count-<%= post.id %>">
+              <%= render partial: "/likes/splike", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
+            </div>
+            <%= link_to "/posts/#{post.id}" do %>
+              <div class="sp-comments-count">
+                <i class="fas fa-comment-alt"></i>
+                <span><%= post.comments.count %> </span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
       </div>
     </div>
   <% end %>

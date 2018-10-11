@@ -91,16 +91,18 @@ ul {
 
 .info-box ul li {float: left;}
 
-.info-box , .copyright {
+.info-box  {
   text-align: center;
 }
 
 .info-list {
   list-style: none;
   padding-right: 10px;
-
 }
 
+.copyright {
+  display:block;
+}
 
 /*検索*/
 .search {

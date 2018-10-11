@@ -1,6 +1,5 @@
 @media (max-width: 600px) {
 
-
 //共通
 
   header{
@@ -61,7 +60,8 @@
   }
 
   .post-in {
-    height: 370px;
+    // height: 370px;
+    height: auto;
   }
 
   .post-date {
@@ -77,6 +77,59 @@
   .post-thumnail {
     height: 180px;
   }
+
+  .post-subtitle {
+    height: auto;
+  }
+
+// sp
+  .sp-post-user-image, .sp-post-date, #sp-likes-count, .sp-comments-count {
+   float: left;
+  }
+
+  .sp-likes-comments {
+    float: right;
+  }
+
+  .sp-overview {
+   padding: 0.5rem 1rem;
+  }
+
+  .sp-post-user-image {
+    padding-top: 2px;
+  }
+
+  .post-user-image {
+    height: 24px;
+    width:24px;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+  }
+
+  .sp-post-date {
+    padding: 4px;
+  }
+
+  .sp-likes-comments {
+    padding: 0 1rem
+  }
+
+  #sp-likes-count {
+    padding: 4px 0.5rem 0 0.5rem;
+  }
+
+  .sp-comments-count {
+    padding: 3px 0.5rem 0 0.5rem;
+  }
+
+
+  .sp-comments-count {
+    font-size: 18px;
+  }
+
+  .post-date, .service-link, .overview {display: none;}
+
+  #like-buttons {padding: 0px;}
 
 //posts#show
 
@@ -204,5 +257,7 @@
 }
 
 @media (min-width: 1100px) {
-  .mobile-header-content {display:none;}
+  .mobile-header-content, .sp-overview  {display:none;}
+
+
 }
