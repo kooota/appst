@@ -78,6 +78,11 @@
     height: 180px;
   }
 
+  .post-title {
+    height:auto;
+    padding: 7px 5px 3px 5px;
+  }
+
   .post-subtitle {
     height: auto;
   }
@@ -100,8 +105,8 @@
   }
 
   .post-user-image {
-    height: 24px;
-    width:24px;
+    height: 30px;
+    width:30px;
     border-radius: 100%;
     margin-right: 0.5rem;
   }
@@ -258,6 +263,11 @@
 
 @media (min-width: 1100px) {
   .mobile-header-content, .sp-overview  {display:none;}
+
+  .more {
+    height: 30px;
+    width: 30px;
+  }
 
 
 }

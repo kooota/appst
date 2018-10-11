@@ -27341,3 +27341,325 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
   INFO [4a589f0e] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
  DEBUG [4a589f0e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-10-11 13:44:02 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO rbenv: rbenv_ruby is not set; ruby version will be defined by the remote hosts via rbenv
+  INFO [96231568] Running /usr/bin/env mkdir -p /tmp as root@160.16.144.160
+ DEBUG [96231568] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /tmp )
+  INFO [96231568] Finished in 7.341 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-appst-production-kotakarasawa.sh 0.0%
+  INFO Uploading /tmp/git-ssh-appst-production-kotakarasawa.sh 100.0%
+  INFO [83cc149c] Running /usr/bin/env chmod 700 /tmp/git-ssh-appst-production-kotakarasawa.sh as root@160.16.144.160
+ DEBUG [83cc149c] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env chmod 700 /tmp/git-ssh-appst-production-kotakarasawa.sh )
+  INFO [83cc149c] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [0be1c201] Running /usr/bin/env git ls-remote https://github.com/kooota/appst HEAD as root@160.16.144.160
+ DEBUG [0be1c201] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git ls-remote https://github.com/kooota/appst HEAD )
+ DEBUG [0be1c201] 	23ee6bff5b5fe735d022e529c8d9553c235a7cc1	HEAD
+  INFO [0be1c201] Finished in 0.708 seconds with exit status 0 (successful).
+  INFO [8abe86a3] Running /usr/bin/env mkdir -p /var/www/app/appst/shared /var/www/app/appst/releases as root@160.16.144.160
+ DEBUG [8abe86a3] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/shared /var/www/app/appst/releases )
+  INFO [8abe86a3] Finished in 0.097 seconds with exit status 0 (successful).
+  INFO [fe28caa6] Running /usr/bin/env mkdir -p /var/www/app/appst/shared/log /var/www/app/appst/shared/tmp/pids /var/www/app/appst/shared/tmp/cache /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/shared/bundle /var/www/app/appst/shared/public/system /var/www/app/appst/shared/public/assets as root@160.16.144.160
+ DEBUG [fe28caa6] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/shared/log /var/www/app/appst/shared/tmp/pids /var/www/app/appst/shared/tmp/cache /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/shared/bundle /var/www/app/appst/shared/public/system /var/www/app/appst/shared/public/assets )
+  INFO [fe28caa6] Finished in 0.106 seconds with exit status 0 (successful).
+ DEBUG [4aa8ada6] Running [ -f /var/www/app/appst/current/REVISION ] as root@160.16.144.160
+ DEBUG [4aa8ada6] Command: [ -f /var/www/app/appst/current/REVISION ]
+ DEBUG [4aa8ada6] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [193a697b] Running /usr/bin/env cat /var/www/app/appst/current/REVISION 2>/dev/null as root@160.16.144.160
+ DEBUG [193a697b] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env cat /var/www/app/appst/current/REVISION 2>/dev/null )
+ DEBUG [193a697b] 	e2a5619fbe166a1b324edbf8054099824a017e86
+ DEBUG [193a697b] Finished in 0.099 seconds with exit status 0 (successful).
+ DEBUG [eeb3ba31] Running [ -f /var/www/app/appst/repo/HEAD ] as root@160.16.144.160
+ DEBUG [eeb3ba31] Command: [ -f /var/www/app/appst/repo/HEAD ]
+ DEBUG [eeb3ba31] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/app/appst/repo
+ DEBUG [cc9e19ca] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [cc9e19ca] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [cc9e19ca] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [fa5fa48e] Running /usr/bin/env git remote set-url origin https://github.com/kooota/appst as root@160.16.144.160
+ DEBUG [fa5fa48e] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git remote set-url origin https://github.com/kooota/appst )
+  INFO [fa5fa48e] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [371bc348] Running /usr/bin/env git remote update --prune as root@160.16.144.160
+ DEBUG [371bc348] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [371bc348] 	Fetching origin
+ DEBUG [371bc348] 	remote: Enumerating objects: 144, done.[K
+remote: Counting objects:   0% (1/144)   [Kremote: Counting objects:   1% (2/144)   [Kremote: Counting objects:   2% (3/144)   [Kremote: Counting objects:   3% (5/144)   [Kremote: Counting objects:   4% (6/144)   [Kremote: Counting objects:   5% (8/144)   [Kremote: Counting objects:   6% (9/144)   [Kremote: Counting objects:   7% (11/144)   [Kremote: Counting objects:   8% (12/144)   [Kremote: Counting objects:   9% (13/144)   [Kremote: Counting objects:  10% (15/144)   [Kremote: Counting objects:  11% (16/144)   [Kremote: Counting objects:  12% (18/144)   [Kremote: Counting objects:  13% (19/144)   [Kremote: Counting objects:  14% (21/144)   [K
+ DEBUG [371bc348] 	remote: Counting objects:  15% (22/144)   [Kremote: Counting objects:  16% (24/144)   [Kremote: Counting objects:  17% (25/144)   [Kremote: Counting objects:  18% (26/144)   [Kremote: Counting objects:  19% (28/144)   [Kremote: Counting objects:  20% (29/144)   [Kremote: Counting objects:  21% (31/144)   [Kremote: Counting objects:  22% (32/144)   [Kremote: Counting objects:  23% (34/144)   [Kremote: Counting objects:  24% (35/144)   [Kremote: Counting objects:  25% (36/144)   [Kremote: Counting objects:  26% (38/144)   [Kremote: Counting objects:  27% (39/144)   [Kremote: Counting objects:  28% (41/144)   [Kremote: Counting objects:  29% (42/144)   [Kremote: Counting objects:  30% (44/144)   [Kremote: Counting objects:  31% (45/144)   [Kremote: Counting objects:  32% (47/144)   [Kremote: Counting objects:  33% (48/144)   [Kremote: Counting objects:  34% (49/144)   [Kremote: Counting objects:  35% (51/144)   [Kremote: Counting objects:  36% (52/144)   [Kremote: Counting objects:  37% (54/144)   [Kremote: Counting objects:  38% (55/144)   [Kremote: Counting objects:  39% (57/144)   [Kremote: Counting objects:  40% (58/144)   [Kremote: Counting objects:  41% (60/144)   [Kremote: Counting objects:  42% (61/144)   [Kremote: Counting objects:  43% (62/144)   [Kremote: Counting objects:  44% (64/144)   [Kremote: Counting objects:  45% (65/144)   [Kremote: Counting objects:  46% (67/144)   [Kremote: Counting objects:  47% (68/144)   [Kremote: Counting objects:  48% (70/144)   [Kremote: Counting objects:  49% (71/144)   [Kremote: Counting objects:  50% (72/144)   [Kremote: Counting objects:  5
+ DEBUG [371bc348] 	1% (74/144)   [Kremote: Counting objects:  52% (75/144)   [Kremote: Counting objects:  53% (77/144)   [Kremote: Counting objects:  54% (78/144)   [Kremote: Counting objects:  55% (80/144)   [Kremote: Counting objects:  56% (81/144)   [Kremote: Counting objects:  57% (83/144)   [Kremote: Counting objects:  58% (84/144)   [Kremote: Counting objects:  59% (85/144)   [Kremote: Counting objects:  60% (87/144)   [Kremote: Counting objects:  61% (88/144)   [Kremote: Counting objects:  62% (90/144)   [Kremote: Counting objects:  63% (91/144)   [Kremote: Counting objects:  64% (93/144)   [Kremote: Counting objects:  65% (94/144)   [Kremote: Counting objects:  66% (96/144)   [Kremote: Counting objects:  67% (97/144)   [Kremote: Counting objects:  68% (98/144)   [Kremote: Counting objects:  69% (100/144)   [Kremote: Counting objects:  70% (101/144)   [Kremote: Counting objects:  71% (103/144)   [Kremote: Counting objects:  72% (104/144)   [Kremote: Counting objects:  73% (106/144)   [Kremote: Counting objects:  74% (107/144)   [Kremote: Counting objects:  75% (108/144)   [Kremote: Counting objects:  76% (110/144)  
+ DEBUG [371bc348] 	 [Kremote: Counting objects:  77% (111/144)   [Kremote: Counting objects:  78% (113/144)   [Kremote: Counting objects:  79% (114/144)   [Kremote: Counting objects:  80% (116/144)   [Kremote: Counting objects:  81% (117/144)   [Kremote: Counting objects:  82% (119/144)   [Kremote: Counting objects:  83% (120/144)   [Kremote: Counting objects:  84% (121/144)   [Kremote: Counting objects:  85% (123/144)   [Kremote: Counting objects:  86% (124/144)   [Kremote: Counting objects:  87% (126/144)   [Kremote: Counting objects:  88% (127/144)   [Kremote: Counting objects:  89% (129/144)   [Kremote: Counting objects:  90% (130/144)   [Kremote: Counting objects:  91% (132/144)   [Kremote: Counting objects:  92% (133/144)   [Kremote: Counting objects:  93% (134/144)   [Kremote: Counting objects:  94% (136/144)   [Kremote: Counting objects:  95% (137/144)   [Kremote: Counting objects:  96% (139/144)   [Kremote: Counting objects:  97% (140/144)   [Kremote: Counting objects:  98% (142/144)   [Kremote: Counting objects:  99% (143/144)   [Kremote: Counting objects: 100% (144/144)   [Kremote: Counting objects: 100% (144/144), done.[K
+remote: Compressing objects:   2% (1/35)   [Kremote: Compressing objects:   5% (2/35)   [Kremote: Compressing objects:   8% (3/35)   [Kremote: Compressing objects:  11% (4/35)   [Kremote: Compressing objects:  14% (5/35)   [Kremote: Compressing objects:  17% (6/35)   [Kremote: Compressing objects:  20% (7/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  22% (8/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  25% (9/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  28% (10/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  31% (11/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  34% (12/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  37% (13/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  40% (14/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  42% (15/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  45% (16/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  48% (17/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  51% (18/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  54% (19/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  57% (20/35)   [Kremote: Compressing objects:  60% (21/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  62% (22/35)   [Kremote: Compressing objects:  65% (23/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  68% (24/35)   [Kremote: Compressing objects:  71% (25/35)   [Kremote: Compressing objects:  74% (26/35)   [Kremote: Compressing objects:  77% (27/35)   [Kremote: Compressing objects:  80% (28/35)   [K
+ DEBUG [371bc348] 	remote: Compressing objects:  82% (29/35)   [Kremote: Compressing objects:  85% (30/35)   [Kremote: Compressing objects:  88% (31/35)   [Kremote: Compressing objects:  91% (32/35)   [Kremote: Compressing objects:  94% (33/35)   [Kremote: Compressing objects:  97% (34/35)   [Kremote: Compressing objects: 100% (35/35)   [Kremote: Compressing objects: 100% (35/35), done.[K
+ DEBUG [371bc348] 	Unpacking objects:   1% (1/96)   
+ DEBUG [371bc348] 	Unpacking objects:   2% (2/96)   
+ DEBUG [371bc348] 	Unpacking objects:   3% (3/96)   
+ DEBUG [371bc348] 	Unpacking objects:   4% (4/96)   
+ DEBUG [371bc348] 	Unpacking objects:   5% (5/96)   
+ DEBUG [371bc348] 	Unpacking objects:   6% (6/96)   
+ DEBUG [371bc348] 	Unpacking objects:   7% (7/96)   
+ DEBUG [371bc348] 	Unpacking objects:   8% (8/96)   
+ DEBUG [371bc348] 	Unpacking objects:   9% (9/96)   
+ DEBUG [371bc348] 	Unpacking objects:  10% (10/96)   
+ DEBUG [371bc348] 	Unpacking objects:  11% (11/96)   Unpacking objects:  12% (12/96)   Unpacking objects:  13% (13/96)   
+ DEBUG [371bc348] 	Unpacking objects:  14% (14/96)   
+ DEBUG [371bc348] 	Unpacking objects:  15% (15/96)   
+ DEBUG [371bc348] 	Unpacking objects:  16% (16/96)   
+ DEBUG [371bc348] 	Unpacking objects:  17% (17/96)   
+ DEBUG [371bc348] 	Unpacking objects:  18% (18/96)   
+ DEBUG [371bc348] 	Unpacking objects:  19% (19/96)   Unpacking objects:  20% (20/96)   
+ DEBUG [371bc348] 	Unpacking objects:  21% (21/96)   
+ DEBUG [371bc348] 	Unpacking objects:  22% (22/96)   
+ DEBUG [371bc348] 	Unpacking objects:  23% (23/96)   
+ DEBUG [371bc348] 	Unpacking objects:  25% (24/96)   Unpacking objects:  26% (25/96)   
+ DEBUG [371bc348] 	Unpacking objects:  27% (26/96)   
+ DEBUG [371bc348] 	Unpacking objects:  28% (27/96)   Unpacking objects:  29% (28/96)   
+ DEBUG [371bc348] 	Unpacking objects:  30% (29/96)   Unpacking objects:  31% (30/96)   Unpacking objects:  32% (31/96)   
+ DEBUG [371bc348] 	Unpacking objects:  33% (32/96)   
+ DEBUG [371bc348] 	Unpacking objects:  34% (33/96)   Unpacking objects:  35% (34/96)   
+ DEBUG [371bc348] 	Unpacking objects:  36% (35/96)   
+ DEBUG [371bc348] 	Unpacking objects:  37% (36/96)   
+ DEBUG [371bc348] 	Unpacking objects:  38% (37/96)   
+ DEBUG [371bc348] 	Unpacking objects:  39% (38/96)   
+ DEBUG [371bc348] 	Unpacking objects:  40% (39/96)   
+ DEBUG [371bc348] 	Unpacking objects:  41% (40/96)   
+ DEBUG [371bc348] 	Unpacking objects:  42% (41/96)   
+ DEBUG [371bc348] 	Unpacking objects:  43% (42/96)   
+ DEBUG [371bc348] 	Unpacking objects:  44% (43/96)   
+ DEBUG [371bc348] 	Unpacking objects:  45% (44/96)   
+ DEBUG [371bc348] 	Unpacking objects:  46% (45/96)   
+ DEBUG [371bc348] 	Unpacking objects:  47% (46/96)   
+ DEBUG [371bc348] 	Unpacking objects:  48% (47/96)   
+ DEBUG [371bc348] 	Unpacking objects:  50% (48/96)   
+ DEBUG [371bc348] 	Unpacking objects:  51% (49/96)   
+ DEBUG [371bc348] 	Unpacking objects:  52% (50/96)   
+ DEBUG [371bc348] 	Unpacking objects:  53% (51/96)   
+ DEBUG [371bc348] 	Unpacking objects:  54% (52/96)   
+ DEBUG [371bc348] 	Unpacking objects:  55% (53/96)   Unpacking objects:  56% (54/96)   
+ DEBUG [371bc348] 	Unpacking objects:  57% (55/96)   Unpacking objects:  58% (56/96)   
+ DEBUG [371bc348] 	Unpacking objects:  59% (57/96)   
+ DEBUG [371bc348] 	Unpacking objects:  60% (58/96)   
+ DEBUG [371bc348] 	Unpacking objects:  61% (59/96)   
+ DEBUG [371bc348] 	Unpacking objects:  62% (60/96)   
+ DEBUG [371bc348] 	Unpacking objects:  63% (61/96)   Unpacking objects:  64% (62/96)   
+ DEBUG [371bc348] 	Unpacking objects:  65% (63/96)   Unpacking objects:  66% (64/96)   
+ DEBUG [371bc348] 	Unpacking objects:  67% (65/96)   Unpacking objects:  68% (66/96)   
+ DEBUG [371bc348] 	Unpacking objects:  69% (67/96)   
+ DEBUG [371bc348] 	Unpacking objects:  70% (68/96)   
+ DEBUG [371bc348] 	Unpacking objects:  71% (69/96)   Unpacking objects:  72% (70/96)   
+ DEBUG [371bc348] 	Unpacking objects:  73% (71/96)   Unpacking objects:  75% (72/96)   
+ DEBUG [371bc348] 	Unpacking objects:  76% (73/96)   
+ DEBUG [371bc348] 	Unpacking objects:  77% (74/96)   
+ DEBUG [371bc348] 	Unpacking objects:  78% (75/96)   Unpacking objects:  79% (76/96)   
+ DEBUG [371bc348] 	remote: Total 96 (delta 26), reused 96 (delta 26), pack-reused 0[K
+ DEBUG [371bc348] 	Unpacking objects:  80% (77/96)   Unpacking objects:  81% (78/96)   
+ DEBUG [371bc348] 	Unpacking objects:  82% (79/96)   
+ DEBUG [371bc348] 	Unpacking objects:  83% (80/96)   
+ DEBUG [371bc348] 	Unpacking objects:  84% (81/96)   
+ DEBUG [371bc348] 	Unpacking objects:  85% (82/96)   Unpacking objects:  86% (83/96)   Unpacking objects:  87% (84/96)   Unpacking objects:  88% (85/96)   
+ DEBUG [371bc348] 	Unpacking objects:  89% (86/96)   
+ DEBUG [371bc348] 	Unpacking objects:  90% (87/96)   
+ DEBUG [371bc348] 	Unpacking objects:  91% (88/96)   
+ DEBUG [371bc348] 	Unpacking objects:  92% (89/96)   
+ DEBUG [371bc348] 	Unpacking objects:  93% (90/96)   
+ DEBUG [371bc348] 	Unpacking objects:  94% (91/96)   
+ DEBUG [371bc348] 	Unpacking objects:  95% (92/96)   Unpacking objects:  96% (93/96)   
+ DEBUG [371bc348] 	Unpacking objects:  97% (94/96)   Unpacking objects:  98% (95/96)   Unpacking objects: 100% (96/96)   Unpacking objects: 100% (96/96), done.
+ DEBUG [371bc348] 	From https://github.com/kooota/appst
+   e2a5619..23ee6bf  prepare    -> prepare
+  INFO [371bc348] Finished in 4.346 seconds with exit status 0 (successful).
+ DEBUG [6d709757] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [6d709757] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [6d709757] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [7b7873b7] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411 as root@160.16.144.160
+ DEBUG [7b7873b7] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411 )
+  INFO [7b7873b7] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [35071dfb] Running /usr/bin/env git archive prepare | /usr/bin/env tar -x -f - -C /var/www/app/appst/releases/20181011044411 as root@160.16.144.160
+ DEBUG [35071dfb] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git archive prepare | /usr/bin/env tar -x -f - -C /var/www/app/appst/releases/20181011044411 )
+  INFO [35071dfb] Finished in 2.732 seconds with exit status 0 (successful).
+ DEBUG [903e6fcf] Running if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [903e6fcf] Command: if test ! -d /var/www/app/appst/repo; then echo "Directory does not exist '/var/www/app/appst/repo'" 1>&2; false; fi
+ DEBUG [903e6fcf] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [1f9936b1] Running /usr/bin/env git rev-list --max-count=1 prepare as root@160.16.144.160
+ DEBUG [1f9936b1] Command: cd /var/www/app/appst/repo && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-appst-production-kotakarasawa.sh" ; /usr/bin/env git rev-list --max-count=1 prepare )
+ DEBUG [1f9936b1] 	23ee6bff5b5fe735d022e529c8d9553c235a7cc1
+ DEBUG [1f9936b1] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [6f830fab] Running if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [6f830fab] Command: if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi
+ DEBUG [6f830fab] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [53df1797] Running /usr/bin/env echo "23ee6bff5b5fe735d022e529c8d9553c235a7cc1" > REVISION as root@160.16.144.160
+ DEBUG [53df1797] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "23ee6bff5b5fe735d022e529c8d9553c235a7cc1" > REVISION )
+  INFO [53df1797] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [51912729] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411 /var/www/app/appst/releases/20181011044411/tmp /var/www/app/appst/releases/20181011044411/public as root@160.16.144.160
+ DEBUG [51912729] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411 /var/www/app/appst/releases/20181011044411/tmp /var/www/app/appst/releases/20181011044411/public )
+  INFO [51912729] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [6257c412] Running [ -L /var/www/app/appst/releases/20181011044411/log ] as root@160.16.144.160
+ DEBUG [6257c412] Command: [ -L /var/www/app/appst/releases/20181011044411/log ]
+ DEBUG [6257c412] Finished in 0.091 seconds with exit status 1 (failed).
+ DEBUG [d8e37d13] Running [ -d /var/www/app/appst/releases/20181011044411/log ] as root@160.16.144.160
+ DEBUG [d8e37d13] Command: [ -d /var/www/app/appst/releases/20181011044411/log ]
+ DEBUG [d8e37d13] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [9b05538c] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/log as root@160.16.144.160
+ DEBUG [9b05538c] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/log )
+  INFO [9b05538c] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [eda54a8d] Running /usr/bin/env ln -s /var/www/app/appst/shared/log /var/www/app/appst/releases/20181011044411/log as root@160.16.144.160
+ DEBUG [eda54a8d] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/log /var/www/app/appst/releases/20181011044411/log )
+  INFO [eda54a8d] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [e14608cb] Running [ -L /var/www/app/appst/releases/20181011044411/tmp/pids ] as root@160.16.144.160
+ DEBUG [e14608cb] Command: [ -L /var/www/app/appst/releases/20181011044411/tmp/pids ]
+ DEBUG [e14608cb] Finished in 0.091 seconds with exit status 1 (failed).
+ DEBUG [22f446b5] Running [ -d /var/www/app/appst/releases/20181011044411/tmp/pids ] as root@160.16.144.160
+ DEBUG [22f446b5] Command: [ -d /var/www/app/appst/releases/20181011044411/tmp/pids ]
+ DEBUG [22f446b5] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [c0c9ff5d] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/tmp/pids as root@160.16.144.160
+ DEBUG [c0c9ff5d] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/tmp/pids )
+  INFO [c0c9ff5d] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [7c51bb5f] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/pids /var/www/app/appst/releases/20181011044411/tmp/pids as root@160.16.144.160
+ DEBUG [7c51bb5f] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/pids /var/www/app/appst/releases/20181011044411/tmp/pids )
+  INFO [7c51bb5f] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [57b4b714] Running [ -L /var/www/app/appst/releases/20181011044411/tmp/cache ] as root@160.16.144.160
+ DEBUG [57b4b714] Command: [ -L /var/www/app/appst/releases/20181011044411/tmp/cache ]
+ DEBUG [57b4b714] Finished in 0.091 seconds with exit status 1 (failed).
+ DEBUG [5de2a93c] Running [ -d /var/www/app/appst/releases/20181011044411/tmp/cache ] as root@160.16.144.160
+ DEBUG [5de2a93c] Command: [ -d /var/www/app/appst/releases/20181011044411/tmp/cache ]
+ DEBUG [5de2a93c] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO [cb11775e] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/tmp/cache as root@160.16.144.160
+ DEBUG [cb11775e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20181011044411/tmp/cache )
+  INFO [cb11775e] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [d65f9e2c] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/cache /var/www/app/appst/releases/20181011044411/tmp/cache as root@160.16.144.160
+ DEBUG [d65f9e2c] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/cache /var/www/app/appst/releases/20181011044411/tmp/cache )
+  INFO [d65f9e2c] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [098d2b88] Running [ -L /var/www/app/appst/releases/20181011044411/tmp/sockets ] as root@160.16.144.160
+ DEBUG [098d2b88] Command: [ -L /var/www/app/appst/releases/20181011044411/tmp/sockets ]
+ DEBUG [098d2b88] Finished in 0.088 seconds with exit status 1 (failed).
+ DEBUG [72b60787] Running [ -d /var/www/app/appst/releases/20181011044411/tmp/sockets ] as root@160.16.144.160
+ DEBUG [72b60787] Command: [ -d /var/www/app/appst/releases/20181011044411/tmp/sockets ]
+ DEBUG [72b60787] Finished in 0.090 seconds with exit status 1 (failed).
+  INFO [2bd806b7] Running /usr/bin/env ln -s /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/releases/20181011044411/tmp/sockets as root@160.16.144.160
+ DEBUG [2bd806b7] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/tmp/sockets /var/www/app/appst/releases/20181011044411/tmp/sockets )
+  INFO [2bd806b7] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [ac7571df] Running [ -L /var/www/app/appst/releases/20181011044411/bundle ] as root@160.16.144.160
+ DEBUG [ac7571df] Command: [ -L /var/www/app/appst/releases/20181011044411/bundle ]
+ DEBUG [ac7571df] Finished in 0.087 seconds with exit status 1 (failed).
+ DEBUG [b2eb95da] Running [ -d /var/www/app/appst/releases/20181011044411/bundle ] as root@160.16.144.160
+ DEBUG [b2eb95da] Command: [ -d /var/www/app/appst/releases/20181011044411/bundle ]
+ DEBUG [b2eb95da] Finished in 0.098 seconds with exit status 1 (failed).
+  INFO [5204e4fc] Running /usr/bin/env ln -s /var/www/app/appst/shared/bundle /var/www/app/appst/releases/20181011044411/bundle as root@160.16.144.160
+ DEBUG [5204e4fc] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/bundle /var/www/app/appst/releases/20181011044411/bundle )
+  INFO [5204e4fc] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG [034bcb55] Running [ -L /var/www/app/appst/releases/20181011044411/public/system ] as root@160.16.144.160
+ DEBUG [034bcb55] Command: [ -L /var/www/app/appst/releases/20181011044411/public/system ]
+ DEBUG [034bcb55] Finished in 0.088 seconds with exit status 1 (failed).
+ DEBUG [10f76d18] Running [ -d /var/www/app/appst/releases/20181011044411/public/system ] as root@160.16.144.160
+ DEBUG [10f76d18] Command: [ -d /var/www/app/appst/releases/20181011044411/public/system ]
+ DEBUG [10f76d18] Finished in 0.091 seconds with exit status 1 (failed).
+  INFO [b81ac72e] Running /usr/bin/env ln -s /var/www/app/appst/shared/public/system /var/www/app/appst/releases/20181011044411/public/system as root@160.16.144.160
+ DEBUG [b81ac72e] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/public/system /var/www/app/appst/releases/20181011044411/public/system )
+  INFO [b81ac72e] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [957f2d60] Running [ -L /var/www/app/appst/releases/20181011044411/public/assets ] as root@160.16.144.160
+ DEBUG [957f2d60] Command: [ -L /var/www/app/appst/releases/20181011044411/public/assets ]
+ DEBUG [957f2d60] Finished in 0.087 seconds with exit status 1 (failed).
+ DEBUG [375dcb38] Running [ -d /var/www/app/appst/releases/20181011044411/public/assets ] as root@160.16.144.160
+ DEBUG [375dcb38] Command: [ -d /var/www/app/appst/releases/20181011044411/public/assets ]
+ DEBUG [375dcb38] Finished in 0.092 seconds with exit status 1 (failed).
+  INFO [5773e039] Running /usr/bin/env ln -s /var/www/app/appst/shared/public/assets /var/www/app/appst/releases/20181011044411/public/assets as root@160.16.144.160
+ DEBUG [5773e039] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/shared/public/assets /var/www/app/appst/releases/20181011044411/public/assets )
+  INFO [5773e039] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [c1f56370] Running if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [c1f56370] Command: if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi
+ DEBUG [c1f56370] Finished in 0.094 seconds with exit status 0 (successful).
+ DEBUG [fe2bee93] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/app/appst/shared/bundle as root@160.16.144.160
+ DEBUG [fe2bee93] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/app/appst/shared/bundle )
+ DEBUG [fe2bee93] 	[33mThe git source `git://github.com/capistrano/rbenv.git` uses the `git` protocol, which transmits data without encryption. Disable this warning with `bundle config git.allow_insecure true`, or switch to the `https` protocol to keep your data secure.[0m
+[33mYour Gemfile lists the gem unicorn (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.[0m
+ DEBUG [fe2bee93] 	[31mThe following gems are missing[0m
+[31m * debug_inspector (0.0.3)[0m
+[31m * binding_of_caller (0.8.0)[0m
+[31m * byebug (10.0.2)[0m
+[31m * capistrano3-unicorn (0.2.1)[0m
+[31m * spring (2.0.2)[0m
+[31m * web-console (2.3.0)[0m
+[33mInstall missing gems with `bundle install`[0m
+ DEBUG [fe2bee93] Finished in 0.473 seconds with exit status 1 (failed).
+  INFO [d05711bd] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/app/appst/shared/bundle --without development test --deployment --quiet as root@160.16.144.160
+ DEBUG [d05711bd] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/app/appst/shared/bundle --without development test --deployment --quiet )
+  INFO [d05711bd] Finished in 0.814 seconds with exit status 0 (successful).
+ DEBUG [4334f267] Running if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [4334f267] Command: if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi
+ DEBUG [4334f267] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [54db6c9a] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as root@160.16.144.160
+ DEBUG [54db6c9a] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [54db6c9a] 	I, [2018-10-11T13:44:27.391576 #25557]  INFO -- : Writing /var/www/app/appst/releases/20181011044411/public/assets/application-767408accb8b11ef4c0cb6bb2b4c5a32.css
+  INFO [54db6c9a] Finished in 4.091 seconds with exit status 0 (successful).
+ DEBUG [d7e572a5] Running if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [d7e572a5] Command: if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi
+ DEBUG [d7e572a5] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [da32387d] Running /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411/assets_manifest_backup as root@160.16.144.160
+ DEBUG [da32387d] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mkdir -p /var/www/app/appst/releases/20181011044411/assets_manifest_backup )
+  INFO [da32387d] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [c5672938] Running /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/.sprockets-manifest* as root@160.16.144.160
+ DEBUG [c5672938] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/.sprockets-manifest* )
+ DEBUG [c5672938] 	ls: cannot access /var/www/app/appst/releases/20181011044411/public/assets/.sprockets-manifest*: No such file or directory
+ DEBUG [c5672938] Finished in 0.111 seconds with exit status 2 (failed).
+ DEBUG [77e2cdaa] Running /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/manifest*.* as root@160.16.144.160
+ DEBUG [77e2cdaa] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/manifest*.* )
+ DEBUG [77e2cdaa] 	/var/www/app/appst/releases/20181011044411/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json
+ DEBUG [77e2cdaa] Finished in 0.106 seconds with exit status 0 (successful).
+ DEBUG [9535dfe1] Running /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/manifest*.* as root@160.16.144.160
+ DEBUG [9535dfe1] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls /var/www/app/appst/releases/20181011044411/public/assets/manifest*.* )
+ DEBUG [9535dfe1] 	/var/www/app/appst/releases/20181011044411/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json
+ DEBUG [9535dfe1] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [49983998] Running /usr/bin/env cp /var/www/app/appst/releases/20181011044411/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json /var/www/app/appst/releases/20181011044411/assets_manifest_backup as root@160.16.144.160
+ DEBUG [49983998] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env cp /var/www/app/appst/releases/20181011044411/public/assets/manifest-5c85cdc54a823e87c46f0dd1d8397c18.json /var/www/app/appst/releases/20181011044411/assets_manifest_backup )
+  INFO [49983998] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [3c17ebb5] Running if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [3c17ebb5] Command: if test ! -d /var/www/app/appst/releases/20181011044411; then echo "Directory does not exist '/var/www/app/appst/releases/20181011044411'" 1>&2; false; fi
+ DEBUG [3c17ebb5] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [5ad970aa] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as root@160.16.144.160
+ DEBUG [5ad970aa] Command: cd /var/www/app/appst/releases/20181011044411 && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [5ad970aa] Finished in 3.802 seconds with exit status 0 (successful).
+  INFO [d46dcd76] Running /usr/bin/env ln -s /var/www/app/appst/releases/20181011044411 /var/www/app/appst/releases/current as root@160.16.144.160
+ DEBUG [d46dcd76] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ln -s /var/www/app/appst/releases/20181011044411 /var/www/app/appst/releases/current )
+  INFO [d46dcd76] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [b7725311] Running /usr/bin/env mv /var/www/app/appst/releases/current /var/www/app/appst as root@160.16.144.160
+ DEBUG [b7725311] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env mv /var/www/app/appst/releases/current /var/www/app/appst )
+  INFO [b7725311] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [b0b7ae08] Running /usr/bin/env ls -x /var/www/app/appst/releases as root@160.16.144.160
+ DEBUG [b0b7ae08] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env ls -x /var/www/app/appst/releases )
+ DEBUG [b0b7ae08] 	20180817055503	20180903024343	20180907071053	20180928002606	20180928002807
+20181011044411
+ DEBUG [b0b7ae08] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 160.16.144.160
+ DEBUG [478fefe2] Running [ -d /var/www/app/appst/current ] as root@160.16.144.160
+ DEBUG [478fefe2] Command: [ -d /var/www/app/appst/current ]
+ DEBUG [478fefe2] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [17538405] Running /usr/bin/env readlink /var/www/app/appst/current as root@160.16.144.160
+ DEBUG [17538405] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env readlink /var/www/app/appst/current )
+ DEBUG [17538405] 	/var/www/app/appst/releases/20181011044411
+ DEBUG [17538405] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [c4461a0b] Running /usr/bin/env rm -rf /var/www/app/appst/releases/20180817055503 as root@160.16.144.160
+ DEBUG [c4461a0b] Command: ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env rm -rf /var/www/app/appst/releases/20180817055503 )
+  INFO [c4461a0b] Finished in 0.847 seconds with exit status 0 (successful).
+ DEBUG [92811992] Running if test ! -d /var/www/app/appst/releases; then echo "Directory does not exist '/var/www/app/appst/releases'" 1>&2; false; fi as root@160.16.144.160
+ DEBUG [92811992] Command: if test ! -d /var/www/app/appst/releases; then echo "Directory does not exist '/var/www/app/appst/releases'" 1>&2; false; fi
+ DEBUG [92811992] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO [628e24b7] Running /usr/bin/env echo "Branch prepare (at 23ee6bff5b5fe735d022e529c8d9553c235a7cc1) deployed as release 20181011044411 by kotakarasawa" >> /var/www/app/appst/revisions.log as root@160.16.144.160
+ DEBUG [628e24b7] Command: cd /var/www/app/appst/releases && ( export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="" ; /usr/bin/env echo "Branch prepare (at 23ee6bff5b5fe735d022e529c8d9553c235a7cc1) deployed as release 20181011044411 by kotakarasawa" >> /var/www/app/appst/revisions.log )
+  INFO [628e24b7] Finished in 0.135 seconds with exit status 0 (successful).
