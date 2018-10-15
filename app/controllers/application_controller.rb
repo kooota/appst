@@ -56,6 +56,4 @@ render file: Rails.root.join('public/500.html'), status: 404, layout: false, con
 
     end
   end
-
-
 end

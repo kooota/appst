@@ -68,3 +68,6 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 
 gem 'metainspector'
+gem 'meta-tags'
+
+gem 'settingslogic'
