@@ -13,7 +13,7 @@ var windowSm = 640;
 
 if (windowWidth <= windowSm) {
     //横幅640px以下のとき（つまりスマホ時）に行う処理を書く
-  if (url == "http://localhost:3000/") {
+  if (url == "https://appstimes.jp/") {
     $(".sp-likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
   } else if (document.URL.match(/users/)) {
     $(".sp-likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
@@ -24,7 +24,7 @@ if (windowWidth <= windowSm) {
   }
 } else {
     //横幅640px超のとき（タブレット、PC）に行う処理を書く
-  if (url == "http://localhost:3000/") {
+  if (url == "https://appstimes.jp/") {
     $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
   } else if (document.URL.match(/users/)) {
     $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
