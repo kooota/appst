@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def self.find_for_oauth(auth)
-
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.name = auth.info.name
       user.nickname = auth.info.nickname

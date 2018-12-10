@@ -47,7 +47,7 @@
       <div class="header-content clearfix">
         <div class="service-thumnail">
           <div class="thumnail-content">
-            <%= image_tag @post.image, class:"img" %>
+            <%= image_tag @post.image.to_s, class:"img" %>
           </div>
         </div>
 
@@ -74,14 +74,14 @@
 
         <section class="box-thumnail">
           <div class="canvas">
-            <%= image_tag @post.image, class:"img" %>
+            <%= image_tag @post.image.to_s, class:"img" %>
           </div>
 
           <!-- sp contents-->
             <div class="mobile-header-content clearfix">
               <div class="service-thumnail">
                 <div class="thumnail-content">
-                  <%= image_tag @post.image, class:"img" %>
+                  <%= image_tag @post.image.to_s, class:"img" %>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@
               <div class="poster">
                 <%= link_to "/users/#{@post.user.id}" do %>
                   <div class="people-userImg">
-                    <%= image_tag @post.user.image, class:"userImg" %>
+                    <%= image_tag @post.user.image.to_s, class:"userImg" %>
                   </div>
                   <div class="poster-name">
                     <%= @post.user.name %>

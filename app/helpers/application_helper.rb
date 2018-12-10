@@ -5,7 +5,7 @@ module ApplicationHelper
       twitter_card[:url] = request.url
       twitter_card[:title] = post.title
       twitter_card[:description] = post.subtitle
-      twitter_card[:image] = "https://appstimes.jp/" + "#{post.image}"
+      twitter_card[:image] = post.image
     else
       twitter_card[:url] = 'https://appstimes.jp'
       twitter_card[:title] = 'AppsTimes'

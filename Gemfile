@@ -62,6 +62,7 @@ gem 'compass-rails', '~> 2.0'
 gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'carrierwave', '~>1.0'
+gem 'fog'
 gem 'mini_magick'
 
 gem 'omniauth'
