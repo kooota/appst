@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   require 'metainspector'
 
   def index
-    @post = Post.includes(:user).all.order("created_at DESC")
+    @post = Post.includes(:user).all.order("created_at DESC").page(params[:page]).per(8)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
   end

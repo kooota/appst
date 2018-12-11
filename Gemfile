@@ -65,6 +65,8 @@ gem 'carrierwave', '~>1.0'
 gem 'fog'
 gem 'mini_magick'
 
+gem 'kaminari'
+
 gem 'omniauth'
 gem 'omniauth-twitter'
 
