@@ -14,9 +14,9 @@ CarrierWave.configure do |config|
   config.fog_public     = true
 
   case Rails.env
-    # when 'development'
-    #   config.fog_directory = 'appstimes-image'
-    #   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/appstimes-image'
+    when 'development'
+      config.fog_directory = 'appstimes-image'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/appstimes-image'
     when 'production'
       config.fog_directory = 'appstimes-image'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/appstimes-image'
