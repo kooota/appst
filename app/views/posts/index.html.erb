@@ -6,19 +6,32 @@
     <p style="font-weight: bold;">『AppsTimes』は、最新・人気のWEBサービス・プロダクトが集まるメディア。<br>
     自分が作ったプロダクト、好きなサービス、わくわくするサービスを共有しよう！</p>
   </div>
-  </div>
 <% end %>
 
 <div class="container1">
 
-  <div class="content clearfix">
+  <% if user_signed_in? %>
+    <div class="content clearfix">
+      <div class="date">
+        <h3>投稿されたサービス一覧</h3>
+      </div>
 
-    <div class="date">
-      <h3>投稿されたサービス一覧</h3>
+
+      <div class="postsList clearfix">
+        <%= render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like} %>
+      </div>
     </div>
 
-  <div class="postsList clearfix">
-    <%= render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like} %>
-  </div>
-  </div>
+  <% else %>
+    <div class="content1 clearfix">
+      <div class="date">
+        <h3>投稿されたサービス一覧</h3>
+      </div>
+
+      <div class="postsList clearfix">
+        <%= render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like} %>
+      </div>
+    </div>
+  <% end %>
+
 </div>

@@ -98,8 +98,22 @@
         <% end %>
 
       </div>
-
     </div>
+
+<% if @categories %>
+    <div class="globalNav">
+      <div class="horizontal_scroll clearfix">
+        <% @categories.each do |category| %>
+          <%= link_to "/categories/#{category.id}", method: :get do%>
+            <div class="globalNav_item">
+              <span><%= category.name %></span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
   </header>
 
 <%= yield %>

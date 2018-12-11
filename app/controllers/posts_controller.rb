@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @post = Post.includes(:user).all.order("created_at DESC").page(params[:page]).per(8)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
+    @categories = Category.all
   end
 
   def new
@@ -15,10 +16,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id)
+    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC")
     @comments = @post.comments.includes(:user)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
+    @categories = Category.all
     # if @post.relateds
     #   @post.relateds.each do |related|
     #     related = related.related_link
