@@ -177,7 +177,7 @@
           <div class="p-articleAction__share p-articleAction__share--first">
             <%= link_to "https://twitter.com/intent/tweet?url=https://appstimes.jp/posts/#{@post.id}&text=#{@post.title}%20+#{@post.subtitle}%0a&via=AppsTimes", class:'twitter-share-button', target: '_blank'   do %>
               <div class="sns_circle-twitter">
-                <span class="icon-twitter"></span>
+                <span class="f-icon-twitter"><i class="fab fa-twitter  "></i></span>
               </div>
             <% end %>
           </div>
@@ -193,7 +193,7 @@
           <div class="p-articleAction__share p-articleAction__share--first">
             <%= link_to "http://b.hatena.ne.jp/entry/s/appstimes.jp/posts/#{@post.id}", class:'hatena-share-button', target: '_blank'   do %>
               <div class="sns_circle-hatena">
-                <span class="icon-hatebu"></span>
+                <span><%= image_tag "hatenabookmark.svg", class:"f-icon-hatebu"%></span>
               </div>
               <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
             <% end %>
@@ -204,9 +204,8 @@
           <div class="p-articleAction__share p-articleAction__share--first">
             <%= link_to "https://social-plugins.line.me/lineit/share?url=https://appstimes.jp/posts/#{@post.id}&text=#{@post.title}+#{@post.subtitle}+%0ahttps://appstimes.jp/posts/#{@post.id}", class:'line-share-button', target: '_blank' do %>
 
-
               <div class="sns_circle-line">
-                <span class="icon-line"></span>
+                <span class="f-icon-line"><%= image_tag "line.svg"%></span>
               </div>
 
              <% end %>

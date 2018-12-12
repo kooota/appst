@@ -455,7 +455,7 @@ a.twitter-share-button, a.facebook-share-button, a.hatena-share-button, a.line-s
   background-color: #1dcd00;
 }
 
-.sns_circle-twitter span, .sns_circle-facebook span, .sns_circle-hatena span, .sns_circle-line span{
+.sns_circle-twitter span, .sns_circle-facebook span{
     position:absolute;
     padding:10px;
     font-size:20px;
@@ -466,7 +466,12 @@ a.twitter-share-button, a.facebook-share-button, a.hatena-share-button, a.line-s
   padding: 8px 15px 10px 15px;
 }
 
-.sns_circle-line span {
-  font-size: 22px;
-  padding: 10px 9px;
+span.f-icon-twitter {
+  padding: 8px 10px 0px 11px
+}
+
+.f-icon-hatebu {
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
 }
