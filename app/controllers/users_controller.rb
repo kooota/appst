@@ -5,8 +5,7 @@ class UsersController < ApplicationController
     @name = @user.name
     @nickname = @user.nickname
     # like = @user.like_posts
-    @post = @user.like_posts
-
+    @post = @user.like_posts.order("created_at DESC").page(params[:page]).per(8)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
   end
