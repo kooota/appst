@@ -9,7 +9,7 @@
 </head>
 
 <div class="container1">
-  <div class="content clearfix">
+  <div class="content2 clearfix">
 
   <div class="ad-top clearfix">
     <!-- 【レスポンシブ】Ad LEFT -->
@@ -170,5 +170,54 @@
        </div>
     </aside>
 
+    <div class="p-footerBar--transparent u-displaySp is-show">
+      <div class="p-footerBar__inner">
+        <div class="p-articleAction is-ios">
+
+          <div class="p-articleAction__share p-articleAction__share--first">
+            <%= link_to "https://twitter.com/intent/tweet?url=https://appstimes.jp/posts/#{@post.id}&text=#{@post.title}%20+#{@post.subtitle}%0a&via=AppsTimes", class:'twitter-share-button', target: '_blank'   do %>
+              <div class="sns_circle-twitter">
+                <span class="icon-twitter"></span>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="p-articleAction__share p-articleAction__share--first" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true">
+            <%= link_to "https://www.facebook.com/sharer/sharer.php?u=https://appstimes.jp/posts/100}", class:"fb-xfbml-parse-ignore", class:'facebook-share-button', target: '_blank'   do %>
+              <div class="sns_circle-facebook">
+                <span><i class="fab fa-facebook-f"></i></span>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="p-articleAction__share p-articleAction__share--first">
+            <%= link_to "http://b.hatena.ne.jp/entry/s/appstimes.jp/posts/#{@post.id}", class:'hatena-share-button', target: '_blank'   do %>
+              <div class="sns_circle-hatena">
+                <span class="icon-hatebu"></span>
+              </div>
+              <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+            <% end %>
+          </div>
+
+
+
+          <div class="p-articleAction__share p-articleAction__share--first">
+            <%= link_to "https://social-plugins.line.me/lineit/share?url=https://appstimes.jp/posts/#{@post.id}&text=#{@post.title}+#{@post.subtitle}+%0ahttps://appstimes.jp/posts/#{@post.id}", class:'line-share-button', target: '_blank' do %>
+
+
+              <div class="sns_circle-line">
+                <span class="icon-line"></span>
+              </div>
+
+             <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
   </div>
+
+
 </div>

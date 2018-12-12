@@ -64,7 +64,7 @@ a:hover {
 }
 
 .header {
-  height:50px;
+  height:48px;
   margin: 0 auto;
   /*width: 80%;*/
   width: 70%;
@@ -124,7 +124,7 @@ ul {
 
 
 .logo-img {
-  height: 35px;
+  height: 30px;
   vertical-align: middle;
 }
 
@@ -156,10 +156,10 @@ ul {
 }
 
 .box-userImg1 {
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   float: left;
-  margin: 5px 10px 0 0;
+  margin: 9px 10px 0 0;
 }
 
 .userImg {

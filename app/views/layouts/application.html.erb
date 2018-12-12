@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="app/assets/stylesheets/icomoon/style.css">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108095747-1"></script>
@@ -28,6 +31,16 @@
 
 </head>
 <body>
+
+  <!-- FB share -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2&appId=140825753239326&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
   <header>
     <div class="header clearfix">
@@ -133,7 +146,7 @@
   </footer>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0f7a22c3812530"></script>
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0f7a22c3812530"></script> -->
 
 </body>
 </html>

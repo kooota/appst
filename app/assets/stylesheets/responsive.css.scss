@@ -20,6 +20,10 @@
     margin-top: 120px;
   }
 
+  .content2 {
+    margin-top: 50px;
+  }
+
   .mainview {
     width: 100%;
     margin: 50px  0 10px 0;
@@ -138,6 +142,7 @@
   .post-date, .service-link, .overview {display: none;}
 
   #like-buttons {padding: 0px;}
+
 
 //posts#show
 
@@ -335,3 +340,133 @@
     -ms-overflow-style:none;
 }
 
+.at-icon {
+    margin: 4px !important;
+}
+
+.at-icon-wrapper {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.p-footerBar--transparent {
+  background: none;
+  border-top: none;
+  opacity: 0;
+  -webkit-transition: opacity 150ms linear;
+  transition: opacity 150ms linear;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+}
+
+.p-footerBar--transparent.is-show {
+  opacity: 1;
+
+}
+
+.u-displaySp {
+  display: block;
+}
+
+.p-footerBar__inner {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 8.5vh
+}
+
+.p-articleAction.is-ios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.p-articleAction__share.p-articleAction__share--first {
+  margin-left: 5px;
+
+}
+
+a.twitter-share-button, a.facebook-share-button, a.hatena-share-button, a.line-share-button {
+  display: block;
+  padding: 16px 6px;
+}
+
+.renewal-p-icon--footerBarTwitter, .renewal-p-icon--footerBarFacebook {
+    width: 40px;
+    height: 40px;
+}
+
+.renewal-p-icon--footerBarFacebook, .renewal-p-icon--footerBarHatena, .renewal-p-icon--footerBarLine {
+  border-radius: 100px;
+}
+
+
+.sns_circle-twitter, .sns_circle-facebook, .sns_circle-hatena, .sns_circle-line {
+    position:relative;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.sns_circle-twitter a, .sns_circle-facebook a, .sns_circle-hatena a, .sns_circle-line a{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-indent:-999px;
+    color:#FFF;/* 文字の色 */
+}
+
+.sns_circle-twitter {
+  background-color: #55acee;
+}
+
+.sns_circle-facebook {
+  background-color: #3B5998;
+}
+
+.sns_circle-hatena {
+  background-color: #008fde;
+}
+
+.sns_circle-line {
+  background-color: #1dcd00;
+}
+
+.sns_circle-twitter span, .sns_circle-facebook span, .sns_circle-hatena span, .sns_circle-line span{
+    position:absolute;
+    padding:10px;
+    font-size:20px;
+    color:#FFF;/* 文字の色 */
+}
+
+.sns_circle-facebook span {
+  padding: 8px 15px 10px 15px;
+}
+
+.sns_circle-line span {
+  font-size: 22px;
+  padding: 10px 9px;
+}
