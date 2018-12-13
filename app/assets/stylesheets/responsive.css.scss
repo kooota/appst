@@ -112,14 +112,15 @@
   }
 
   .post-user-image {
-    height: 30px;
-    width:30px;
+    height: 35px;
+    width:35px;
     border-radius: 100%;
     margin-right: 0.5rem;
   }
 
   .sp-post-date {
     padding: 4px;
+    margin-top: 5px;
   }
 
   .sp-likes-comments {
@@ -128,6 +129,11 @@
 
   #sp-likes-count {
     padding: 4px 0.5rem 0 0.5rem;
+    margin-top: 5px;
+  }
+
+  #like-buttons {
+    font-size: 20px;
   }
 
   .sp-comments-count {
