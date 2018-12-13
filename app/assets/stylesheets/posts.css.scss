@@ -332,6 +332,14 @@ section {
   font-size: 13px;
 }
 
+.description a {
+  color: #99cccc !important;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
 .box-comment form {
   padding: 10px;
   background-color: #efefef;
