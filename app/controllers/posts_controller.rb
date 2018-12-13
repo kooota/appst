@@ -27,6 +27,10 @@ class PostsController < ApplicationController
   #   end
   # end
 
+   def create
+    Post.create(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image],image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
+  end
+
   def show
     @post = Post.find(params[:id])
     @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC")
@@ -57,6 +61,10 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy if post.user_id == current_user.id
     redirect_to "/"
+  end
+
+  def done
+    @post_id = params[:id]
   end
 
   def privacy
