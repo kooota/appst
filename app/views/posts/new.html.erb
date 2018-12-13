@@ -1,32 +1,38 @@
 <div class="contents row 1">
   <div class="container2">
     <%= form_for @post do |f|%>
-      <div class="titleBox new">
-        <h3>
-          プロダクトを投稿する
-        </h3>
-      </div>
-      <%= f.text_field :title, class:"postContent", placeholder:"サービス名", required: "required"%>
-      <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明", required: "required"%>
-      <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL", required: "required" %>
+        <div class="titleBox new">
+          <h3>
+            プロダクトを投稿する
+          </h3>
+        </div>
+        <%= f.text_field :title, class:"postContent", placeholder:"サービス名", required: "required"%>
+        <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明", required: "required"%>
+        <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL", required: "required" %>
 
-      <%= f.file_field :image, class:"postContent", placeholder:"サービス画像", required: "required" %>
-      <%= f.hidden_field :image_cache %>
+        <%= f.file_field :image, class:"postContent", placeholder:"サービス画像", required: "required" %>
+        <%= f.hidden_field :image_cache %>
 
-      <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
-      <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
-      <%= f.text_area :content, class:"postContent",placeholder:"サービス概要", rows:"10", required: "required"%>
+        <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
+        <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
+        <%= f.text_area :content, class:"postContent",placeholder:"サービス概要", rows:"10", required: "required"%>
 
-      <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア", "9"],["コミュニティ", "15"],["ライフスタイル","16"],["音声","17"],["不動産","18"],["シェアリング","19"], ["マッチング","20"]],class:"postContent", prompt:"カテゴリーを選択", required: "required" %>
+        <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア", "9"],["コミュニティ", "15"],["ライフスタイル","16"],["音声","17"],["不動産","18"],["シェアリング","19"], ["マッチング","20"]],class:"postContent", prompt:"カテゴリーを選択", required: "required" %>
 
-<!--       <%= f.fields_for :relateds do |i| %>
-        <%= i.text_field :related_link, class:"postContent",placeholder:"関連記事"  %>
-      <% end %> -->
+  <!--       <%= f.fields_for :relateds do |i| %>
+          <%= i.text_field :related_link, class:"postContent",placeholder:"関連記事"  %>
+        <% end %> -->
 
-      <%= f.text_field :twitter, class:"postContent",placeholder:"Twiiterアカウント"  %>
-      <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント"  %>
-      <%= f.submit "投稿", style: "background-color: #80CACA;"  %>
-    <% end %>
+        <%= f.text_field :twitter, class:"postContent",placeholder:"Twiiterアカウント"  %>
+        <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント"  %>
+        <%= f.submit "投稿する", style: "background-color: #80CACA;"  %>
+
   </div>
+
+  <% end %>
+
 </div>
+
+</div>
+
 

@@ -67,12 +67,6 @@
              <div id="sp-likes-count" class="sp-likes-count-<%= post.id %>">
               <%= render partial: "/likes/splike", locals: {post: post, posts: @posts, likes: @likes, like: @like} %>
             </div>
-            <%= link_to "/posts/#{post.id}" do %>
-              <div class="sp-comments-count">
-                <i class="fas fa-comment-alt"></i>
-                <span><%= post.comments.count %> </span>
-              </div>
-            <% end %>
           </div>
         </div>
 

@@ -14,6 +14,19 @@ class PostsController < ApplicationController
 
   end
 
+  # def create
+  #   @post = Post.new(post_params)
+  #   respond_to do |format|
+  #     if @post.save
+  #       format.html { redirect_to @post, notice: '質問を送信しました。' }
+  #     else
+  #       # 一度目の「確認」ボタンクリック時は、confirmingがセットされていないのsaveでエラーが発生しこっちに来る
+  #       # ただし、ここに到達した時点で model の after_validation 後なので、confirmingはセットされている状態で new アクションへ
+  #       format.html { render action: 'new' }
+  #     end
+  #   end
+  # end
+
   def show
     @post = Post.find(params[:id])
     @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC")
@@ -27,10 +40,6 @@ class PostsController < ApplicationController
     #     @related_link = MetaInspector.new(related)
     #   end
     # end
-  end
-
-  def create
-    Post.create(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image],image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
   end
 
   def edit
@@ -55,7 +64,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cache,  :category_id, user_id: current_user.id)
+    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image, :image_cache,  :category_id, :confirming, user_id: current_user.id)
   end
 
   def move_to_index

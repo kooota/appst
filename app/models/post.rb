@@ -9,6 +9,14 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_acceptance_of :confirming
+  after_validation :check_confirming
+
+  def check_confirming
+    errors.delete(:confirming)
+    self.confirming = errors.empty? ? '1' : ''
+  end
+
   def like_user(user_id)
    likes.find_by(user_id: user_id)
   end
