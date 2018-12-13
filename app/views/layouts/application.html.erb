@@ -64,13 +64,12 @@
       <div class="userNav">
         <% if user_signed_in? %>
 
-          <div class="postProduct">
-            <%= link_to "/posts/new" do %>
-              <span>投稿する</span>
+            <%= link_to "/posts/new", class:"link-to-post" do %>
+              <div class="postProduct">
+                    <i class="fas fa-rocket"></i>
+                    <span>＋</span>
+              </div>
             <% end %>
-          </div>
-
-
 
       <div class="accbox">
           <div class="box-userImg1">

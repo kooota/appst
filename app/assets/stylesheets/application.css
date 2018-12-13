@@ -140,11 +140,6 @@ ul {
   font-size: 12px;
 }
 
-
-.postProduct span {
-  margin-right: 10px;
-}
-
 .signIn {
   margin-right: 10px;
 }
@@ -153,6 +148,36 @@ ul {
   background-color: #4277EC;
   padding: 6px;
   border-radius: 3px;
+}
+
+.link-to-post {
+  margin-right: 15px;
+  display: block;
+}
+
+.postProduct {
+    height: 32px;
+    width: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #FFF;
+    position: relative;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.4);
+    top: 6px;
+}
+
+
+.fa-rocket {
+  font-size: 24px;
+}
+
+.postProduct span {
+  position: absolute;
+  font-weight: bold;
+  right: -2px;
+  top: -2px;
 }
 
 .box-userImg1 {
@@ -231,7 +256,6 @@ ul {
 .link-to-sns {
   text-align: center;
 }
-
 
 .logout {
   padding: 4px 0px;
