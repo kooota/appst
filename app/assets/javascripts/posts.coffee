@@ -9,3 +9,5 @@ $(document).on 'turbolinks:load', ->
     history: false
     prefill: true
     status: '.page-load-status'
+
+

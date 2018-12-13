@@ -82,15 +82,22 @@
             <input type="checkbox" id="label1" class="cssacc" />
             <div class="accshow">
             <div class="mypage">
-              <%= link_to "/users/#{current_user.id}" do%>
-                <span><%= current_user.name %></span>
-                <div style="font-size: 11px;">
-                  マイページ
-                </div>
-              <% end %>
+              <%= link_to "マイページへ", "/users/#{current_user.id}"%>
+
             </div>
 
              <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
+
+              <div class="follow-at">
+                <div class="heading">
+                  AppsTimesをフォローして<br>
+                  最新情報をチェック！
+                </div>
+                <div class="link-to-sns">
+                  <a href="https://twitter.com/AppsTimes?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-lang="ja" data-show-count="false">Follow @AppsTimes</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
