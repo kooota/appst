@@ -239,6 +239,10 @@ ul {
   font-weight: 600;
 }
 
+.follow-at {
+  margin: 10px 0;
+}
+
 .follow-at, .link-to-sns {
   padding: 4px 0;
 }
@@ -250,11 +254,27 @@ ul {
     line-height: 1.5;
     color: #263238;
     text-align: center;
-    margin-top: 10px;
 }
 
 .link-to-sns {
   text-align: center;
+}
+
+.link-to-sns a {
+  background: rgb(75, 171, 231);
+  margin: 0 auto;
+  border-radius: 3px;
+  color: #fff;
+  width: 115px;
+}
+
+.link-to-sns span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.follow {
+  padding: 0px 5px 0px 0px;
 }
 
 .logout {
