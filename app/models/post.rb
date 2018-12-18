@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+
   validates_acceptance_of :confirming
   after_validation :check_confirming
 

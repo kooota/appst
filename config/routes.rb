@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
+  get '/ranking' => 'posts#ranking'
   get "/privacy" => "posts#privacy"
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
-
 end

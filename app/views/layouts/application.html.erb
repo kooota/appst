@@ -122,6 +122,16 @@
 <% if @categories %>
     <div class="globalNav">
       <div class="horizontal_scroll clearfix">
+          <%= link_to "/" do %>
+            <div class="globalNav_item">
+              <span>HOME</span>
+            </div>
+          <% end %>
+          <%= link_to "/ranking" do %>
+            <div class="globalNav_item">
+              <span>週間ランキング</span>
+            </div>
+          <% end %>
         <% @categories.each do |category| %>
           <%= link_to "/categories/#{category.id}", method: :get do%>
             <div class="globalNav_item">

@@ -33,19 +33,57 @@
   border-bottom: 1px solid #d8d8d8;
 }
 
+.rank-header {
+  float: left;
+}
+
+.pc-see-more {
+  float: left;
+  line-height: 20px;
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 2px solid #4c4c4c;
+  border-radius: 25px;
+  margin: 0px 0px 10px 30px;
+}
+
+.pc-see-more:hover, .sp-see-more:hover {
+  border: 2px solid #99cccc;
+}
+
+.rankPostsList{
+  width: 1000px;
+  margin: 0px auto 30px ;
+}
+
+.fa-arrow-right {
+  margin-right: 5px;
+}
+
+.sp-see-more {
+  display: none;
+}
+
+
 .postsList {
   width: 90%;
   margin: 0 auto;
 }
 
-.post {
+.post, .rank-post  {
   display: inline-block;
   width: 25%;
   padding: 20px;
   float: left;
 }
 
+.rank-post {
+  width: 33%;
+}
 
+.fa-trophy,.fa-flag {
+  padding: 0 10px 0 0;
+}
 
 .post-in {
   height: 300px;

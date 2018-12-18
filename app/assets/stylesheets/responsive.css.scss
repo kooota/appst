@@ -58,12 +58,39 @@
   .date h3, .fav h3 {
     font-size: 16px
   }
-  .post {
+
+
+
+  .post, .rank-post {
     width: 100%;
   }
 
-  .postsList {
+  .postsList, .rankPostsList {
     width: 100%;
+  }
+
+  .rankPostsList {
+    margin: 0 auto;
+  }
+
+  .sp-see-more {
+    width: 80%;
+    display: block;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  .sp-see-more a {
+    display: block;
+    line-height: 24px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid #4c4c4c;
+    border-radius: 25px;
+  }
+
+  .pc-see-more {
+    display: none;
   }
 
   .post-in {
@@ -148,7 +175,6 @@
   .post-date, .service-link, .overview {display: none;}
 
   #like-buttons {padding: 0px;}
-
 
 //posts#show
 

@@ -7,7 +7,6 @@ class LikesController < ApplicationController
     @likes = Like.where(post_id: params[:post_id])
     @post = Post.find(params[:post_id])
     @posts = Post.all
-
   end
 
   def destroy
