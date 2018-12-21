@@ -132,6 +132,7 @@ ul {
 
 .userNav {
   /*width: 33%;*/
+  line-height: 50px;
   width:50%;
   float: left;
   display: inline-flex;
