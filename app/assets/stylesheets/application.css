@@ -188,9 +188,11 @@ ul {
 }
 
 .userImg {
+  height: 100%;
   cursor :pointer;
   transition: all 0.5s;
   overflow: auto;
+  border-radius: 50%;
   }
 
 
