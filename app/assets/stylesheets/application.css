@@ -153,7 +153,6 @@ ul {
 .link-to-post {
   margin-right: 16px;
   display: block;
-  margin-top: 4px;
 }
 
 .postProduct {
@@ -178,7 +177,7 @@ ul {
   position: absolute;
   font-weight: bold;
   right: -2px;
-  top: 13px;
+  top: -2px;
 }
 
 .box-userImg1 {
