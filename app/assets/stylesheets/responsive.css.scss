@@ -14,6 +14,12 @@
     position: absolute;
     right: 20px;
   }
+  .link-to-post {
+    margin: 4px 16px 0px 0px;
+  }
+  .postProduct span {
+    top: 13px;
+  }
 }}
 
   .content {
@@ -78,6 +84,7 @@
     display: block;
     margin: 0 auto 30px;
     text-align: center;
+    border-radius: 25px;
   }
 
   .sp-see-more a {
