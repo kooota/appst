@@ -1,7 +1,7 @@
 <div class="container1">
-  <% if user_signed_in? %>
-    <div class="content clearfix">
 
+  <div class="content clearfix">
+    <% if user_signed_in? %>
       <div class="date clearfix">
         <h3 class="rank-header"><i class="fas fa-trophy"></i>週間ランキング (<%=@begin%>〜<%=@end%>)</h3>
       </div>
@@ -10,7 +10,7 @@
         <%= render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
       </div>
 
-  <% else %>
+    <% else %>
 
 
       <div class="date clearfix">
@@ -21,7 +21,7 @@
       <div class="rankPostsList clearfix">
         <%= render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
       </div>
-  <% end %>
+    <% end %>
 
-    </div>
+  </div>
 </div>
