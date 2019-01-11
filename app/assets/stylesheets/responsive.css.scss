@@ -3,22 +3,32 @@
 //共通
 
   header{
-  .header {
-    width: 100%;
+    .header {
+      width: 100%;
 
-  .search {display: none;}
-  .atLogo {width: 50%; height:100%; text-align: center;}
-  .userNav {width: 50%;height:100%;
-  .signUp {margin-right: 10px;}}
-  .cssacc:checked + .accshow{
-    position: absolute;
-    right: 16px;
-    top: 48px;
+    .search {display: none;}
+    .atLogo {width: 50%; height:100%; text-align: center;}
+    .userNav {width: 50%;height:100%;
+    .signUp {margin-right: 10px;}}
+    .cssacc:checked + .accshow{
+      position: absolute;
+      right: 16px;
+      top: 48px;
+    }
+    }
   }
-}}
 
-  .content {
-    margin-top: 120px;
+  // .content {
+  //   margin-top: 120px;
+  // }
+
+  .sp-head-banner {
+    margin-top: 95px;
+    padding: 10px;
+  }
+
+  .sp-head-banner.user-p {
+    margin: 10px 0px;
   }
 
   .content2 {
@@ -47,6 +57,11 @@
     text-align: center;
   }
 
+// head banner
+
+  .pc-head-banner, .adjust {
+    display: none;
+  }
 
 // post#index, user#show
   .container1 {
@@ -304,7 +319,7 @@
 }
 
 @media (min-width: 1100px) {
-  .mobile-header-content, .sp-overview  {display:none;}
+  .mobile-header-content, .sp-overview, .sp-head-banner  {display:none;}
 
   .more {
     height: 30px;
@@ -317,6 +332,34 @@
 
   .globalNav {
     display: none;
+  }
+
+  .pc-head-banner {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 15px 1rem 15px;
+  }
+
+  .category-page, .ranking-page {
+    margin-top: 50px;
+    padding: 2rem 0;
+  }
+
+  .post-page {
+    margin-top: 50px;
+    padding: 1rem;
+  }
+
+  .pc-head-banner.user-p {
+    margin: 0;
+  }
+  .container1.top, .container1.category-p, .container1.ranking-p, .container1.post-p {
+    padding: 0px 0px 20px 0px;
+  }
+
+  .adjust {
+    width: 80%;
+    margin-top: 50px;
   }
 
 }
@@ -382,17 +425,6 @@
     height: 40px !important;
     width: 40px !important;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .p-footerBar--transparent {
   background: none;
