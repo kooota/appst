@@ -195,6 +195,14 @@ ul {
   border-radius: 50%;
   }
 
+.userheaderImg {
+  height: 32px;
+  cursor :pointer;
+  transition: all 0.5s;
+  overflow: auto;
+  border-radius: 50%;
+
+}
 
 .accshow {
   line-height: 30px;
