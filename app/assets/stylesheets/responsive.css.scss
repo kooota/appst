@@ -64,8 +64,12 @@
 
 // head banner
 
-  .pc-head-banner, .adjust {
+  .pc-head-banner {
     display: none;
+  }
+
+  .adjust {
+    margin-top: 90px;
   }
 
 // post#index, user#show
