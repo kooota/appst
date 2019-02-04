@@ -6,17 +6,41 @@
           プロフィールを編集する
         </h3>
       </div>
-      <%= f.text_field :name, class:"postContent", placeholder:"アカウント名" %>
-      <%= f.text_field :company, class:"postContent", placeholder:"会社名" %>
-      <%= f.text_field :position, class:"postContent", placeholder:"職種" %>
-      <%= image_tag @user.image %>
-      <%= f.file_field :image, class:"postContent", placeholder:"プロフィール画像"  %>
+      <label class="st-Form_label">名前</label>
+      <%= f.text_field :name, class:"postContent" %>
+
+      <label class="st-Form_label">会社名</label>
+      <%= f.text_field :company, class:"postContent"%>
+
+      <label class="st-Form_label">職種</label>
+      <%= f.text_field :position, class:"postContent"%>
+
+      <label class="st-Form_label">プロフィール画像</label>
+      <div>
+        <%= image_tag @user.image, class:"user-Image_confirmation" %>
+      </div>
+      <%= f.file_field :image, class:"postContent"%>
       <%= f.hidden_field :image_cache %>
 
-      <%= f.text_area :description, class:"postContent",placeholder:"自己紹介",rows:"5"  %>
-      <%= f.text_field :nickname, class:"postContent",placeholder:"Twitterアカウント" %>
-      <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント" %>
-      <%= f.text_field :note, class:"postContent",placeholder:"noteアカウント"  %>
+      <label class="st-Form_label">自己紹介</label>
+      <%= f.text_area :description, class:"postContent", rows:"5"  %>
+
+      <label class="st-Form_label">Twitter ID</label>
+      <div class="st-Form_group">
+        <div class="st-Form_groupBefore">
+          https://twitter.com/
+        </div>
+        <%= f.text_field :nickname, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;" %>
+      </div>
+
+      <label class="st-Form_label">Facebook ID</label>
+      <div class="st-Form_group">
+        <div class="st-Form_groupBefore">
+          https://facebook.com/
+        </div>
+        <%= f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;" %>
+      </div>
+<!--       <%= f.text_field :note, class:"postContent st-Form_groupBefore",placeholder:"noteアカウント"  %> -->
       <%= f.submit "更新", style: "background-color: #80CACA;"  %>
     <% end %>
   </div>

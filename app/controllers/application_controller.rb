@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
+  # def after_sign_in_path_for(resource)
+  #   "/users/#{current_user.id}/"
+  # end
+
   # rescue_from ActiveRecord::StatementInvalid, with: :render_404
 
   # def render_404(e = nil)

@@ -104,6 +104,10 @@ ul {
   display:block;
 }
 
+.error_explanation {
+  color: red;
+}
+
 /*検索*/
 .search {
   width: 33%;

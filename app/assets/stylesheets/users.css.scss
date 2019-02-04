@@ -85,6 +85,54 @@ a.nav:visited {color: #80CACA}
   font-size: 20px;
   line-height: 40px;
 }
+
+.user-Image_confirmation {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.st-Form_label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.st-Form_groupBefore {
+  font-size: 12px;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+.st-Form_group {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px 0 15px;
+}
+
+.st-Form_groupBefore {
+  border-right: 0;
+}
+
+.st-Form_groupText {
+    display: block;
+    flex: 1 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    padding: 8px 16px;
+    cursor: text;
+}
+
+
 .twitter, .profile-twitter {
   margin-left: 10px;
   color: #1DA1F2;
