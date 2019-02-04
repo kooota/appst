@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
     to = Time.zone.now.yesterday.at_end_of_day
     from = (to - 7.day).at_beginning_of_day
-    post_ids = Post.where(created_at: from...to).limit(3).order('likes_count DESC')
+    post_ids = Post.where(created_at: from...to).limit(5).order('likes_count DESC')
     @rank = post_ids.map{|id| Post.find id}
     @begin = 1.weeks.ago.strftime('%m/%d')
     @end = Time.zone.now.yesterday.strftime('%m/%d')
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC")
+    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC").limit(5)
     @comments = @post.comments.includes(:user)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])

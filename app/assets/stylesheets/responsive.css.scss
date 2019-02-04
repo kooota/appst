@@ -77,10 +77,17 @@
     width: 100%;
     padding: 0px 0px 20px 0px;
 
-  .date {
+
+  .date h3 {
+    font-size: 18px;
   }
 
-  .date h3, .fav h3 {
+  .describe {
+    font-size: 12px;
+    margin-left: 28px;
+  }
+
+  .fav h3 {
     font-size: 16px
   }
 
@@ -177,7 +184,9 @@
   }
 
   .sp-likes-comments {
-    padding: 0 1rem
+    padding: 0 1rem;
+    font-size:20px;
+
   }
 
   #sp-likes-count {
@@ -300,6 +309,11 @@
     padding: 15px 8px;
   }
 
+  .side-see-more {
+    text-align: center;
+    margin-top:10px;
+    font-size: 12px;
+  }
 
 
 }
@@ -327,8 +341,28 @@
 
 }
 
+
+
+/////////////////////
+////////
+//以下、PC用
+////////
+/////////////////////
+
 @media (min-width: 1100px) {
-  .mobile-header-content, .sp-overview, .sp-head-banner  {display:none;}
+  .mobile-header-content, .sp-head-banner  {display:none;}
+
+  .rank-post:first-of-type, .rank-post:nth-of-type(2) {
+    width: 35%;
+  }
+
+  .rank-post:first-of-type {
+    margin-left: 15%;
+  }
+
+  .rank-post:nth-of-type(2){
+    margin-right: 15%;
+  }
 
   .more {
     height: 30px;
@@ -369,6 +403,70 @@
   .adjust {
     width: 80%;
     margin-top: 50px;
+  }
+
+  .post-date, .service-link, .overview {display: none;}
+
+  .sp-overview {
+   padding: 0.5rem 1rem;
+  }
+
+  .sp-post-user-image, .sp-post-date, #sp-likes-count, .sp-comments-count {
+   float: left;
+  }
+
+  .sp-likes-comments {
+    float: right;
+  }
+
+  .sp-overview {
+   padding: 0.5rem 1rem;
+  }
+
+  .sp-post-user-image {
+    padding-top: 2px;
+  }
+
+  .post-user-image {
+    height: 35px;
+    width:35px;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+  }
+
+  .sp-post-date {
+    padding: 4px;
+    margin-top: 5px;
+  }
+
+  .sp-likes-comments {
+    // padding: 0rem 0.5rem 0rem 1;
+  }
+
+  #sp-likes-count {
+    padding: 4px 0.5rem 0 0.5rem;
+    margin-top: 5px;
+    font-size: 19px;
+  }
+
+  #like-buttons {
+    font-size: 20px;
+  }
+
+  .sp-comments-count {
+    padding: 3px 0.5rem 0 0.5rem;
+  }
+
+
+  .sp-comments-count {
+    font-size: 18px;
+  }
+
+
+  .side-see-more {
+    text-align: center;
+    margin-top:10px;
+    font-size: 12px;
   }
 
 }
@@ -444,7 +542,7 @@
   position: fixed;
   z-index: 10;
   bottom: 0;
-  width: 100%;
+  width: 50%;
 }
 
 .p-footerBar--transparent.is-show {

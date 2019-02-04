@@ -37,6 +37,14 @@
   float: left;
 }
 
+.describe {
+  display: block;
+  font-size: 14px;
+  margin-left: 33px;
+}
+
+
+
 .pc-see-more {
   float: left;
   line-height: 20px;
@@ -70,14 +78,17 @@
   margin: 0 auto;
 }
 
-.post, .rank-post  {
+.post {
+  width: 33%;
+}
+
+.post, .rank-post, .ranking-post  {
   display: inline-block;
-  width: 25%;
   padding: 20px;
   float: left;
 }
 
-.rank-post {
+.rank-post, .ranking-post {
   width: 33%;
 }
 
@@ -86,18 +97,18 @@
 }
 
 .post-in {
-  height: 300px;
+  height: 285px;
   border: 1px solid #f6f8fa;
   border-radius: 5px;
   width: 100%;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 30px rgba(0,0,0,0.05);
   position: relative;
 }
 
 .post-thumnail {
   position: relative;
   display: block;
-  height: 120px;
+  height: 150px;
 }
 
 .post-thumnail img {

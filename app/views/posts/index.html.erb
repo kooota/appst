@@ -42,25 +42,34 @@
   <% if user_signed_in? %>
     <div class="content clearfix">
 
-      <div class="date clearfix">
+<!--       <div class="date clearfix">
         <h3 class="rank-header"><i class="fas fa-trophy"></i>週間ランキング (<%=@begin%>〜<%=@end%>)</h3>
           <%= link_to "ranking", class:"pc-see-more", target:"_blank" do %>
             <i class="fas fa-arrow-right"></i>もっと見る
           <%end%>
+      </div> -->
+
+      <div class="date clearfix">
+        <h3 class="rank-header"><i class="fas fa-trophy"></i>Featured Apps
+        <span class="describe">話題のサービスをお届け</span></h3>
+          <%= link_to "ranking", class:"pc-see-more", target:"_blank" do %>
+            もっと見る
+          <%end%>
       </div>
 
       <div class="rankPostsList clearfix">
-        <%= render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
+        <%= render partial: "rank_index" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
       </div>
 
       <div class="sp-see-more">
           <%= link_to "ranking", target:"_blank" do %>
-            <i class="fas fa-arrow-right"></i>もっと見る
+            もっと見る
           <%end%>
       </div>
 
       <div class="date">
-        <h3><i class="fas fa-flag"></i>新着プロダクト一覧</h3>
+        <h3><i class="fas fa-flag"></i>WHAT'S NEW
+        <span class="describe">新しく投稿されたサービス一覧</span></h3>
       </div>
 
 
@@ -73,26 +82,28 @@
 
 
       <div class="date clearfix">
-        <h3 class="rank-header"><i class="fas fa-trophy"></i>週間ランキング (<%=@begin%>〜<%=@end%>)</h3>
+        <h3 class="rank-header"><i class="fas fa-trophy"></i>Featured Apps
+        <span class="describe">話題のサービスをお届け</span></h3>
         <%= link_to "ranking", class:"pc-see-more", target:"_blank" do %>
-        <i class="fas fa-arrow-right"></i>もっと見る
+        もっと見る
         <%end%>
       </div>
 
       <div class="rankPostsList clearfix">
-        <%= render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
+        <%= render partial: "rank_index" , locals: {post: @post, rank: @rank, likes: @likes, like: @like} %>
       </div>
 
       <div class="sp-see-more">
           <%= link_to "ranking", target:"_blank" do %>
-            <i class="fas fa-arrow-right"></i>もっと見る
+            ランキングをもっと見る
           <%end%>
       </div>
 
 
     <div class="content1 clearfix">
       <div class="date">
-        <h3><i class="fas fa-flag"></i>新着プロダクト一覧</h3>
+        <h3><i class="fas fa-flag"></i>What's New
+        <span class="describe">新しく投稿されたサービス一覧</span></h3>
       </div>
 
       <div class="postsList clearfix">

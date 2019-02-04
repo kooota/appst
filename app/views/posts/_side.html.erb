@@ -113,8 +113,19 @@
           </div>
         <% end %>
       <% end %>
+    <div class="side-see-more">
+      <%= link_to "/categories/#{@post.category.id}", class:"see-more-category", target:"_blank" do %>
+      もっと見る
+    </div>
   </div>
+
+
+
 </div>
+
+
+<%end%>
+
 <% end %>
 
   <div class="ad-side">
