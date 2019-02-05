@@ -40,7 +40,7 @@ if (windowWidth <= windowSm) {
   } else if (document.URL.match(/ranking/)) {
     $(".sp-likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
   } else {
-    $(".sp-likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/sidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
+    $(".likes-count-<%=@post.id%>").html("<%= j(render partial: 'likes/sidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like}) %>");
   }
 }
 
