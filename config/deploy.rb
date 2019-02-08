@@ -3,7 +3,7 @@ lock '3.11.0'
 set :application, 'appst'
 set :repo_url, 'https://github.com/kooota/appst'
 
-set :branch, 'prepare'
+set :branch, 'master'
 set :deploy_to, '/var/www/app/appst'
 
 set :scm, :git
