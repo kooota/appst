@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190205064352) do
+ActiveRecord::Schema.define(version: 20190206071201) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -35,22 +35,8 @@ ActiveRecord::Schema.define(version: 20190205064352) do
     t.datetime "updated_at",           null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title",          limit: 255
-    t.string   "subtitle",       limit: 255
-    t.text     "content",        limit: 65535
-    t.text     "service_url",    limit: 65535
-    t.text     "appstore_url",   limit: 65535
-    t.text     "googleplay_url", limit: 65535
-    t.integer  "user_id",        limit: 4
-    t.integer  "category_id",    limit: 4
-    t.integer  "likes_count",    limit: 4
-    t.string   "twitter",        limit: 255
-    t.string   "facebook",       limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.text     "image",          limit: 65535
-  end
+# Could not dump table "posts" because of following StandardError
+#   Unknown type 'json' for column 'images'
 
   create_table "relateds", force: :cascade do |t|
     t.text     "related_link", limit: 65535

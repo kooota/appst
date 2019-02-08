@@ -3,12 +3,10 @@ class Post < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :comments
   has_many :relateds
-
   belongs_to :user
   belongs_to :category
 
   mount_uploader :image, ImageUploader
-
 
   validates_acceptance_of :confirming
   after_validation :check_confirming
