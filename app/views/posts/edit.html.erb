@@ -10,16 +10,37 @@
       <%= f.text_field :subtitle, class:"postContent", placeholder:"サービスの簡単な説明(50文字以内)", maxlength:50 %>
       <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL" %>
 
+      <div>
+        <%= image_tag @post.image, class:"post-Image_confirmation" %>
+      </div>
       <%= f.file_field :image, class:"postContent", placeholder:"サービス画像" %>
       <%= f.hidden_field :image_cache %>
 
       <%= f.text_field :appstore_url, class:"postContent",placeholder:"App Store URL" %>
+
       <%= f.text_field :googleplay_url, class:"postContent",placeholder:"Google Play URL" %>
+
       <%= f.text_area :content, class:"postContent",placeholder:"サービス概要", rows:"10"  %>
       <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア・フィットネス", "9"],["コミュニティ", "15"],["ライフスタイル", "16"],["音声","17"],["不動産","18"],["シェアリング","19"], ["マッチング","20"]],class:"postContent", prompt:"カテゴリーを選択", required: "required" %>
-      <%= f.text_field :twitter, class:"postContent",placeholder:"Twiiterアカウント"  %>
-      <%= f.text_field :facebook, class:"postContent",placeholder:"Facebookアカウント"  %>
+
+        <label class="st-Form_label">サービスのTwitter ID</label>
+        <div class="st-Form_group">
+          <div class="st-Form_groupBefore">
+            https://twitter.com/
+          </div>
+          <%= f.text_field :twitter, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;" %>
+        </div>
+
+        <label class="st-Form_label">サービスのFacebook ID</label>
+        <div class="st-Form_group">
+          <div class="st-Form_groupBefore">
+            https://facebook.com/
+          </div>
+          <%= f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;" %>
+        </div>
+
       <%= f.submit "更新", style: "background-color: #80CACA;" %>
+
     <% end %>
   </div>
 </div>
