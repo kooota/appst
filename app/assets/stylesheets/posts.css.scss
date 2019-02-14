@@ -433,18 +433,18 @@ section {
 }
 
 .poster-box {
-  width: auto;
+  width: 70%;
   padding: 0 20px 10px 0;
   border-right: 1px solid #d8d8d8;
 }
 
 .poster-name, .developer-name {
-  margin: 4px 0 0 8px;
+  margin: 6px 0 0 8px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-  width: 85%;
+  width: 80%;
     }
 
 .developer-box {
