@@ -1,0 +1,81 @@
+<div class="links clearfix">
+  <% if @post.service_url %>
+    <div class="website-link clearfix">
+      <%= link_to post.service_url, target:"_blank" do %>
+        <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
+        <div class="sideinfo">
+          <div class="side-link">
+            Website
+          </div>
+          <div class="side-url">
+            <%= post.service_url %>
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% unless @post.appstore_url == "" || @post.appstore_url.nil?  %>
+    <div class="appstore-link clearfix">
+      <%= link_to post.appstore_url, target:"_blank" do %>
+        <span class="link-icon">
+          <i class="fab fa-app-store"></i>
+        </span>
+        <div class="sideinfo">
+          <div class="side-link">
+            App Store
+          </div>
+          <div class="side-url">
+            iPhone, iPad
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <% unless @post.googleplay_url == "" || @post.googleplay_url.nil?  %>
+    <div class="googleplay-link clearfix">
+      <%= link_to post.googleplay_url, target:"_blank" do %>
+        <span class="link-icon">
+          <i class="fab fa-android"></i>
+        </span>
+        <div class="sideinfo">
+          <div class="side-link">
+            Google Play
+          </div>
+          <div class="side-url">
+            Android
+          </div>
+        </div>
+        <span class="link-icon2"><i class="fas fa-angle-right"></i></span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% unless @post.twitter =="" || @post.twitter.nil? && @post.facebook == "" || @post.facebook.nil? %>
+
+<div class="social-box">
+  <div class="social">
+    SNS
+  </div>
+
+  <div class="sns-list">
+    <% unless @post.twitter == "" || @post.twitter.nil?  %>
+        <%= link_to "https://twitter.com/#{@post.twitter}", target:"_blank" do %>
+          <span class="twitter"><i class="fab fa-twitter"></i></span>
+        <% end %>
+    <% end %>
+    <% unless @post.facebook == "" || @post.facebook.nil?  %>
+        <%= link_to "https://facebook.com/#{@post.facebook}", target:"_blank" do %>
+          <span class="facebook"><i class="fab fa-facebook"></i></span>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+<%end%>
+
+
