@@ -39,8 +39,13 @@
           <%= f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;" %>
         </div>
 
-      <%= f.submit "更新", style: "background-color: #80CACA;" %>
+        <div class="btn-post-preview">
 
+          <%= f.submit "プレビュー", class:"preview-post", name: "preview", formtarget: "_blank" %>
+
+          <%= f.submit "更新", class:"update-post" %>
+
+        </div>
     <% end %>
   </div>
 </div>

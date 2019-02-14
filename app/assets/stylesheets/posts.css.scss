@@ -263,7 +263,7 @@ form input, form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #80CACA !important;
+  background-color: #80CACA;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -439,7 +439,13 @@ section {
 }
 
 .poster-name, .developer-name {
-  margin: 8px 0 0 8px;}
+  margin: 4px 0 0 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 85%;
+    }
 
 .developer-box {
   width: auto;
@@ -612,6 +618,32 @@ section {
   font-size: 12px;
   line-height: 15px;
 }
+
+.btn-post-preview {
+  text-align: center;
+  margin-top: 30px;
+}
+
+form input[type="submit"].submit-post, form input[type="submit"].preview-post, form input[type="submit"].update-post {
+  width:40%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+form input[type="submit"].submit-post, form input[type="submit"].update-post  {
+  margin-left: 20px;
+  background-color: #80CACA;
+}
+
+form input[type="submit"].preview-post {
+  background-color: #34495e;
+}
+
+// preview
+  .content2.no_margin_preview {
+    margin-top: 50px;
+  }
+
 
 
 //post#edit

@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   # before_action :move_to_index, except: :index
   require 'metainspector'
 
+  before_action :render_preview_if, only: %w[create update]
+
+
   def index
     @post = Post.includes(:user).all.order("created_at DESC").page(params[:page]).per(9)
     @likes = Like.all
@@ -76,6 +79,19 @@ class PostsController < ApplicationController
 
   def privacy
   end
+
+
+
+  def render_preview_if
+    if params[:preview]
+      @post = Post.new(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image], image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
+      render 'preview'
+    end
+  end
+
+
+
+
 
   private
 
