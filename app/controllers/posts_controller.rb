@@ -65,12 +65,9 @@ class PostsController < ApplicationController
     @categories = Category.all
     # post_ids = Like.group(:post_id).order('count_post_id DESC').limit(12).count(:post_id).keys
     to = Time.zone.now.yesterday.at_end_of_day
-    from = (to - 7.day).at_beginning_of_day
+    from = (to - 14.day).at_beginning_of_day
     post_ids = Post.where(created_at: from...to).limit(12).order('likes_count DESC')
     @rank = post_ids.map{|id| Post.find id}
-
-    @begin = 1.weeks.ago.strftime('%m/%d')
-    @end = Time.now.yesterday.strftime('%m/%d')
   end
 
   def done
