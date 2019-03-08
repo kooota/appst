@@ -86,11 +86,11 @@
   width: 33%;
 }
 
-.post:hover {
+.post:hover, .post-in:hover {
   opacity: 0.75;
 }
 
-.post:hover .post-img {
+.post:hover .post-img, .post-in:hover .post-img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   transition: .3s ease-in-out;
