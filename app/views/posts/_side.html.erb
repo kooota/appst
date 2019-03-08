@@ -63,7 +63,7 @@
   <% end %>
 </div>
 
-<% unless @post.twitter =="" || @post.twitter.nil? && @post.facebook == "" || @post.facebook.nil? %>
+<% unless @post.twitter =="" || @post.twitter.nil? || @post.facebook == "" || @post.facebook.nil? %>
 
 <div class="social-box">
   <div class="social">
