@@ -9,3 +9,11 @@ $(document).on 'turbolinks:load', ->
     history: false
     prefill: true
     status: '.page-load-status'
+
+$(document).on 'turbolinks:load', ->
+  $('.postsList').infiniteScroll
+    path: "nav.pagination a[rel=next]"
+    append: ".post"
+    history: false
+    prefill: true
+    status: '.page-load-status'
