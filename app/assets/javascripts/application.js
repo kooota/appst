@@ -15,25 +15,3 @@
 //= require turbolinks
 //= require_tree .
 //= require infinite-scroll.pkgd.min
-
-$(function(){
-  $('.globalNav_item a ').each(function(){
-    $href = $(this).prop('href')
-    if(location.href === $href) {
-      $(this).parent().addClass('current');
-    } else {
-      $(this).parent().removeClass('current');
-    }
-  });
-});
-
-
-  $(window).load(function() {
-    var myTarget = $(".current");
-    var myIndex = $(".horizontal_scroll .globalNav_item").index(myTarget);
-    var scrollvalue = 60 * myIndex;
-    $('.horizontal_scroll').scrollLeft(scrollvalue);
-});
-
-
-
