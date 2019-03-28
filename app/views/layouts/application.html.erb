@@ -6,8 +6,16 @@
     <%= stylesheet_link_tag    'icomoon', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -28,6 +36,8 @@
        });
   </script>
 
+
+
 </head>
 <body>
 
@@ -43,15 +53,6 @@
 
   <header>
     <div class="header clearfix">
-
-<!--       <div class="search">
-        <div class="searchContainer">
-          <span class="searchIcon">
-            <i class="fas fa-search"></i>
-          </span>
-          <input type="" name="" class="headerSearch">
-        </div>
-      </div> -->
 
       <div class="atLogo">
         <%= link_to "/" do %>
@@ -79,13 +80,11 @@
             </label>
             <input type="checkbox" id="label1" class="cssacc" />
             <div class="accshow">
+
             <div class="mypage">
               <%= link_to "マイページへ", "/users/#{current_user.id}"%>
-
             </div>
-
              <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
-
               <div class="follow-at">
                 <div class="heading">
                   AppsTimesをフォローして<br>
@@ -95,7 +94,7 @@
                   <a href="https://twitter.com/AppsTimes?ref_src=twsrc%5Etfw" class="twitter-follow-button data-show-screen-name="false" data-lang="ja" data-show-count="false" target="_blank"><span class="f-icon-twitter-follow"><i class="fab fa-twitter follow "></i>フォローする</span></a>
                 </div>
               </div>
-
+            </div>
             </div>
           </div>
         </div>
@@ -117,30 +116,34 @@
 
       </div>
     </div>
+  </div>
 
 <% if @categories %>
     <div class="globalNav">
       <div class="horizontal_scroll clearfix">
-          <%= link_to "/" do %>
-            <div class="globalNav_item">
+          <div class="globalNav_item">
+            <%= link_to root_path, method: :get do %>
+
               <span>HOME</span>
-            </div>
-          <% end %>
-          <%= link_to "/ranking" do %>
-            <div class="globalNav_item">
+            <% end %>
+          </div>
+
+          <div class="globalNav_item">
+            <%= link_to "/ranking", method: :get do %>
               <span>ランキング</span>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         <% @categories.each do |category| %>
-          <%= link_to "/categories/#{category.id}", method: :get do%>
-            <div class="globalNav_item">
-              <span><%= category.name %></span>
-            </div>
-          <% end %>
+          <div class="globalNav_item">
+            <%= link_to "/categories/#{category.id}", method: :get do%>
+                <span><%= category.name %></span>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
 <% end %>
+
 
   </header>
 

@@ -5,23 +5,39 @@
   header{
     .header {
       width: 100%;
-
     .search {display: none;}
-    .atLogo {width: 50%; height:100%; text-align: center;}
-    .userNav {width: 50%;height:100%;
+    .atLogo {width: 48%; height:100%; text-align: center;}
+    .userNav {width: 50%;height:100%;line-height: 44px;
     .signUp {margin-right: 10px;}}
-    .cssacc:checked + .accshow{
+    .cssacc:checked +.accshow{
       position: absolute;
       right: 16px;
       top: 48px;
       z-index: 2;
     }
-    }
   }
 
-  // .content {
-  //   margin-top: 120px;
-  // }
+  .header {
+    height: 42px;
+  }
+
+  .inner {
+    height:42px;
+    width: 100%;}
+  }
+
+  .logo-img {
+    height: 25px;
+    vertical-align: middle;
+    margin: 0px 25px 5px 0px;
+  }
+
+  .box-userImg1 {
+    height: 30px;
+    width: 30px;
+    float: left;
+    margin: 9px 10px 0 0;
+  }
 
   .sp-head-banner {
     padding: 10px;
@@ -46,7 +62,7 @@
     margin: 50px  0 10px 0;
     background-color: #99cccc;
     padding:60px 40px;
-    margin-top: 90px;
+    margin-top: 74px;
   }
   .mainview h1 {
     padding: 10px;
@@ -279,7 +295,7 @@
 // user#show
   .user-header {
     padding: 0;
-    margin-top: 50px;
+    margin-top: 42px;
   }
   .user-header-content {
     height:auto;
@@ -291,6 +307,7 @@
     height: 100px;
     margin: 10px auto;
   }
+
   .user-image-container {
     margin: 0 auto;
     width: 100%;
@@ -355,6 +372,19 @@
 /////////////////////
 
 @media (min-width: 1100px) {
+
+  .logo-img {
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  .box-userImg1 {
+  height: 32px;
+  width: 32px;
+  float: left;
+  margin: 9px 10px 0 0;
+}
+
   .mobile-header-content, .sp-head-banner  {display:none;}
 
   .rank-post:first-of-type, .rank-post:nth-of-type(2) {
@@ -496,9 +526,8 @@
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  line-height: 40px;
-  border-top: 1px solid #d8d8d8;
-  font-size: 14px;
+  line-height: 32px;
+  font-size: 12px;
   padding: 0 8px;
   z-index: 1;
 }
@@ -507,6 +536,22 @@
   display: block;
   white-space: nowrap;
   padding: 0 8px;
+  opacity: 0.4;
+}
+
+.globalNav_item.current {
+  opacity: 1.0;
+  position: relative;
+}
+
+.globalNav_item.current a:after {
+    position: absolute;
+    left: calc(50% - 15px);
+    right: calc(50% - 15px);
+    content: '';
+    height: 3px;
+    bottom: 0px;
+    background: white;
 }
 
 
@@ -519,7 +564,7 @@
 .horizontal_scroll img {
   vertical-align: bottom; }
 
-// Chrom, Safari
+// Chrome, Safari
 .horizontal_scroll{
 
     overflow-y:auto;
@@ -542,6 +587,11 @@
     height: 40px !important;
     width: 40px !important;
 }
+
+
+
+
+
 
 .p-footerBar--transparent {
   background: none;

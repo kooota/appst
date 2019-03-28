@@ -128,10 +128,6 @@ ul {
 
 
 
-.logo-img {
-  height: 30px;
-  vertical-align: middle;
-}
 
 /*ヘッダーアクション*/
 
@@ -185,12 +181,7 @@ ul {
   top: -2px;
 }
 
-.box-userImg1 {
-  height: 32px;
-  width: 32px;
-  float: left;
-  margin: 9px 10px 0 0;
-}
+
 
 .userImg {
   height: 100%;
