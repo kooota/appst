@@ -42,7 +42,7 @@
   .sp-head-banner {
     padding: 10px;
     width: 340px;
-    margin: 85px auto 0 auto;
+    margin: 75px auto 0 auto;
   }
 
   .sp-head-banner.user-p {
@@ -337,6 +337,47 @@
     font-size: 12px;
   }
 
+  .max-600 {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  .menus {
+    border-bottom: 1px solid #EEE;
+    background: #FFF;
+  }
+
+  .menus a {
+    display: block;
+    flex: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 0 8px;
+    color: #999;
+  }
+
+  .wrapper a.active {
+    color: #212529;
+  }
+
+  .wrapper a.active:after {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: #212529;
+    bottom: -0px;
+    left: 0;
+    right: 0;
+  }
 
 }
 
@@ -526,7 +567,7 @@
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  line-height: 32px;
+  line-height: 35px;
   font-size: 12px;
   padding: 0 8px;
   z-index: 1;

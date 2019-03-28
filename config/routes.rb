@@ -16,8 +16,10 @@ Rails.application.routes.draw do
 
   get "/users/:id/setting" => "users#setting"
 
+  get '/users/:id/fav' => 'users#favorite'
   get '/ranking' => 'posts#ranking'
   get "/privacy" => "posts#privacy"
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
+
 end

@@ -36,9 +36,9 @@
        });
   </script>
 
-<script>
-$(function(){
-  $('.globalNav_item a ').each(function(){
+<script type="text/javascript">
+$(document).on('turbolinks:load',function () {
+  $('.globalNav_item a').each(function(){
     $href = $(this).prop('href')
     if(location.href === $href) {
       $(this).parent().addClass('current');
@@ -49,8 +49,8 @@ $(function(){
 });
 </script>
 
-<<script>
-  $(window).load(function() {
+<script type="text/javascript">
+$(document).on('turbolinks:load', function () {
     var myTarget = $(".current");
     var myIndex = $(".horizontal_scroll .globalNav_item").index(myTarget);
     var scrollvalue = 60 * myIndex;
@@ -58,9 +58,18 @@ $(function(){
 });
 </script>
 
-
-
-
+<script type="text/javascript">
+$(document).on('turbolinks:load', function () {
+  $('.max-600.wrapper a').each(function(){
+    $href = $(this).prop('href')
+    if(location.href === $href) {
+      $(this).addClass('active');
+    } else {
+      $(this).removeClass('active');
+    }
+  });
+});
+</script>
 
 </head>
 <body>

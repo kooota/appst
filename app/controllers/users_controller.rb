@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @name = @user.name
     @nickname = @user.nickname
     # like = @user.like_posts
-    @post = @user.like_posts.order("created_at DESC").page(params[:page]).per(8)
+    @post = Post.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(8)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
   end
@@ -19,6 +19,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(update_params) if current_user.id?
+  end
+
+  def favorite
+    @user = User.find(params[:id])
+    @name = @user.name
+    @nickname = @user.nickname
+    @post = @user.like_posts.order("created_at DESC").page(params[:page]).per(8)
+    @likes = Like.all
+    @like = Like.where(post_id: params[:post_id])
   end
 
   private

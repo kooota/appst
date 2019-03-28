@@ -74,3 +74,4 @@ gem 'metainspector'
 gem 'meta-tags'
 
 gem 'settingslogic'
+gem 'jquery-turbolinks'
