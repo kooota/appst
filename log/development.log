@@ -24100,3 +24100,350 @@ Processing by UsersController#show as HTML
   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `posts` INNER JOIN `likes` ON `posts`.`id` = `likes`.`post_id` WHERE `likes`.`user_id` = 2[0m
   Rendered users/show.html.erb within layouts/application (205.8ms)
 Completed 200 OK in 336ms (Views: 295.5ms | ActiveRecord: 36.5ms)
+
+
+Started GET "/users/2" for ::1 at 2019-03-28 14:07:51 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (60.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mPost Load (19.9ms)[0m  SELECT  `posts`.* FROM `posts` INNER JOIN `likes` ON `posts`.`id` = `likes`.`post_id` WHERE `likes`.`user_id` = 2  ORDER BY created_at DESC LIMIT 8 OFFSET 0
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 59], ["user_id", 2]]
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59
+  Rendered likes/_like.html.erb (19.3ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 59[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 59], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 59], ["user_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59[0m  [["post_id", 59]]
+  Rendered likes/_splike.html.erb (7.1ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.9ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 36 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 36 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 36], ["user_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 36[0m
+  Rendered likes/_like.html.erb (9.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 36
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 36 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 36], ["user_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 36 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 36], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 36  [["post_id", 36]]
+  Rendered likes/_splike.html.erb (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 32 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 32 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 32], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 32
+  Rendered likes/_like.html.erb (9.3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 32[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 32 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 32], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 32 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 32], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 32[0m  [["post_id", 32]]
+  Rendered likes/_splike.html.erb (5.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.6ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 35 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 35 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 35], ["user_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 35[0m
+  Rendered likes/_like.html.erb (8.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 35 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 35], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 35 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 35], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 35  [["post_id", 35]]
+  Rendered likes/_splike.html.erb (8.7ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 5 LIMIT 1[0m
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 34 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 34 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 34], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 34
+  Rendered likes/_like.html.erb (5.7ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 34[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 34 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 34], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 34 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 34], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 34[0m  [["post_id", 34]]
+  Rendered likes/_splike.html.erb (4.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.8ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 33 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 33 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 33], ["user_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 33[0m
+  Rendered likes/_like.html.erb (8.6ms)
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 33 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 33], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 33 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 33], ["user_id", 2]]
+  [1m[35mCACHE (0.6ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 33  [["post_id", 33]]
+  Rendered likes/_splike.html.erb (21.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.5ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 31 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 31 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 31], ["user_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 31
+  Rendered likes/_like.html.erb (39.4ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 31[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 31 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 31], ["user_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 31 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 31], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 31[0m  [["post_id", 31]]
+  Rendered likes/_splike.html.erb (12.5ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1
+  [1m[36mLike Load (0.5ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 15 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 15 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 15], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 15[0m
+  Rendered likes/_like.html.erb (12.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 15
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 15 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 15], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 15 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 15], ["user_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 15  [["post_id", 15]]
+  Rendered likes/_splike.html.erb (7.5ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `posts` INNER JOIN `likes` ON `posts`.`id` = `likes`.`post_id` WHERE `likes`.`user_id` = 2[0m
+  Rendered users/show.html.erb within layouts/application (501.8ms)
+Completed 200 OK in 1159ms (Views: 1026.9ms | ActiveRecord: 104.5ms)
+
+
+Started GET "/assets/categories-539b1b2d248fcacaf845c897cae976a6.css?body=1" for ::1 at 2019-03-28 14:07:52 +0900
+
+
+Started GET "/assets/comments-f63193a29cacbfd1cf3dc72f41bdcc0e.css?body=1" for ::1 at 2019-03-28 14:07:52 +0900
+
+
+Started GET "/assets/posts-fc9b0487b147b7eb29d8a3050fd1e6c5.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/likes-c006717a1b3371f7881fda43fdc32d07.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/icomoon-a0d410ed11a822a6f179b75ab43d7a5c.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/responsive-fceedc669e57bf2e1c35c3ac40fd1774.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/users-e6a2f7c32bcfd721909388025c0f7a7d.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/application-f943e2b568aaf05f91b2f82a81b0c549.css?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/jquery-24e9e31ece1989ef3791bcd53ea38cab.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/jquery_ujs-e9c99e4aa7db66a7f23b948d7d043bd8.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/turbolinks-dfadbfad3c1175de4c9257125fee9f94.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/categories-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/comments-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/infinite-scroll.pkgd.min-40e93075a0bdbdbedc2a2cd7b5e0ae83.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/users-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/posts-7766a2a245c28d095aa3a7ea0e41ca2f.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/likes-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/application-5579b52f88f7be4489480efdfd14c874.js?body=1" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/apst-logo-338d8f703a6257841b6f5c813aa450b3.jpg" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/assets/default-d78e1cbe848dc9b7eb53a8390b22fa1f.jpg" for ::1 at 2019-03-28 14:07:53 +0900
+
+
+Started GET "/" for ::1 at 2019-03-28 14:07:55 +0900
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.3ms)[0m  SELECT  `posts`.* FROM `posts` WHERE (`posts`.`created_at` >= '2019-03-13 00:00:00' AND `posts`.`created_at` < '2019-03-27 23:59:59')  ORDER BY likes_count DESC LIMIT 5
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered posts/_rank_index.html.erb (0.1ms)
+  [1m[35mPost Load (0.8ms)[0m  SELECT  `posts`.* FROM `posts`  ORDER BY created_at DESC LIMIT 9 OFFSET 0
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (1, 3)[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1
+  [1m[36mLike Load (0.8ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 59], ["user_id", 2]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59[0m
+  Rendered likes/_like.html.erb (21.1ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 59
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 59], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 59], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59[0m  [["post_id", 59]]
+  Rendered likes/_splike.html.erb (4.9ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1
+  [1m[36mLike Load (0.6ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 58 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 58
+  Rendered likes/_like.html.erb (7.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 58[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 58 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 58], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 58[0m  [["post_id", 58]]
+  Rendered likes/_splike.html.erb (4.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.8ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 56 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 56
+  Rendered likes/_like.html.erb (7.8ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 56[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 56 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 56], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 56[0m  [["post_id", 56]]
+  Rendered likes/_splike.html.erb (5.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (11.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 55 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (3.9ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 55
+  Rendered likes/_like.html.erb (22.9ms)
+  [1m[36m (5.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 55[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 55 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 55], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 55[0m  [["post_id", 55]]
+  Rendered likes/_splike.html.erb (11.1ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 13 LIMIT 1
+  [1m[36mLike Load (0.6ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 54 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 54
+  Rendered likes/_like.html.erb (5.6ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 54[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 54 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 54], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 54[0m  [["post_id", 54]]
+  Rendered likes/_splike.html.erb (3.0ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (1.3ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 53 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 53
+  Rendered likes/_like.html.erb (11.3ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 53[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 53 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 53], ["user_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 53[0m  [["post_id", 53]]
+  Rendered likes/_splike.html.erb (3.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (4.2ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 52 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 52
+  Rendered likes/_like.html.erb (11.7ms)
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 52[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 52 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 52], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 52[0m  [["post_id", 52]]
+  Rendered likes/_splike.html.erb (4.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.6ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 51 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 51
+  Rendered likes/_like.html.erb (23.9ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 51[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 51 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 51], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 51[0m  [["post_id", 51]]
+  Rendered likes/_splike.html.erb (3.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (1.1ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 50 AND `likes`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (4.5ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 50
+  Rendered likes/_like.html.erb (10.5ms)
+  [1m[36m (7.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 50[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 50 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 50], ["user_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 50[0m  [["post_id", 50]]
+  Rendered likes/_splike.html.erb (4.9ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `posts`
+  Rendered posts/_posts.html.erb (463.8ms)
+  Rendered posts/index.html.erb within layouts/application (479.6ms)
+  [1m[36mCategory Load (1.0ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Completed 200 OK in 754ms (Views: 680.6ms | ActiveRecord: 61.4ms)
+
+
+Started GET "/ranking" for ::1 at 2019-03-28 14:08:12 +0900
+Processing by PostsController#ranking as HTML
+  Parameters: {"authenticity_token"=>"QwYFOvWigNr2JK70upMp2QUPopLkEF09DpdlbnvTr4Xs+mBkxr6VaALCHTMS4anD8gtgYbaXhT6GpzduYc+mMg=="}
+  [1m[35mPost Load (3.4ms)[0m  SELECT  `posts`.* FROM `posts` WHERE (`posts`.`created_at` >= '2019-03-13 00:00:00' AND `posts`.`created_at` < '2019-03-27 23:59:59')  ORDER BY likes_count DESC LIMIT 12
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered posts/_rank.html.erb (0.4ms)
+  Rendered posts/ranking.html.erb within layouts/application (20.8ms)
+  [1m[35mCategory Load (0.8ms)[0m  SELECT `categories`.* FROM `categories`
+Completed 200 OK in 671ms (Views: 585.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-28 14:08:13 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"authenticity_token"=>"QwYFOvWigNr2JK70upMp2QUPopLkEF09DpdlbnvTr4Xs+mBkxr6VaALCHTMS4anD8gtgYbaXhT6GpzduYc+mMg=="}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT  `posts`.* FROM `posts` WHERE (`posts`.`created_at` >= '2019-03-13 00:00:00' AND `posts`.`created_at` < '2019-03-27 23:59:59')  ORDER BY likes_count DESC LIMIT 5[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered posts/_rank_index.html.erb (0.1ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT  `posts`.* FROM `posts`  ORDER BY created_at DESC LIMIT 9 OFFSET 0[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` IN (1, 3)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 59], ["user_id", 2]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59
+  Rendered likes/_like.html.erb (8.2ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 59[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1  [["post_id", 59], ["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 59 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 59], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 59  [["post_id", 59]]
+  Rendered likes/_splike.html.erb (4.7ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  [1m[35mLike Load (0.4ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 58 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 58[0m
+  Rendered likes/_like.html.erb (4.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 58
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 58 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 58], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 58  [["post_id", 58]]
+  Rendered likes/_splike.html.erb (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.4ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 56 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 56[0m
+  Rendered likes/_like.html.erb (3.7ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 56
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 56 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 56], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 56  [["post_id", 56]]
+  Rendered likes/_splike.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.5ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 55 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 55[0m
+  Rendered likes/_like.html.erb (4.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 55
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 55 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 55], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 55  [["post_id", 55]]
+  Rendered likes/_splike.html.erb (4.5ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 13 LIMIT 1[0m
+  [1m[35mLike Load (0.4ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 54 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 54[0m
+  Rendered likes/_like.html.erb (4.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 54
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 54 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 54], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 54  [["post_id", 54]]
+  Rendered likes/_splike.html.erb (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 53 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 53[0m
+  Rendered likes/_like.html.erb (5.8ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 53
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 53 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 53], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 53  [["post_id", 53]]
+  Rendered likes/_splike.html.erb (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.4ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 52 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 52[0m
+  Rendered likes/_like.html.erb (4.3ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 52
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 52 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 52], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 52  [["post_id", 52]]
+  Rendered likes/_splike.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.6ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 51 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 51[0m
+  Rendered likes/_like.html.erb (6.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 51
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 51 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 51], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 51  [["post_id", 51]]
+  Rendered likes/_splike.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (1.0ms)[0m  SELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 50 AND `likes`.`user_id` = 2 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 50[0m
+  Rendered likes/_like.html.erb (4.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`post_id` = 50
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `likes`.* FROM `likes` WHERE `likes`.`post_id` = 50 AND `likes`.`user_id` = 2 LIMIT 1[0m  [["post_id", 50], ["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `likes` WHERE `likes`.`post_id` = 50  [["post_id", 50]]
+  Rendered likes/_splike.html.erb (2.4ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  Rendered posts/_posts.html.erb (226.8ms)
+  Rendered posts/index.html.erb within layouts/application (237.7ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.* FROM `categories`
+Completed 200 OK in 466ms (Views: 440.1ms | ActiveRecord: 18.6ms)
