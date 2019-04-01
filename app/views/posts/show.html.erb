@@ -11,8 +11,6 @@
 </head>
 
 
-
-
 <div class="pc-head-banner post-page">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- 【PC】TOP -->
@@ -25,7 +23,6 @@
   </script>
 </div>
 
-
 <div class="container1 post-p">
   <div class="content2 clearfix">
 
@@ -34,7 +31,7 @@
     <div class="adleft">
       <div class="sponsor-text">Sponsored Link</div>
       <hr class="clear">
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
             style="display:inline-block;width:336px;height:280px"
             data-ad-client="ca-pub-9870776519307971"
@@ -42,8 +39,11 @@
         data-ad-format="rectangle"></ins>
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      </script> -->
+      <%= render partial: 'ad', locals: { ad: @ad } %>
+
     </div>
+
 
   <!-- 【レスポンシブ】Ad RIGHT -->
     <div class="adright">
@@ -60,6 +60,7 @@
     </script>
     </div>
   </div>
+
     <div class="service-header clearfix">
       <div class="header-content clearfix">
         <div class="service-thumnail">

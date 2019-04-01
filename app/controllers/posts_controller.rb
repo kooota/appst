@@ -33,6 +33,7 @@ class PostsController < ApplicationController
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])
     @categories = Category.all
+    @ad = rand(2)
     # if @post.relateds
     #   @post.relateds.each do |related|
     #     related = related.related_link
