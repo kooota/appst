@@ -12,6 +12,7 @@ CarrierWave.configure do |config|
   }
 
   config.fog_public     = true
+  config.cache_storage = :fog
 
   case Rails.env
     when 'development'
