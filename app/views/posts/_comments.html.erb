@@ -22,7 +22,7 @@
                   <div class="box-userImg">
                     <div class="userImg">
                       <%= link_to "/users/#{comment.user.id}" do %>
-                        <%= image_tag comment.user.image %>
+                        <%= image_tag comment.user.image.url %>
                       <% end %>
                     </div>
                   </div>

@@ -11,7 +11,7 @@
       <%= f.text_field :service_url, class:"postContent", placeholder:"サービスURL" %>
 
       <div>
-        <%= image_tag @post.image, class:"post-Image_confirmation" %>
+        <%= image_tag @post.image.url, class:"post-Image_confirmation" %>
       </div>
       <%= f.file_field :image, class:"postContent", placeholder:"サービス画像" %>
       <%= f.hidden_field :image_cache %>

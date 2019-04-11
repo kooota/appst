@@ -1,4 +1,4 @@
-c029e4128e4a8f25adda35795f5729bd4f62e51f		branch 'master' of git://github.com/capistrano/rbenv
+b8807f3bbb3f424ac42cc8838a38822e028d0aa3		branch 'master' of git://github.com/capistrano/rbenv
 74de31447f5daf7e2bf3eb7cfea767bfe4bea613		branch 'set-up-travis-and-danger' of git://github.com/capistrano/rbenv
 92fc22ad639905b1cea03ff2f372943af9c8bb68	not-for-merge	tag 'v2.0.0' of git://github.com/capistrano/rbenv
 a8372c1d690f2aec7c359792c9e8be73bf15fb97	not-for-merge	tag 'v2.0.1' of git://github.com/capistrano/rbenv
@@ -9,3 +9,4 @@ abd8ce1aeb3d0b6ce38ea4ffdafcd7eea2aa23d5	not-for-merge	tag 'v2.1.0' of git://git
 c761eeabe8847ad3d4c8dd88cba548bb0e20bdcd	not-for-merge	tag 'v2.1.1' of git://github.com/capistrano/rbenv
 08bb6293b09b1f0819fa4614ba58ea70c8cc0f22	not-for-merge	tag 'v2.1.2' of git://github.com/capistrano/rbenv
 cd4af5b7c3a9ed46b5dedf3b055e34dc73a0956a	not-for-merge	tag 'v2.1.3' of git://github.com/capistrano/rbenv
+ab67cf1c566e5ce97deb88c36d4fb5fc957f699b	not-for-merge	tag 'v2.1.4' of git://github.com/capistrano/rbenv

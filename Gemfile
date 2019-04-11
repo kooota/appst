@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.2.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '0.3.18'
+gem 'mysql2', '0.4.4'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -39,7 +39,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -50,6 +50,7 @@ group :development do
   gem 'rb-readline'
   gem 'unicorn'
   gem 'capistrano3-unicorn'
+  gem 'listen'
 end
 
 group :production do
@@ -58,10 +59,10 @@ end
 
 
 gem 'pry-rails'
-gem 'compass-rails', '~> 2.0'
-gem 'sprockets', '2.11.0'
+gem 'compass-rails'
+gem 'sprockets'
 gem 'devise'
-gem 'carrierwave', '~>1.0'
+gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 
@@ -70,8 +71,6 @@ gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
-gem 'metainspector'
-gem 'meta-tags'
-
 gem 'settingslogic'
 gem 'jquery-turbolinks'
+gem 'bootsnap', require: false

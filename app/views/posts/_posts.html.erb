@@ -4,7 +4,7 @@
     <div class="post">
       <div class="post-in clearfix">
         <div class="post-thumnail">
-          <%= image_tag post.image, class:"post-img" %>
+          <%= image_tag post.image.url, class:"post-img" %>
         </div>
       <% if user_signed_in? && current_user.id == post.user_id %>
         <div class="more">
@@ -57,7 +57,7 @@
         <div class="sp-overview clearfix">
           <%= link_to "/users/#{post.user.id}" do %>
           <div class="sp-post-user-image">
-            <span><%= image_tag post.user.image, class:"post-user-image" %></span>
+            <span><%= image_tag post.user.image.url, class:"post-user-image" %></span>
           </div>
           <% end %>
 

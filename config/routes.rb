@@ -21,5 +21,4 @@ Rails.application.routes.draw do
   get "/privacy" => "posts#privacy"
   get '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
-
 end
