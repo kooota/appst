@@ -13,3 +13,21 @@ Rails.application.config.assets.precompile += %w( icomoon.css )
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+Rails.application.config.assets.precompile += %w( icomoon.css )
+
+Rails.application.config.assets.precompile += %w( categories.css.scss )
+
+Rails.application.config.assets.precompile += %w( comments.css.scss )
+
+Rails.application.config.assets.precompile += %w( likes.css.scss )
+
+Rails.application.config.assets.precompile += %w( posts.css.scss )
+
+Rails.application.config.assets.precompile += %w( responsive.css.scss )
+
+Rails.application.config.assets.precompile += %w( users.css.scss )
+
+Rails.application.config.assets.precompile += %w( comments.css.scss )
+
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
