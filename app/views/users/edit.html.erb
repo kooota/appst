@@ -17,7 +17,7 @@
 
       <label class="st-Form_label">プロフィール画像</label>
       <div>
-        <%= image_tag current_user.image, class:"user-Image_confirmation" %>
+        <%= image_tag current_user.image.url, class:"user-Image_confirmation" %>
       </div>
       <%= f.file_field :image, class:"postContent"%>
       <%= f.hidden_field :image_cache %>

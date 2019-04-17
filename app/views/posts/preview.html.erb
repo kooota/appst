@@ -91,7 +91,7 @@
               <div class="poster">
 
                   <div class="people-userImg">
-                    <%= image_tag @post.user.image.to_s, class:"userImg" %>
+                    <%= image_tag @post.user.image.to_s.url, class:"userImg" %>
                   </div>
                   <div class="poster-name">
                     <%= @post.user.name %>
