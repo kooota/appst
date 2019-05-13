@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # before_action :move_to_index, except: :index
 
-  before_action :render_preview_if, only: %w[create update]
+  # before_action :render_preview_if, only: %w[create update]
 
 
   def index
@@ -79,21 +79,23 @@ class PostsController < ApplicationController
 
 
 
-  def render_preview_if
+  def preview
     if params[:preview]
-      @post = Post.new(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image], image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
+      @post = Post.new(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image], image_cache: post_params[:image_cache], category_id: post_params[:category_id], user_id: current_user.id)
       render 'preview'
     end
   end
 
 
-
-
+  def back
+    @post = Post.new(post_params)
+    render 'new'
+  end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image , :image_cache,  :category_id, :confirming, user_id: current_user.id)
+    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image , :image_cache,  :category_id, user_id: current_user.id)
   end
 
   def move_to_index

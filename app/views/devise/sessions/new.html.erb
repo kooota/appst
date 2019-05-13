@@ -24,6 +24,7 @@
   <h4>メールアドレスを利用してログインする</h4>
 </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -39,7 +40,6 @@
             <%= f.check_box :remember_me, checked:"checked" %><%= f.label :remember_me %>
     </div>
   <% end -%>
-
   <div class="actions">
     <%= f.submit "ログイン", style: "background-color: #80CACA;"  %>
   </div>

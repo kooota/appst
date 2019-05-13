@@ -30,6 +30,11 @@ class UsersController < ApplicationController
     @like = Like.where(post_id: params[:post_id])
   end
 
+  def profile
+    @user = User.find(params[:id])
+    redirect_to action: "show" unless @user.id == current_user.id
+  end
+
   private
   def update_params
     params.require(:user).permit(:name, :company, :position, :description, :twitter, :facebook, :image, :note,:image_cache, :nickname)

@@ -1,6 +1,6 @@
 <div class="contents row 1">
   <div class="container2">
-    <%= form_for @post do |f|%>
+    <%= form_for @post, url: preview_posts_path do |f|%>
         <div class="titleBox new">
           <h3>
             プロダクトを投稿する
@@ -56,9 +56,8 @@
 
         <div class="btn-post-preview">
 
-          <%= f.submit "プレビュー", class:"preview-post", name: "preview"%>
-
-          <%= f.submit "投稿する", class:"submit-post" %>
+          <%= f.submit "投稿内容の確認", class:"preview-post", name:"preview" %>
+<!--           <%= f.submit "投稿する", class:"submit-post" %> -->
 
         </div>
 

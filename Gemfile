@@ -74,3 +74,4 @@ gem 'omniauth-twitter'
 gem 'settingslogic'
 gem 'jquery-turbolinks'
 gem 'bootsnap', require: false
+gem 'toastr-rails'

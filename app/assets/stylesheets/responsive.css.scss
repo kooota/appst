@@ -21,6 +21,13 @@
     height: 42px;
   }
 
+  .st-userNav {width: 46%;height:100%;line-height: 44px;}
+
+  .toast-top-right {
+    top: 12px;
+    right: 28px;
+  }
+
   .inner {
     height:42px;
     width: 100%;}
@@ -36,7 +43,7 @@
     height: 30px;
     width: 30px;
     float: left;
-    margin: 9px 10px 0 0;
+    margin: 6px 10px 0 0;
   }
 
   .sp-head-banner {
@@ -232,6 +239,7 @@
 
   #like-buttons {padding: 0px;}
 
+
 //posts#show
 
   .service-header {
@@ -396,6 +404,16 @@
       width: 100%;
     }
   }
+
+  form input[type="submit"].preview-post {
+    font-size: 30px;
+    width: 50%;
+  }
+
+  .back-btn, .post-btn {
+    display: inline-block;
+  }
+
 }
 
 

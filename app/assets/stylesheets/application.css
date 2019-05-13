@@ -10,9 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require toastr
  *= require_tree .
  *= require_self
+
  */
+
 
 header {
   margin: 0 auto;
@@ -131,7 +134,7 @@ ul {
 
 /*ヘッダーアクション*/
 
-.userNav {
+.userNav, .st-userNav {
   /*width: 33%;*/
   line-height: 50px;
   width:50%;
@@ -182,13 +185,34 @@ ul {
 }
 
 
+.header-userImg {
+  overflow: auto;
+  border-radius: 100px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.st-Header_loginUser {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    user-select: none;
+    outline: none;
+}
+
+.fa.fa-caret-down.ml-1 {
+  margin-left: 8px;
+}
 
 .userImg {
   height: 100%;
   cursor :pointer;
   transition: all 0.5s;
   overflow: auto;
-  border-radius: 50%;
+  border-radius: 100px;
   }
 
 .userheaderImg {

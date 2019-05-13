@@ -3,9 +3,10 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <title>AppsTimes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    'icomoon', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'icomoon', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet">
@@ -93,48 +94,44 @@ $(document).on('turbolinks:load', function () {
         <% end %>
       </div>
 
+      <% if user_signed_in? %>
+        <div class="st-userNav">
+          <%= link_to "/posts/new", class:"link-to-post" do %>
+          <span>投稿する</span>
+          <% end %>
 
-      <div class="userNav">
-        <% if user_signed_in? %>
-
-            <%= link_to "/posts/new", class:"link-to-post" do %>
-              <div class="postProduct">
-                    <i class="fas fa-rocket"></i>
-                    <span>＋</span>
-              </div>
-            <% end %>
-
-      <div class="accbox">
-          <div class="box-userImg1">
-            <label for="label1">
-              <div class="userImg">
-                <%= image_tag current_user.image.url %>
-              </div>
-            </label>
-            <input type="checkbox" id="label1" class="cssacc" />
-            <div class="accshow">
-
-            <div class="mypage">
-              <%= link_to "マイページへ", "/users/#{current_user.id}"%>
-            </div>
-             <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
-              <div class="follow-at">
-                <div class="heading">
-                  AppsTimesをフォローして<br>
-                  最新情報をチェック！
+          <div class="accbox">
+            <div class="box-userImg1">
+              <label for="label1">
+                <div class="st-Header_loginUser">
+                  <%= image_tag current_user.image.url, class: "header-userImg" %>
+                  <span class="fa fa-caret-down ml-1"></span>
                 </div>
-                <div class="link-to-sns">
-                  <a href="https://twitter.com/AppsTimes?ref_src=twsrc%5Etfw" class="twitter-follow-button data-show-screen-name="false" data-lang="ja" data-show-count="false" target="_blank"><span class="f-icon-twitter-follow"><i class="fab fa-twitter follow "></i>フォローする</span></a>
+
+              </label>
+              <input type="checkbox" id="label1" class="cssacc" />
+              <div class="accshow">
+
+                <div class="mypage">
+                  <%= link_to "マイページへ", "/users/#{current_user.id}"%>
+                </div>
+                <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
+                <div class="follow-at">
+                  <div class="heading">
+                    AppsTimesをフォローして<br>
+                    最新情報をチェック！
+                  </div>
+                  <div class="link-to-sns">
+                    <a href="https://twitter.com/AppsTimes?ref_src=twsrc%5Etfw" class="twitter-follow-button data-show-screen-name="false" data-lang="ja" data-show-count="false" target="_blank"><span class="f-icon-twitter-follow"><i class="fab fa-twitter follow "></i>フォローする</span></a>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
 
-
         <% else %>
-
+        <div class="userNav">
           <div class="signIn">
             <%= link_to new_user_session_path do %>
               <span>ログイン</span>
@@ -145,6 +142,7 @@ $(document).on('turbolinks:load', function () {
               <span>新規登録</span>
             <% end %>
           </div>
+        </div>
         <% end %>
 
       </div>
@@ -180,10 +178,17 @@ $(document).on('turbolinks:load', function () {
 
   </header>
 
-<!--   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> -->
-
 <%= yield %>
+
+  <% unless flash.empty? %>
+  <script type="text/javascript">
+    <% flash.each do |f| %>
+    <% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
+    toastr['<%= type %>']('<%= f[1] %>');
+    <% end %>
+  </script>
+  <% end %>
+
 
   <footer>
     <div class="info-box clearfix">
@@ -198,5 +203,6 @@ $(document).on('turbolinks:load', function () {
       </div>
     </div>
   </footer>
+
 </body>
 </html>

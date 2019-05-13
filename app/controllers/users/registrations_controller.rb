@@ -8,10 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.find_by(id: params[:id])
   end
+
   # GET /resource/sign_up
   # def new
   #   super
   # end
+
 
   # POST /resource
   # def create

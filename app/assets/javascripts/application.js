@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
+//= require toastr
 //= require_tree .
 //= require infinite-scroll.pkgd.min

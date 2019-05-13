@@ -75,6 +75,40 @@
         <% end %>
     <% end %>
   </div>
+
+  <div class="back-btn">
+    <%= form_for @post, url: "new" do |f| %>
+      <%= f.hidden_field :title %>
+      <%= f.hidden_field :subtitle %>
+      <%= f.hidden_field :service_url %>
+      <%= f.hidden_field :image %>
+      <%= f.hidden_field :image_cache %>
+      <%= f.hidden_field :appstore_url %>
+      <%= f.hidden_field :googleplay_url %>
+      <%= f.hidden_field :content %>
+      <%= f.hidden_field :category_id %>
+      <%= f.hidden_field :twitter %>
+      <%= f.hidden_field :facebook %>
+      <%= f.submit "戻る" ,class:"preview-post", name: "preview" %>
+    <% end %>
+  </div>
+  <div class="post-btn">
+    <%= form_for @post do |f| %>
+      <%= f.hidden_field :title %>
+      <%= f.hidden_field :subtitle %>
+      <%= f.hidden_field :service_url %>
+      <%= f.hidden_field :image %>
+      <%= f.hidden_field :image_cache %>
+      <%= f.hidden_field :appstore_url %>
+      <%= f.hidden_field :googleplay_url %>
+      <%= f.hidden_field :content %>
+      <%= f.hidden_field :category_id %>
+      <%= f.hidden_field :twitter %>
+      <%= f.hidden_field :facebook %>
+      <%= f.submit "投稿する" ,class:"submit-post"%>
+    <% end %>
+  </div>
+
 </div>
 <%end%>
 
