@@ -76,6 +76,7 @@
     <% end %>
   </div>
 
+<div class="btn-box clearfix">
   <div class="back-btn">
     <%= form_for @post, url: "new" do |f| %>
       <%= f.hidden_field :title %>
@@ -89,7 +90,7 @@
       <%= f.hidden_field :category_id %>
       <%= f.hidden_field :twitter %>
       <%= f.hidden_field :facebook %>
-      <%= f.submit "戻る" ,class:"preview-post", name: "preview" %>
+      <%= f.submit "戻る" ,class:"back-to-post", name: "preview" %>
     <% end %>
   </div>
   <div class="post-btn">
@@ -108,6 +109,7 @@
       <%= f.submit "投稿する" ,class:"submit-post"%>
     <% end %>
   </div>
+</div>
 
 </div>
 <%end%>

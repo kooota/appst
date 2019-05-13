@@ -640,7 +640,7 @@ section {
   margin-top: 30px;
 }
 
-form input[type="submit"].submit-post,form input[type="submit"].update-post {
+form input[type="submit"].submit-post,form input[type="submit"].update-post, form input[type="submit"].preview-post, form input[type="submit"].back-to-post {
   width:40%;
   padding: 5px;
   font-size: 16px;
@@ -651,16 +651,19 @@ form input[type="submit"].submit-post, form input[type="submit"].update-post  {
   background-color: #80CACA;
 }
 
-form input[type="submit"].preview-post {
+form input[type="submit"].preview-post, form input[type="submit"].back-to-post {
   background-color: #34495e;
+}
+
+form input[type="submit"].back-to-post, form input[type="submit"].submit-post {
+  margin: 0 0 0 25px;
+  float: left;
 }
 
 // preview
   .content2.no_margin_preview {
     margin-top: 50px;
   }
-
-
 
 //post#edit
 
