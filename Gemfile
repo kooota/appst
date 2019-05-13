@@ -75,3 +75,5 @@ gem 'settingslogic'
 gem 'jquery-turbolinks'
 gem 'bootsnap', require: false
 gem 'toastr-rails'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
