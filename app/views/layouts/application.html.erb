@@ -35,19 +35,6 @@
   </script>
 
 <script type="text/javascript">
-$(document).on('turbolinks:load',function () {
-  $('.globalNav_item a').each(function(){
-    $href = $(this).prop('href')
-    if(location.href === $href) {
-      $(this).parent().addClass('current');
-    } else {
-      $(this).parent().removeClass('current');
-    }
-  });
-});
-</script>
-
-<script type="text/javascript">
 $(document).on('turbolinks:load', function () {
     var myTarget = $(".current");
     var myIndex = $(".horizontal_scroll .globalNav_item").index(myTarget);
@@ -69,6 +56,19 @@ $(document).on('turbolinks:load', function () {
 });
 </script>
 
+<script type="text/javascript">
+$(document).on('turbolinks:load', function() {
+  if ( $("#userComment").val().length == 0 ) {
+    $(".commentSubmit").css("display", "none");
+  }
+
+  $("#userComment").on("keydown keyup keypress change", function() {
+    if ($(this).val().length > 0) {
+      $(".commentSubmit").show();
+    }
+  });
+});
+</script>
 
 
 
@@ -112,9 +112,18 @@ $(document).on('turbolinks:load', function () {
               <input type="checkbox" id="label1" class="cssacc" />
               <div class="accshow">
 
-                <div class="mypage">
-                  <%= link_to "マイページへ", "/users/#{current_user.id}"%>
-                </div>
+
+                <%= link_to "マイページ", "/users/#{current_user.id}", class:"mypage"%>
+
+
+                <%= link_to "お気に入り", "/users/#{current_user.id}/fav", class:"myfav"%>
+
+
+
+                <%= link_to "投稿したサービス", "/users/#{current_user.id}/", class:"mypost"%>
+
+                <%= link_to "設定", "/users/#{current_user.id}/edit", class:"setting"%>
+
                 <%= link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete%>
                 <div class="follow-at">
                   <div class="heading">

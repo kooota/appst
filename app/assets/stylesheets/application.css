@@ -244,7 +244,7 @@ ul {
     padding: 0;
     overflow: hidden;
     opacity: 0;
-    transition: 0.8s;
+/*    transition: 0.8s;*/
 }
 
 /*クリックで中身表示*/
@@ -256,15 +256,22 @@ ul {
     border-radius: 5px;
     margin-top: 5px;
     box-shadow:0 2px 12px 0 rgba(0,0,0,.08);
-    padding: 0 0 0 12px;
 }
 
-.mypage {
+.mypage, .mypost , .myfav, .logout, .setting{
   font-size: 14px;
   color: #212529;
-  padding: 4px 0px;
   border-bottom: 1px solid #d8d8d8;
-  font-weight: 600;
+  font-weight: 400;
+  padding: 8px 12px;
+}
+
+.mypage:hover, .mypost:hover, .myfav:hover, .logout:hover, .setting:hover{
+  background-color: #eee;
+}
+
+.myfav {
+  border: none;
 }
 
 .follow-at {
@@ -305,12 +312,6 @@ ul {
   padding: 0px 5px 0px 0px;
 }
 
-.logout {
-  padding: 4px 0px;
-  font-size: 14px;
-  font-weight: 600;
-  border-bottom: 1px solid #d8d8d8;
-}
 
 .at-custom-mobile-bar {
   background: none !important;

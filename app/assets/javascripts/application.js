@@ -17,3 +17,13 @@
 //= require toastr
 //= require_tree .
 //= require infinite-scroll.pkgd.min
+
+`$(function(){
+if ($("#userComment").val().length == 0) {
+$(".commentSubmit").css("display", "none");
+}
+$("#userComment").on("keydown keyup keypress change", function() {
+if ($(this).val().length > 0) {
+$(".commentSubmit").toggle();
+});
+});`

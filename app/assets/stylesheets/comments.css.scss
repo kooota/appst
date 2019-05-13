@@ -7,3 +7,21 @@
 }
 
 .destroy a {color: #434343;}
+
+.commentSubmit {
+  text-align: right;
+}
+
+form input[type="submit"].commentSubmit-btn {
+  width: 12%;
+  font-size:14px;
+  height: 30px;
+  padding: 0 13px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+form textarea#userComment {
+  padding: 0;
+  margin: 5px 0 10px;
+}
