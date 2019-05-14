@@ -21,6 +21,14 @@ form input[type="submit"].commentSubmit-btn {
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  form input[type="submit"].commentSubmit-btn {
+    width: 25%;
+    background-color: #4277EC;
+  }
+
+}
+
 form textarea#userComment {
   padding: 0;
   margin: 5px 0 10px;
