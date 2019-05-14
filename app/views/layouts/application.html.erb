@@ -57,6 +57,19 @@ $(document).on('turbolinks:load',function () {
 </script>
 
 <script type="text/javascript">
+$(document).on('turbolinks:load', function () {
+  $('.max-600.wrapper a').each(function(){
+    $href = $(this).prop('href')
+    if(location.href === $href) {
+      $(this).addClass('active');
+    } else {
+      $(this).removeClass('active');
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
 $(document).on('turbolinks:load', function() {
   if ( $("#userComment").val().length == 0 ) {
     $(".commentSubmit").css("display", "none");
