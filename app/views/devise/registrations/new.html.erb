@@ -28,10 +28,10 @@
     <%= render "flash" %>
 
 
-<!--     <div class="field">
+     <div class="field">
       <%= f.label :name, "ユーザー名" %><br />
       <%= f.text_field :name, autofocus: true, required: "required"%>
-    </div> -->
+    </div>
 
     <div class="field">
       <%= f.label :email, "登録するメールアドレス" %><br />
@@ -52,7 +52,7 @@
   </div> -->
 
   <div class="actions">
-    <%= f.submit "登録", style: "background-color: #80CACA;"  %>
+    <%= f.submit "登録", class:"register-btn"  %>
   </div>
 <% end %>
   </div>

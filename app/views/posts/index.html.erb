@@ -13,12 +13,54 @@
 
 
 <% unless user_signed_in? %>
-  <div class="mainview">
-    <div class="top-logo">
-      <%= image_tag "apst-logo.jpg" %>
+  <div class="hello-inner">
+    <div class="mainview">
+      <div class="hello">
+        <div class="hello-title">Discover  your  favorite!</div>
+        <p class="hello-description">AppsTimesは、最新・人気のプロダクトを投稿・閲覧できるサービスです。<br>
+        自分が作ったプロダクトや、わくわくするサービスを共有しましょう！</p>
+      </div>
+      <div class="top-signup">
+        <div class="social-signup-wrapper">
+          <div class="top-twitter-login">
+            <%= link_to  user_twitter_omniauth_authorize_path do %>
+              <div class="twitter--box">
+                <i class="fab fa-twitter top"></i>
+                <span>Twitterで登録</span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="separator">
+          <span>OR</span>
+        </div>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <div class="top-field">
+          <%= f.label :name, "ユーザー名" %><br />
+          <%= f.text_field :name, autofocus: true, required: "required", placeholder: "appstimes" %>
+        </div>
+
+        <div class="top-field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, placeholder: "apps@appstimes.jp"%>
+        </div>
+
+        <div class="top-field">
+          <%= f.label :password %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", placeholder: "********" %>
+        </div>
+        <span class="signup-help-text">8文字以上、英・数・記号が使えます</span>
+        <div class="actions">
+          <%= f.submit "登録", class:"top-signup-btn"  %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <p style="font-weight: bold;">『AppsTimes』は、最新・人気のWEBサービス・プロダクトが集まるメディア。<br>
-    自分が作ったプロダクト、好きなサービス、わくわくするサービスを共有しよう！</p>
   </div>
 <% end %>
 
@@ -66,7 +108,8 @@
         <h3 class="rank-header"><i class="fas fa-trophy"></i>Featured Apps
         <span class="describe">話題のサービスをお届け</span></h3>
           <%= link_to "ranking", class:"pc-see-more", target:"_blank" do %>
-            もっと見る
+          <span style="color:#fff;"><i class="fas fa-chevron-circle-right"></i>
+            もっと見る</span>
           <%end%>
       </div>
 
@@ -76,6 +119,7 @@
 
       <div class="sp-see-more">
           <%= link_to "ranking", target:"_blank" do %>
+          <i class="fas fa-chevron-circle-right"></i>
             もっと見る
           <%end%>
       </div>
@@ -96,7 +140,8 @@
         <h3 class="rank-header"><i class="fas fa-trophy"></i>Featured Apps
         <span class="describe">話題のサービスをお届け</span></h3>
         <%= link_to "ranking", class:"pc-see-more", target:"_blank" do %>
-        もっと見る
+          <span class="more-post" style="color:#fff;"><i class="fas fa-chevron-circle-right"></i>
+        もっと見る</span>
         <%end%>
       </div>
 
@@ -106,6 +151,7 @@
 
       <div class="sp-see-more">
           <%= link_to "ranking", target:"_blank" do %>
+            <i class="fas fa-chevron-circle-right"></i>
             もっと見る
           <%end%>
       </div>

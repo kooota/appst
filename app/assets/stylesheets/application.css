@@ -99,6 +99,8 @@ ul {
   text-align: center;
 }
 
+.lists {-webkit-appearance: none;}
+
 .info-list {
   list-style: none;
   padding-right: 10px;

@@ -1,24 +1,10 @@
+
 .container1 {
   width: 80%;
   margin: 0 auto;
   height: auto;
   overflow: hidden;
   padding: 70px 0px 20px 0px;
-}
-
-// .show-container1 {
-//   width: 80%;
-//   margin: 0 auto;
-//   height: auto;
-//   overflow: hidden;
-//   padding: 70px 0px 20px 0px;
-// }
-
-.mainview {
-  background-color: #99cccc;
-  margin-top: 50px;
-  text-align: center;
-  padding: 50px;
 }
 
 .container2 {
@@ -53,14 +39,19 @@
   float: left;
   line-height: 20px;
   padding: 5px 20px;
-  background-color: transparent;
-  border: 2px solid #4c4c4c;
+  background-color:  #4277EC;
   border-radius: 25px;
   margin: 0px 0px 10px 30px;
+  color: #fff;
+}
+
+.pc-see-more a:link {
+  color: #fff !important;
 }
 
 .pc-see-more:hover, .sp-see-more:hover {
-  border: 2px solid #99cccc;
+  opacity: 0.8;
+  color:#fff;
 }
 
 .rankPostsList{
@@ -275,12 +266,17 @@ form input, form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #80CACA;
-  border-radius: 20px;
+  background-color: #4277EC;
+  border-radius: 5px;
   color: #fff;
   border: 0;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-appearance: none;
+}
+
+form input[type="submit"].register-btn, form input[type="submit"].login-btn {
+  padding: 8px;
+  margin-top:10px;
 }
 
 #post_category_id {
