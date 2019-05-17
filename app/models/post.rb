@@ -3,18 +3,12 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_many :likes, dependent: :destroy
-  has_many :comments
+  has_many :comments , inverse_of: :post
   has_many :relateds
   belongs_to :user
   belongs_to :category
 
-  validates_acceptance_of :confirming
-  after_validation :check_confirming
-
-  def check_confirming
-    errors.delete(:confirming)
-    self.confirming = errors.empty? ? '1' : ''
-  end
+  accepts_nested_attributes_for :comments
 
   def like_user(user_id)
    likes.find_by(user_id: user_id)

@@ -99,22 +99,9 @@
 
               </div>
             </div>
-
-<!--             <div class="developer-box">
-              <span class="pos-div">サービス提供者</span>
-              <div class="developer">
-                <%= link_to "/users/#{@post.user.id}" do %>
-                  <div class="people-userImg">
-                    <%= image_tag @post.user.image.to_s, class:"userImg" %>
-                  </div>
-                  <div class="developer-name">
-                    <%= @post.user.name %>
-                  </div>
-                <% end %>
-              </div>
-            </div> -->
           </div>
 
+<!--           <%= render partial: 'comments/firstcomments', locals:{ post: @post }%> -->
 
         </section>
       </div>

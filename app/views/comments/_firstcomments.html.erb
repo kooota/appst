@@ -1,0 +1,32 @@
+<% post.comments.each do |comment| %>
+  <div class="comment_area">
+    <div class="spotlight clearfix">
+
+      <div class="box-userImg">
+        <div class="userImg">
+          <%= link_to "/users/#{comment.user.id}" do %>
+          <%= image_tag comment.user.image.url %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="userInfo clearfix">
+        <div class="username">
+          <span><%= comment.user.name %></span>
+        </div>
+
+          <div class="company">
+            <span><%= comment.user.company %></span>
+          </div>
+          <div class="position">
+            <span><%= comment.user.position %></span>
+          </div>
+      </div>
+
+      <div class="user-comment">
+        <%= simple_format(comment.content) %>
+      </div>
+
+    </div>
+  </div>
+<% end %>

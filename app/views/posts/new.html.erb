@@ -1,6 +1,6 @@
 <div class="contents row 1">
   <div class="container2">
-    <%= form_for @post, url: preview_posts_path do |f|%>
+    <%= form_for @post do |f|%>
         <div class="titleBox new">
           <h3>
             プロダクトを投稿する
@@ -8,56 +8,73 @@
         </div>
 
         <label class="st-Form_label">サービス名</label>
-        <%= f.text_field :title, class:"postContent", required: "required"%>
+        <%= f.text_field :title, class:"postContent", required: "required", placeholder: "Appstimes"%>
 
         <label class="st-Form_label">サービスの簡単な説明</label>
-        <%= f.text_field :subtitle, class:"postContent", required: "required"%>
+        <%= f.text_field :subtitle, class:"postContent", required: "required", placeholder: "最新・人気のプロダクトを投稿・閲覧できるサービス"%>
 
         <label class="st-Form_label">サービスURL</label>
-        <%= f.text_field :service_url, class:"postContent", required: "required" %>
+        <%= f.text_field :service_url, class:"postContent", required: "required", placeholder: "https://appstimes.jp" %>
 
-         <label class="st-Form_label">サービス画像</label>
-        <%= f.file_field :image, class:"postContent", required: "required" %>
-        <%= f.hidden_field :image_cache %>
+        <label class="st-Form_label">アイキャッチ画像</label>
+        <div class="field image">
+          <div id="img_field" onClick="$('#file').click()">
+            <% if @post.image.file.nil? %>
+              <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+            <% else %>
+              <%= image_tag @post.image.to_s%>
+            <% end %>
+          </div>
+          <span class="post-caution">(枠内をクリックしてファイルを選択)</span>
+          <%= f.file_field :image, id:"file", class:"postContent", style:"display:none" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
 
         <label class="st-Form_label">App Store URL</label>
-        <%= f.text_field :appstore_url, class:"postContent"%>
+        <%= f.text_field :appstore_url, placeholder:"https://itunes.apple.com/********", class:"postContent"%>
 
         <label class="st-Form_label">Google Play URL</label>
-        <%= f.text_field :googleplay_url, class:"postContent" %>
+        <%= f.text_field :googleplay_url, placeholder:'https://play.google.com/********', class:"postContent" %>
 
         <label class="st-Form_label">サービスの説明</label>
-        <%= f.text_area :content, class:"postContent", rows:"20", required: "required"%>
+        <%= f.text_area :content, class:"postContent", rows:"10", required: "required" ,placeholder: "- どのような課題を解決するサービスか
+- どのようなことができるのか
+- ターゲットとするユーザー など"%>
+
+
+         <label class="st-Form_label">最初のコメント</label>
+          <%= fields_for :comments do |c| %>
+            <%= c.text_area :content, class:"postContent", rows:"5", placeholder: "- このサービスを作ろうと思ったきっかけ・背景
+- どんな人に使ってほしいか
+- ユーザーへの質問 など            "%>
+          <% end %>
 
         <label class="st-Form_label">カテゴリー</label>
-
         <%= f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア", "9"],["コミュニティ", "15"],["ライフスタイル","16"],["音声","17"],["不動産","18"],["シェアリング","19"], ["マッチング","20"]], class:"postContent", style:"display: block;" , prompt:"カテゴリーを選択", required: "required"%>
 
   <!--       <%= f.fields_for :relateds do |i| %>
           <%= i.text_field :related_link, class:"postContent",placeholder:"関連記事"  %>
         <% end %> -->
 
-        <label class="st-Form_label">サービスのTwitter ID</label>
+        <label class="st-Form_label">サービスまたは開発者のTwitter ID</label>
         <div class="st-Form_group">
           <div class="st-Form_groupBefore">
             https://twitter.com/
           </div>
-          <%= f.text_field :twitter, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;" %>
+          <%= f.text_field :twitter, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;", placeholder: "AppsTimes" %>
         </div>
-
-
-        <label class="st-Form_label">サービスのFacebook ID</label>
+        <label class="st-Form_label">サービスまたは開発者のFacebook ID</label>
         <div class="st-Form_group">
           <div class="st-Form_groupBefore">
             https://facebook.com/
           </div>
-          <%= f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;" %>
+          <%= f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;", placeholder:"appstimes" %>
         </div>
 
         <div class="btn-post-preview">
 
-          <%= f.submit "投稿内容の確認", class:"preview-post", name:"preview" %>
-<!--           <%= f.submit "投稿する", class:"submit-post" %> -->
+<!--           <%= f.submit "投稿内容の確認", class:"preview-post", name:"preview" %> -->
+          <%= f.submit "投稿する", class:"submit-post" %>
 
         </div>
 

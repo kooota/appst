@@ -19,10 +19,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.comments.build
   end
 
    def create
-    Post.create(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image], image_cache: post_params[:image_cache], category_id: post_params[:category_id],user_id: current_user.id)
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.comments.build
+    @post.comments.each do |c|
+      c.content = params[:comments][:content]
+      c.user_id = current_user.id
+    end
+    @post.save
   end
 
   def show
@@ -70,32 +78,43 @@ class PostsController < ApplicationController
     @rank = post_ids.map{|id| Post.find id.id}
   end
 
-  def done
-    @post_id = params[:id]
-  end
-
-  def privacy
-  end
-
-
-
   def preview
     if params[:preview]
-      @post = Post.new(title: post_params[:title],subtitle: post_params[:subtitle],content: post_params[:content],service_url: post_params[:service_url],appstore_url: post_params[:appstore_url],googleplay_url: post_params[:googleplay_url],twitter: post_params[:twitter],facebook: post_params[:facebook], image: post_params[:image], image_cache: post_params[:image_cache], category_id: post_params[:category_id], user_id: current_user.id)
+      @post = Post.new(post_params)
+      @post.user_id = current_user.id
+      @post.comments.build
+      @post.comments.each do |c|
+        c.content = params[:comments][:content]
+        c.user_id = current_user.id
+      end
       render 'preview'
     end
   end
-
 
   def back
     @post = Post.new(post_params)
     render 'new'
   end
 
-  private
+  def privacy
+  end
 
+  private
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :service_url, :appstore_url,:googleplay_url, :twitter, :facebook, :image , :image_cache,  :category_id, user_id: current_user.id)
+    params.require(:post).permit(
+      :title,
+      :subtitle,
+      :content,
+      :service_url,
+      :appstore_url,
+      :googleplay_url,
+      :twitter,
+      :facebook,
+      :image,
+      :image_cache,
+      :category_id,
+      user_id: current_user.id,
+      comments_attributes: [:id, :content, user_id: current_user.id])
   end
 
   def move_to_index

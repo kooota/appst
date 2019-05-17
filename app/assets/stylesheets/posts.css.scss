@@ -646,7 +646,7 @@ form input[type="submit"].submit-post,form input[type="submit"].update-post, for
   font-size: 16px;
 }
 
-form input[type="submit"].submit-post, form input[type="submit"].update-post  {
+form input[type="submit"].update-post  {
   margin-left: 20px;
   background-color: #80CACA;
 }
@@ -655,7 +655,7 @@ form input[type="submit"].preview-post, form input[type="submit"].back-to-post {
   background-color: #34495e;
 }
 
-form input[type="submit"].back-to-post, form input[type="submit"].submit-post {
+form input[type="submit"].back-to-post{
   margin: 50px 0 0 25px;
   float: left;
 }
@@ -732,3 +732,66 @@ form input[type="submit"].back-to-post, form input[type="submit"].submit-post {
 .pryvacy-content p {font-size:14px;}
 
 .pryvacy {font-size: 20px;}
+
+
+// new#preview
+
+.post-caution {
+  font-size: 11px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#img_field img {
+  width: 280px;
+  height: 140px;
+}
+
+#img_field {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px #d8d8d8;
+  color: #666;
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 280px;
+  height: 140px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  text-align: center;
+}
+
+#img_field i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 140px;
+  transition: 0.3s ease-out;
+}
+
+#img_field i.add {
+  display: none;
+  font-size: 50px;
+  position: absolute;
+  top: -90px;
+  right: 15px;
+}
+
+#img_field:hover {
+  background-color: #EDBC6C;
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+}
+
+#img_field:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}

@@ -57,24 +57,25 @@
 </div>
 
 <% unless @post.twitter =="" || @post.twitter.nil? && @post.facebook == "" || @post.facebook.nil? %>
+  <div class="social-box">
+    <div class="social">
+      SNS
+    </div>
 
-<div class="social-box">
-  <div class="social">
-    SNS
-  </div>
-
-  <div class="sns-list">
-    <% unless @post.twitter == "" || @post.twitter.nil?  %>
+    <div class="sns-list">
+      <% unless @post.twitter == "" || @post.twitter.nil?  %>
         <%= link_to "https://twitter.com/#{@post.twitter}", target:"_blank" do %>
           <span class="twitter"><i class="fab fa-twitter"></i></span>
-        <% end %>
-    <% end %>
-    <% unless @post.facebook == "" || @post.facebook.nil?  %>
+          <% end %>
+      <% end %>
+      <% unless @post.facebook == "" || @post.facebook.nil?  %>
         <%= link_to "https://facebook.com/#{@post.facebook}", target:"_blank" do %>
           <span class="facebook"><i class="fab fa-facebook"></i></span>
         <% end %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+<%end%>
 
 <div class="btn-box clearfix">
   <div class="back-btn">
@@ -90,6 +91,9 @@
       <%= f.hidden_field :category_id %>
       <%= f.hidden_field :twitter %>
       <%= f.hidden_field :facebook %>
+      <%= fields_for :comments do |c| %>
+        <%= c.hidden_field :content %>
+      <% end %>
       <%= f.submit "戻る" ,class:"back-to-post", name: "preview" %>
     <% end %>
   </div>
@@ -106,12 +110,12 @@
       <%= f.hidden_field :category_id %>
       <%= f.hidden_field :twitter %>
       <%= f.hidden_field :facebook %>
+      <%= fields_for :comments do |c| %>
+        <%= c.hidden_field :content %>
+      <% end %>
       <%= f.submit "投稿する" ,class:"submit-post"%>
     <% end %>
   </div>
 </div>
-
-</div>
-<%end%>
 
 
