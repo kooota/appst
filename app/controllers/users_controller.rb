@@ -40,5 +40,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :company, :position, :description, :twitter, :facebook, :image, :note,:image_cache, :nickname)
   end
 
-
 end

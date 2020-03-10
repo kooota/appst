@@ -10,7 +10,8 @@ set :scm, :git
 set :log_level, :debug
 set :pty, true
 
-append :linked_files, 'config/master.key'
+# append :linked_files, 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/master.key'
 
 set :bundle_binstubs, nil
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
