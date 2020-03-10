@@ -51,6 +51,7 @@ group :development do
   gem 'unicorn'
   gem 'capistrano3-unicorn'
   gem 'listen'
+  gem 'bullet'
 end
 
 group :production do
