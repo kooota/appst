@@ -61,9 +61,6 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.3)
-    bullet (6.1.0)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     byebug (11.0.1)
     capistrano (3.11.1)
       airbrussh (>= 1.0.0)
@@ -438,7 +435,6 @@ GEM
     unicorn (5.5.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    uniform_notifier (1.13.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -457,7 +453,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bullet
   byebug
   capistrano
   capistrano-bundler
