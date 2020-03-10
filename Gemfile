@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.2'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '0.4.4'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,18 +43,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'capistrano' #追加
-  gem 'capistrano-bundler' #追加
-  gem 'capistrano-rbenv', github:"capistrano/rbenv" #追加
-  gem 'capistrano-rails' #追加
   gem 'rb-readline'
-  gem 'unicorn'
-  gem 'capistrano3-unicorn'
   gem 'listen'
+  gem 'bullet'
 end
 
 group :production do
-  gem 'unicorn'
 end
 
 
