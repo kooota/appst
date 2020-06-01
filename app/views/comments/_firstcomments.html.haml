@@ -1,0 +1,16 @@
+- post.comments.each do |comment|
+  .comment_area
+    .spotlight.clearfix
+      .box-userImg
+        .userImg
+          = link_to "/users/#{comment.user.id}" do
+            = image_tag comment.user.image.url
+      .userInfo.clearfix
+        .username
+          %span= comment.user.name
+        .company
+          %span= comment.user.company
+        .position
+          %span= comment.user.position
+      .user-comment
+        = simple_format(comment.content)

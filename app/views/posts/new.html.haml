@@ -1,0 +1,55 @@
+.contents.row.1
+  .container2
+    = form_for @post do |f|
+      .titleBox.new
+        %h3
+          プロダクトを投稿する
+      %label.st-Form_label サービス名
+      = f.text_field :title, class:"postContent", required: "required", placeholder: "Appstimes"
+      %label.st-Form_label サービスの簡単な説明
+      = f.text_field :subtitle, class:"postContent", required: "required", placeholder: "最新・人気のプロダクトを投稿・閲覧できるサービス"
+      %label.st-Form_label サービスURL
+      = f.text_field :service_url, class:"postContent", required: "required", placeholder: "https://appstimes.jp"
+      %label.st-Form_label アイキャッチ画像
+      .field.image
+        #img_field{:onclick => "$('#file').click()"}
+          - if @post.image.file.nil?
+            %i.fas.fa-image
+            %i.fas.fa-file-upload.add
+          - else
+            = image_tag @post.image.to_s
+        %span.post-caution (枠内をクリックしてファイルを選択)
+        = f.file_field :image, id:"file", class:"postContent", style:"display:none"
+        = f.hidden_field :image_cache
+      %label.st-Form_label App Store URL
+      = f.text_field :appstore_url, placeholder:"https://itunes.apple.com/********", class:"postContent"
+      %label.st-Form_label Google Play URL
+      = f.text_field :googleplay_url, placeholder:'https://play.google.com/********', class:"postContent"
+      %label.st-Form_label サービスの説明
+      = f.text_area :content, class:"postContent", rows:"10", required: "required" ,placeholder: "- どのような課題を解決するサービスか |
+        - どのようなことができるのか                                                                                               |
+        - ターゲットとするユーザー など"                                                                                            |
+      %label.st-Form_label 最初のコメント
+      = fields_for :comments do |c|
+        = c.text_area :content, class:"postContent", rows:"5", placeholder: "- このサービスを作ろうと思ったきっかけ・背景 |
+          - どんな人に使ってほしいか                                                                             |
+          - ユーザーへの質問 など            "                                                                 |
+      %label.st-Form_label カテゴリー
+      = f.select :category_id, [["テクノロジー", "1"],["トラベル", "2"],["SNS", "3"],["写真・動画", "10"], ["メディア", "14"],["ファイナンス", "12"],["教育", "8"],["キャリア", "13"],["ビジネス", "4"],["ユーティリティ", "5"],["食・グルメ", "6"],["ファッション", "7"],["EC", "11"],["ヘルスケア", "9"],["コミュニティ", "15"],["ライフスタイル","16"],["音声","17"],["不動産","18"],["シェアリング","19"], ["マッチング","20"]], class:"postContent", style:"display: block;" , prompt:"カテゴリーを選択", required: "required"
+      /
+        <haml_loud> f.fields_for :relateds do |i| </haml_loud><haml_block>
+        <haml_loud> i.text_field :related_link, class:&quot;postContent&quot;,placeholder:&quot;関連記事&quot;  </haml_loud>
+        </haml_block>
+      %label.st-Form_label サービスまたは開発者のTwitter ID
+      .st-Form_group
+        .st-Form_groupBefore
+          https://twitter.com/
+        = f.text_field :twitter, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;", placeholder: "AppsTimes"
+      %label.st-Form_label サービスまたは開発者のFacebook ID
+      .st-Form_group
+        .st-Form_groupBefore
+          https://facebook.com/
+        = f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;", placeholder:"appstimes"
+      .btn-post-preview
+        / <haml_loud> f.submit &quot;投稿内容の確認&quot;, class:&quot;preview-post&quot;, name:&quot;preview&quot; </haml_loud>
+        = f.submit "投稿する", class:"submit-post"

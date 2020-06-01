@@ -1,0 +1,49 @@
+- @post.each do |post|
+  = link_to "/posts/#{post.id}" do
+    .post
+      .post-in.clearfix
+        .post-thumnail
+          = image_tag post.image.url, class:"post-img"
+        - if user_signed_in? && current_user.id == post.user_id
+          .more
+            %span
+              %i.fas.fa-angle-down
+            %ul.more_list
+              %li.more-edit
+                = link_to '編集', "/posts/#{post.id}/edit", method: :get, class:"more-edit"
+              %li
+                = link_to '削除', "/posts/#{post.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete"
+        = link_to "/posts/#{post.id}" do
+          .post-title
+            %span= post.title
+          .post-subtitle
+            %span= post.subtitle
+          .post-date.clearfix
+            = link_to "/categories/#{post.category_id}" do
+              .category
+                %span= post.category.name
+            .service-link
+              = link_to post.service_url, target:"_blank" do
+                %i.fas.fa-link
+          .overview
+            #likes-count{:class => "likes-count-#{post.id}"}
+              = render partial: "/likes/like", locals: {post: post, posts: @posts, likes: @likes, like: @like}
+            = link_to "/posts/#{post.id}" do
+              .comments-count
+                %i.fas.fa-comment-alt
+                %span
+                  = post.comments.count
+          .sp-overview.clearfix
+            = link_to "/users/#{post.user.id}" do
+              .sp-post-user-image
+                %span= image_tag post.user.image.url, class:"post-user-image"
+            .sp-post-date.clearfix
+              = link_to "/categories/#{post.category_id}" do
+                .category
+                  %span= post.category.name
+            .sp-likes-comments.clearfix
+              #sp-likes-count{:class => "sp-likes-count-#{post.id}"}
+                = render partial: "/likes/splike", locals: {post: post, posts: @posts, likes: @likes, like: @like}
+.page-load-status
+  .infinite-scroll-request
+    = paginate @post

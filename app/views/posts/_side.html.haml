@@ -1,0 +1,81 @@
+.links.clearfix
+  .website-link.show-fav.clearfix
+    %div{:class => "likes-count-#{post.id} show-likes-count"}
+      = render partial: "/likes/sidelike", locals: {post: post, posts: @posts, likes: @likes, like: @like}
+  - if @post.service_url
+    .website-link.clearfix
+      = link_to post.service_url, target:"_blank" do
+        %span.link-icon
+          %i.fas.fa-external-link-alt
+        .sideinfo
+          .side-link
+            Website
+          .side-url
+            = post.service_url
+        %span.link-icon2
+          %i.fas.fa-angle-right
+  - unless @post.appstore_url == "" || @post.appstore_url.nil?
+    .appstore-link.clearfix
+      = link_to post.appstore_url, target:"_blank" do
+        %span.link-icon
+          %i.fab.fa-app-store
+        .sideinfo
+          .side-link
+            App Store
+          .side-url
+            iPhone, iPad
+        %span.link-icon2
+          %i.fas.fa-angle-right
+  - unless @post.googleplay_url == "" || @post.googleplay_url.nil?
+    .googleplay-link.clearfix
+      = link_to post.googleplay_url, target:"_blank" do
+        %span.link-icon
+          %i.fab.fa-android
+        .sideinfo
+          .side-link
+            Google Play
+          .side-url
+            Android
+        %span.link-icon2
+          %i.fas.fa-angle-right
+- unless @post.twitter =="" || @post.twitter.nil? || @post.facebook == "" || @post.facebook.nil?
+  .social-box
+    .social
+      SNS
+    .sns-list
+      - unless @post.twitter == "" || @post.twitter.nil?
+        = link_to "https://twitter.com/#{@post.twitter}", target:"_blank" do
+          %span.twitter
+            %i.fab.fa-twitter
+      - unless @post.facebook == "" || @post.facebook.nil?
+        = link_to "https://facebook.com/#{@post.facebook}", target:"_blank" do
+          %span.facebook
+            %i.fab.fa-facebook
+- unless @posts.blank?
+  .related-box
+    .relateds
+      %h2
+        「#{@post.title}」と同じ「#{@post.category.name}」カテゴリーのサービス
+    .related-list
+      - posts.each do |posts|
+        = link_to "/posts/#{posts.id}" do
+          .item.clearfix
+            .side-thumnail
+              .side-thumnail-content
+                = image_tag posts.image.url, class:"img"
+            .side-info
+              .side-service-title
+                = posts.title
+              .side-service-subtitle
+                = posts.subtitle
+      .side-see-more
+        = link_to "/categories/#{@post.category.id}", class:"see-more-category", target:"_blank" do
+          もっと見る
+.ad-side
+  %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+  / 【レスポンシブ】サイドバー
+  %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-format" => "rectangle", "data-ad-slot" => "2926842015", "data-full-width-responsive" => "false", :style => "display:block"}
+  :javascript
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  %hr.clear/
+  .sponsor-text Sponsored Link

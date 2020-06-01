@@ -1,0 +1,29 @@
+.contents.row
+  .container
+    .titleBox
+      %h3 ログイン
+      = link_to "新規会員登録が済んでない方はこちら", new_user_registration_path , class:"nav"
+    .twitter-login
+      = link_to  user_twitter_omniauth_authorize_path do
+        .twitter--box
+          %i.fab.fa-twitter
+          %span Twitterでログイン
+    .inner
+      .separate
+    .titleBox
+      %h4 メールアドレスを利用してログインする
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true
+      .field
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me, checked:"checked"
+          = f.label :remember_me
+      .actions
+        = f.submit "ログイン", class:"login-btn"

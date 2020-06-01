@@ -1,0 +1,63 @@
+.pc-head-banner.category-page
+  %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+  / 【PC】TOP
+  %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9157678259", :style => "display:inline-block;width:970px;height:90px"}
+  :javascript
+    (adsbygoogle = window.adsbygoogle || []).push({});
+.sp-head-banner.container
+  %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+  / 【モバイル】TOP/カテゴリー/ランキング
+  %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9628273935", :style => "display:inline-block;width:320px;height:50px"}
+  :javascript
+    (adsbygoogle = window.adsbygoogle || []).push({});
+.container1.category-p
+  .content.clearfix
+    .date
+      %h3{:style => "padding-left:16px;"}
+        = @category.slug
+        %span.category-describe
+          = @category.name
+          カテゴリー
+    .postsList
+      - @post.each do |post|
+        = link_to "/posts/#{post.id}" do
+          .post
+            .post-in
+              .post-thumnail
+                = image_tag post.image.url, class:"post-img"
+              .post-title
+                %span= post.title
+              .post-subtitle
+                %span= post.subtitle
+              .post-date.clearfix
+                = link_to "/categories/#{post.category_id}" do
+                  .category
+                    %span= post.category.name
+                .service-link
+                  = link_to post.service_url, target:"_blank" do
+                    %i.fas.fa-link
+              .overview
+                #likes-count{:class => "likes-count-#{post.id}"}
+                  = render partial: "/likes/like", locals: {post: post, likes: @likes, like: @like}
+                = link_to "/posts/#{post.id}" do
+                  .comments-count
+                    %i.fas.fa-comment-alt
+                    %span
+                      = post.comments.count
+              .sp-overview.clearfix
+                = link_to "/users/#{post.user.id}" do
+                  .sp-post-user-image
+                    %span= image_tag post.user.image.url, class:"post-user-image"
+                .sp-post-date.clearfix
+                  = link_to "/categories/#{post.category_id}" do
+                    .category
+                      %span= post.category.name
+                .sp-likes-comments.clearfix
+                  #sp-likes-count{:class => "sp-likes-count-#{post.id}"}
+                    = render partial: "/likes/splike", locals: {post: post, posts: @posts, likes: @likes, like: @like}
+              /
+                <div class="destroy">
+                <haml_loud> link_to &quot;削除&quot;, &quot;/posts/\#{post.id}&quot;, method: :delete </haml_loud>
+                </div>
+.page-load-status
+  = paginate @post

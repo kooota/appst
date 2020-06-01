@@ -1,0 +1,30 @@
+.pc-head-banner.ranking-page
+  %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+  / 【PC】TOP
+  %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9157678259", :style => "display:inline-block;width:970px;height:90px"}
+  :javascript
+    (adsbygoogle = window.adsbygoogle || []).push({});
+.sp-head-banner.container
+  %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+  / 【モバイル】TOP/カテゴリー/ランキング
+  %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9628273935", :style => "display:inline-block;width:320px;height:50px"}
+  :javascript
+    (adsbygoogle = window.adsbygoogle || []).push({});
+.container1.ranking-p
+  .content.clearfix
+    - if user_signed_in?
+      .date.clearfix
+        %h3.rank-header
+          %i.fas.fa-trophy>
+          Featured Apps
+          %span.describe 話題のサービスをお届け
+      .rankPostsList.clearfix
+        = render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like}
+    - else
+      .date.clearfix
+        %h3.rank-header
+          %i.fas.fa-trophy>
+          Featured Apps
+          %span.describe 話題のサービスをお届け
+      .rankPostsList.clearfix
+        = render partial: "rank" , locals: {post: @post, rank: @rank, likes: @likes, like: @like}

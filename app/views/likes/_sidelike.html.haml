@@ -1,0 +1,21 @@
+- if user_signed_in?
+  - if post.like_user(current_user.id)
+    = button_to post_like_path(post.like_user(current_user.id), post_id: post.id), method: :delete, id: "show-like-buttons", remote: true do
+      .side-link.clearfix
+        %span.like-icon
+          %i.fas.fa-heart.heart-in-show
+          %span.like-text LIKE
+          %span.num-of-like= post.likes.count
+  - else
+    = button_to post_likes_path(post), id: "show-like-buttons", remote: true do
+      .side-link.clearfix
+        %span.like-icon
+          %i.far.fa-heart.heart-in-show
+          %span.like-text LIKE
+          %span.num-of-like= post.likes.count
+- else
+  = link_to new_user_session_path do
+    %span.like-icon
+      %i.far.fa-heart.heart-in-show
+      %span.like-text LIKE
+      %span.num-of-like= post.likes.count

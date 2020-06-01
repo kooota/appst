@@ -1,0 +1,76 @@
+- @rank.each do |rank|
+  = link_to "/posts/#{rank.id}" do
+    .rank-post
+      .post-in.clearfix
+        .post-thumnail
+          = image_tag rank.image.url, class:"post-img"
+        - if user_signed_in? && current_user.id == rank.user_id
+          .more
+            %span
+              %i.fas.fa-angle-down
+            %ul.more_list
+              %li.more-edit
+                = link_to '編集', "/posts/#{rank.id}/edit", method: :get, class:"more-edit"
+              %li
+                = link_to '削除', "/posts/#{rank.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete"
+        = link_to "/posts/#{rank.id}" do
+          .post-title
+            %span= rank.title
+          .post-subtitle
+            %span= rank.subtitle
+          .post-date.clearfix
+            = link_to "/categories/#{rank.category_id}" do
+              .category
+                %span= rank.category.name
+            .service-link
+              = link_to rank.service_url, target:"_blank" do
+                %i.fas.fa-link
+          .overview
+            #likes-count{:class => "likes-count-#{rank.id}"}
+              - if user_signed_in?
+                - if rank.like_user(current_user.id)
+                  = button_to post_like_path(rank.like_user(current_user.id), post_id: rank.id), method: :delete, id: "like-buttons", remote: true do
+                    %i.fas.fa-heart
+                    %span
+                      = rank.likes.count
+                - else
+                  = button_to post_likes_path(rank), id: "like-buttons", remote: true do
+                    %i.far.fa-heart
+                    %span
+                      = rank.likes.count
+              - else
+                = link_to new_user_session_path do
+                  %i.far.fa-heart
+                  %span
+                    = rank.likes.count
+            = link_to "/posts/#{rank.id}" do
+              .comments-count
+                %i.fas.fa-comment-alt
+                %span
+                  = rank.comments.count
+          .sp-overview.clearfix
+            = link_to "/users/#{rank.user.id}" do
+              .sp-post-user-image
+                %span= image_tag rank.user.image.url, class:"post-user-image"
+            .sp-post-date.clearfix
+              = link_to "/categories/#{rank.category_id}" do
+                .category
+                  %span= rank.category.name
+            .sp-likes-comments.clearfix
+              #sp-likes-count{:class => "sp-likes-count-#{rank.id}"}
+                - if user_signed_in?
+                  - if rank.like_user(current_user.id)
+                    = button_to post_like_path(rank.like_user(current_user.id), post_id: rank.id), method: :delete, id: "like-buttons", remote: true do
+                      %i.fas.fa-heart
+                      %span
+                        = rank.likes.count
+                  - else
+                    = button_to post_likes_path(rank), id: "like-buttons", remote: true do
+                      %i.far.fa-heart
+                      %span
+                        = rank.likes.count
+                - else
+                  = link_to new_user_session_path do
+                    %i.far.fa-heart
+                    %span
+                      = rank.likes.count

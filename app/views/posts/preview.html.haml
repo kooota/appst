@@ -1,0 +1,64 @@
+.container1.post-p.preview
+  .content2.no_margin_preview.clearfix
+    .service-header.clearfix
+      .header-content.clearfix
+        .service-thumnail
+          .thumnail-content
+            = image_tag @post.image.to_s, class:"img"
+        .header-info
+          .service-title
+            = @post.title
+          .service-subtitle
+            = @post.subtitle
+          .service-category
+            %span= @post.category.name
+    .main-container
+      .primary-content
+        %section.box-thumnail
+          .canvas
+            = image_tag @post.image.to_s, class:"img"
+          / sp contents
+          .mobile-header-content.clearfix
+            .service-thumnail
+              .thumnail-content
+                = image_tag @post.image.to_s, class:"img"
+            .header-info
+              .service-title
+                = @post.title
+              .service-subtitle
+                = @post.subtitle
+              .service-category
+                %span= @post.category.name
+          / sp contents
+          .thumnails
+        .box-title
+          %h2
+            %i.fas.fa-check-circle>
+            サービス概要
+        %section.box-about
+          .description
+            = text_url_to_link(simple_format(h(@post.content))).html_safe
+        - unless @post.relateds
+          .box-title
+            %h2
+              %i.fas.fa-star>
+              関連リンク
+          %section.box-related
+            .relateds
+        .box-title
+          %h2
+            %i.fas.fa-comments>
+            コメント
+        %section.box-comment
+          .people-container.clearfix
+            .poster-box
+              %span.pos-div このサービスを投稿してくれた人
+              .poster
+                .people-userImg
+                  = image_tag @post.user.image.to_s, class:"userImg"
+                .poster-name
+                  = @post.user.name
+          / <haml_loud> render partial: &#39;comments/firstcomments&#39;, locals:{ post: @post }</haml_loud>
+    %aside
+      .sub-content
+        = render template: 'posts/previewside',  locals: {post: @post}

@@ -1,0 +1,31 @@
+.contents.row
+  .container2
+    = form_for @user, method: :patch do |f|
+      .titleBox.new
+        %h3
+          プロフィールを編集する
+      %label.st-Form_label 名前
+      = f.text_field :name, class:"postContent"
+      %label.st-Form_label 会社名
+      = f.text_field :company, class:"postContent"
+      %label.st-Form_label 職種
+      = f.text_field :position, class:"postContent"
+      %label.st-Form_label プロフィール画像
+      %div
+        = image_tag current_user.image.url, class:"user-Image_confirmation"
+      = f.file_field :image, class:"postContent"
+      = f.hidden_field :image_cache
+      %label.st-Form_label 自己紹介
+      = f.text_area :description, class:"postContent", rows:"5"
+      %label.st-Form_label Twitter ID
+      .st-Form_group
+        .st-Form_groupBefore
+          https://twitter.com/
+        = f.text_field :nickname, class:"postContent st-Form_groupText", style:"margin: 0; border-radius: 0;"
+      %label.st-Form_label Facebook ID
+      .st-Form_group
+        .st-Form_groupBefore
+          https://facebook.com/
+        = f.text_field :facebook, class:"postContent st-Form_groupText",style:"margin: 0; border-radius: 0;"
+      / <haml_loud> f.text_field :note, class:&quot;postContent st-Form_groupBefore&quot;,placeholder:&quot;noteアカウント&quot;  </haml_loud>
+      = f.submit "更新", style: "background-color: #80CACA;"

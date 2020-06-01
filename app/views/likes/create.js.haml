@@ -1,0 +1,46 @@
+var url = location.href;
+var path = location.pathname;
+
+\// if (url == "https://appstimes.jp/") {
+\//   $(".likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+\// } else {
+\//   $(".likes-count-#{@post.id}").html("#{j(render partial: 'likes/sidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+\// }
+
+var windowWidth = $(window).width();
+var windowSm = 640;
+
+if (windowWidth = windowSm) {
+\//&#x6A2A;&#x5E45;640px&#x4EE5;&#x4E0B;&#x306E;&#x3068;&#x304D;&#xFF08;&#x3064;&#x307E;&#x308A;&#x30B9;&#x30DE;&#x30DB;&#x6642;&#xFF09;&#x306B;&#x884C;&#x3046;&#x51E6;&#x7406;&#x3092;&#x66F8;&#x304F;
+if (url == "https://appstimes.jp/") {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (url == "http://localhost:3000/") {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/users/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/categories/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/ranking/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/splike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else {
+$(".likes-count-#{@post.id}").html("#{j(render partial: 'likes/spsidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+}
+
+} else {
+\//&#x6A2A;&#x5E45;640px&#x8D85;&#x306E;&#x3068;&#x304D;&#xFF08;&#x30BF;&#x30D6;&#x30EC;&#x30C3;&#x30C8;&#x3001;PC&#xFF09;&#x306B;&#x884C;&#x3046;&#x51E6;&#x7406;&#x3092;&#x66F8;&#x304F;
+if (url == "https://appstimes.jp/") {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (url == "http://localhost:3000/") {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/users/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/categories/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else if (document.URL.match(/ranking/)) {
+$(".sp-likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+} else {
+$(".likes-count-#{@post.id}").html("#{j(render partial: 'likes/sidelike', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");
+}
+}
+
+\// $(".likes-count-#{@post.id}").html("#{j(render partial: 'likes/like', locals: { post: @post, posts: @posts, likes: @likes, like: @like})}");

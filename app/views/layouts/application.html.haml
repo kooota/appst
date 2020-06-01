@@ -1,0 +1,172 @@
+!!!
+%html
+  %head{:prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AppsTimes
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'icomoon', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Lato|Quicksand", :rel => "stylesheet"}/
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"}
+    %script{:src => "https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"}
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    / Global site tag (gtag.js) - Google Analytics
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-108095747-1"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108095747-1');
+    %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+    :javascript
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-9870776519307971",
+           enable_page_level_ads: true
+      });
+    :javascript
+      $(document).on('turbolinks:load',function () {
+        $('.globalNav_item a').each(function(){
+          $href = $(this).prop('href')
+          if(location.href === $href) {
+            $(this).parent().addClass('current');
+          } else {
+            $(this).parent().removeClass('current');
+          }
+        });
+      });
+    :javascript
+      $(document).on('turbolinks:load', function () {
+          var myTarget = $(".current");
+          var myIndex = $(".horizontal_scroll .globalNav_item").index(myTarget);
+          var scrollvalue = 60 * myIndex;
+          $('.horizontal_scroll').scrollLeft(scrollvalue);
+      });
+    :javascript
+      $(document).on('turbolinks:load', function () {
+        $('.max-600.wrapper a').each(function(){
+          $href = $(this).prop('href')
+          if(location.href === $href) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+      });
+    :javascript
+      $(document).on('turbolinks:load', function () {
+        $fileField = $('#file')
+        // 選択された画像を取得し表示
+        $($fileField).on('change', $fileField, function(e) {
+          file = e.target.files[0]
+          reader = new FileReader(),
+          $preview = $("#img_field");
+      
+          reader.onload = (function(file) {
+            return function(e) {
+              $preview.empty();
+              $preview.append($('<img>').attr({
+                src: e.target.result,
+                width: "100%",
+                class: "preview",
+                title: file.name
+              }));
+            };
+          })(file);
+          reader.readAsDataURL(file);
+        });
+      });
+    :javascript
+      $(document).on('turbolinks:load', function() {
+        if ( $("#userComment").val().length == 0 ) {
+          $(".commentSubmit").css("display", "none");
+        }
+        $("#userComment").on("keydown keyup keypress change", function() {
+          if ($(this).val().length > 0) {
+            $(".commentSubmit").show();
+          }
+        });
+      });
+  %body
+    / FB share
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2&appId=140825753239326&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    %header
+      .header.clearfix
+        .atLogo
+          = link_to "/" do
+            = image_tag "apst-logo.jpg", class:"logo-img"
+        - if user_signed_in?
+          .st-userNav
+            = link_to "/posts/new", class:"link-to-post" do
+              %span 投稿する
+            .accbox
+              .box-userImg1
+                %label{:for => "label1"}
+                  .st-Header_loginUser
+                    = image_tag current_user.image.url, class: "header-userImg"
+                    %span.fa.fa-caret-down.ml-1
+                %input#label1.cssacc{:type => "checkbox"}/
+                .accshow
+                  = link_to "マイページ", "/users/#{current_user.id}", class:"mypage"
+                  = link_to "お気に入り", "/users/#{current_user.id}/fav", class:"myfav"
+                  = link_to "投稿したサービス", "/users/#{current_user.id}/", class:"mypost"
+                  = link_to "設定", "/users/#{current_user.id}/edit", class:"setting"
+                  = link_to "ログアウト", destroy_user_session_path, class:"logout",method: :delete
+                  .follow-at
+                    .heading
+                      AppsTimesをフォローして
+                      %br/
+                      最新情報をチェック！
+                    .link-to-sns
+                      %a.twitter-follow-button{:class => "data-show-screen-name=", "data-lang" => "ja", "data-show-count" => "false", :false => "", :href => "https://twitter.com/AppsTimes?ref_src=twsrc%5Etfw", :target => "_blank"}
+                        %span.f-icon-twitter-follow
+                          %i.fab.fa-twitter.follow>
+                          フォローする
+        - else
+          .userNav
+            .signIn
+              = link_to new_user_session_path do
+                %span ログイン
+            .signUp
+              = link_to new_user_registration_path do
+                %span 新規登録
+      - if @categories
+        .globalNav
+          .horizontal_scroll.clearfix
+            .globalNav_item
+              = link_to root_path, method: :get do
+                %span HOME
+            .globalNav_item
+              = link_to "/ranking", method: :get do
+                %span ランキング
+            - @categories.each do |category|
+              .globalNav_item
+                = link_to "/categories/#{category.id}", method: :get do
+                  %span= category.name
+    = yield
+    - unless flash.empty?
+      :javascript
+        <haml_silent>     flash.each do |f| 
+        </haml_silent><haml_block><haml_silent>     type = f[0].to_s.gsub(&#39;alert&#39;,&#39;error&#39;).gsub(&#39;notice&#39;,&#39;info&#39;) 
+        </haml_silent>    toastr['#{type}']('#{f[1]}');
+        </haml_block>
+    %footer
+      .info-box.clearfix
+        .lists.clearfix
+          = link_to "https://advance-p.net/aboutus/", target:"_blank" do
+            %span.info-list 運営会社
+          = link_to "https://appstimes.jp/privacy", target:"_blank" do
+            %span.info-list プライバシーポリシー
+          %span.info-list.copyright
+            %i.far.fa-copyright>
+            2018 AppsTimes

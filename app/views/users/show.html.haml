@@ -1,0 +1,96 @@
+.container1
+  .content1.clearfix
+    .user-header
+      .user-header-content.clearfix
+        .user-image-container
+          .user-image
+            = image_tag @user.image.url
+        .user-info
+          .user-name
+            %span= @user.name
+            - unless @user.nickname == "" || @user.nickname.nil?
+              = link_to "https://twitter.com/#{@user.nickname}", target:"_blank" do
+                %span.profile-twitter
+                  %i.fab.fa-twitter
+            - unless @user.facebook == "" || @user.facebook.nil?
+              = link_to "https://facebook.com/#{@user.facebook}",target:"_blank" do
+                %span.profile-facebook
+                  %i.fab.fa-facebook
+          .user-company
+            %span= @user.company
+            %span= @user.position
+          .user-introduction
+            %span= simple_format(@user.description)
+        - if user_signed_in? && current_user.id == @user.id
+          .user-edit
+            = link_to "/users/#{@user.id}/edit" do
+              %span.edit-btn EDIT
+    .pc-head-banner.user-p
+      %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+      / 【PC】TOP
+      %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9157678259", :style => "display:inline-block;width:970px;height:90px"}
+      :javascript
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    .sp-head-banner.user-p
+      %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+      / 【モバイル】TOP/カテゴリー/ランキング
+      %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9628273935", :style => "display:inline-block;width:320px;height:50px"}
+      :javascript
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    .menus
+      .max-600.wrapper
+        = link_to "投稿したサービス", "/users/#{@user.id}"
+        = link_to "お気に入り", "/users/#{@user.id}/fav"
+    .postsList
+      - @post.each do |post|
+        = link_to "/posts/#{post.id}" do
+          .post
+            .post-in
+              .post-thumnail
+                = image_tag post.image.url, class:"post-img"
+              - if user_signed_in? && current_user.id == post.user_id
+                .more
+                  %span
+                    %i.fas.fa-angle-down
+                  %ul.more_list
+                    %li.more-edit
+                      = link_to '編集', "/posts/#{post.id}/edit", method: :get, class:"more-edit"
+                    %li
+                      = link_to '削除', "/posts/#{post.id}", method: :delete, data: { confirm: 'この投稿を削除しますか？' }, class:"more-delete"
+              = link_to "/posts/#{post.id}" do
+                .post-title
+                  %span= post.title
+                .post-subtitle
+                  %span= post.subtitle
+                .post-date.clearfix
+                  = link_to "/categories/#{post.category_id}" do
+                    .category
+                      %span= post.category.name
+                  .service-link
+                    = link_to post.service_url, target:"_blank" do
+                      %i.fas.fa-link
+                .overview
+                  #likes-count{:class => "likes-count-#{post.id}"}
+                    = render partial: "/likes/like", locals: {post: post, likes: @likes, like: @like}
+                  = link_to "/posts/#{post.id}" do
+                    .comments-count
+                      %i.fas.fa-comment-alt
+                      %span
+                        = post.comments.count
+                .sp-overview.clearfix
+                  = link_to "/users/#{post.user.id}" do
+                    .sp-post-user-image
+                      %span= image_tag post.user.image.url, class:"post-user-image"
+                  .sp-post-date.clearfix
+                    = link_to "/categories/#{post.category_id}" do
+                      .category
+                        %span= post.category.name
+                  .sp-likes-comments.clearfix
+                    #sp-likes-count{:class => "sp-likes-count-#{post.id}"}
+                      = render partial: "/likes/splike", locals: {post: post, posts: @posts, likes: @likes, like: @like}
+                /
+                  <div class="destroy">
+                  <haml_loud> link_to &quot;削除&quot;, &quot;/posts/\#{post.id}&quot;, method: :delete </haml_loud>
+                  </div>
+.page-load-status
+  = paginate @post

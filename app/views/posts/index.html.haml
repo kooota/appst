@@ -1,0 +1,117 @@
+%head{:prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"}
+  %title AppsTimes
+  %meta{:content => "AppsTimes", :property => "og:title"}/
+  %meta{:content => "website", :property => "og:type"}/
+  %meta{:content => " https://appstimes.jp", :property => "og:url"}/
+  %meta{:content => "https://s3-ap-northeast-1.amazonaws.com/appstimes-image/uploads/post/image/14/appstimes.jpg", :property => "og:image"}/
+  %meta{:content => "AppsTimes", :property => "og:site_name"}/
+  %meta{:content => "最新・注目のWebサービス/アプリを掲載するメディア", :property => "og:description"}/
+  %meta{:content => "summary_large_image", :name => "twitter:card"}/
+  %meta{:content => "@AppsTimes", :name => "twitter:site"}/
+%body
+  - unless user_signed_in?
+    .hello-inner
+      .mainview
+        .hello
+          .hello-title Discover  your  favorites!
+          %p.hello-description
+            AppsTimesは、最新・人気のプロダクトを投稿・閲覧できるサービスです。
+            %br/
+            自分が作ったプロダクトや、わくわくするサービスを共有しましょう！
+        .top-signup
+          .social-signup-wrapper
+            .top-twitter-login
+              = link_to  user_twitter_omniauth_authorize_path do
+                .twitter--box
+                  %i.fab.fa-twitter.top
+                  %span Twitterで登録
+          .separator
+            %span OR
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            .top-field
+              = f.label :name, "ユーザー名"
+              %br/
+              = f.text_field :name, autofocus: true, required: "required", placeholder: "appstimes"
+            .top-field
+              = f.label :email, "メールアドレス"
+              %br/
+              = f.email_field :email, placeholder: "apps@appstimes.jp"
+            .top-field
+              = f.label :password
+              - if @validatable
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "off", placeholder: "********"
+            %span.signup-help-text 8文字以上、英・数・記号が使えます
+            .actions
+              = f.submit "登録", class:"top-signup-btn"
+  - if user_signed_in?
+    .adjust
+  .pc-head-banner.container
+    %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+    / 【PC】TOP
+    %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9157678259", :style => "display:inline-block;width:970px;height:90px"}
+    :javascript
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  .sp-head-banner.container.top
+    %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+    / 【モバイル】TOP/カテゴリー/ランキング
+    %ins.adsbygoogle{"data-ad-client" => "ca-pub-9870776519307971", "data-ad-slot" => "9628273935", :style => "display:inline-block;width:320px;height:50px"}
+    :javascript
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  .container1.top
+    - if user_signed_in?
+      .content.clearfix
+        /
+          <div class="date clearfix">
+          <h3 class="rank-header"><i class="fas fa-trophy"></i>週間ランキング (<haml_loud>@begin</haml_loud>〜<haml_loud>@end</haml_loud>)</h3>
+          <haml_loud> link_to &quot;ranking&quot;, class:&quot;pc-see-more&quot;, target:&quot;_blank&quot; do </haml_loud><haml_block>
+          <i class="fas fa-arrow-right"></i>もっと見る
+          </haml_block>      </div>
+        .date.clearfix
+          %h3.rank-header
+            %i.fas.fa-trophy>
+            Featured Apps
+            %span.describe 話題のサービスをお届け
+          = link_to "ranking", class:"pc-see-more", target:"_blank" do
+            %span{:style => "color:#fff;"}
+              %i.fas.fa-chevron-circle-right
+              もっと見る
+        .rankPostsList.clearfix
+          = render partial: "rank_index" , locals: {post: @post, rank: @rank, likes: @likes, like: @like}
+        .sp-see-more
+          = link_to "ranking", target:"_blank" do
+            %i.fas.fa-chevron-circle-right
+            もっと見る
+        .date
+          %h3
+            %i.fas.fa-flag>
+            What's New
+            %span.describe 新しく投稿されたサービス一覧
+        .postsList.clearfix
+          = render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like}
+    - else
+      .date.clearfix
+        %h3.rank-header
+          %i.fas.fa-trophy>
+          Featured Apps
+          %span.describe 話題のサービスをお届け
+        = link_to "ranking", class:"pc-see-more", target:"_blank" do
+          %span.more-post{:style => "color:#fff;"}
+            %i.fas.fa-chevron-circle-right
+            もっと見る
+      .rankPostsList.clearfix
+        = render partial: "rank_index" , locals: {post: @post, rank: @rank, likes: @likes, like: @like}
+      .sp-see-more
+        = link_to "ranking", target:"_blank" do
+          %i.fas.fa-chevron-circle-right
+          もっと見る
+      .content1.clearfix
+        .date
+          %h3
+            %i.fas.fa-flag>
+            What's New
+            %span.describe 新しく投稿されたサービス一覧
+        .postsList.clearfix
+          = render partial: "posts", locals: {posts: @posts, post: @post, likes: @likes, like: @like}
