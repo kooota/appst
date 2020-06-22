@@ -28,6 +28,11 @@ class ApplicationController < ActionController::Base
   #   render template: 'errors/error404', status: 404, layout: 'application', content_type: 'text/html'
   # end
 
+  def notice_slack(message)
+    notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'])
+    notifier.ping(message)
+  end
+
   unless Rails.env.development?
     rescue_from Exception,                        with: :_render_500
     rescue_from ActiveRecord::RecordNotFound,     with: :_render_404

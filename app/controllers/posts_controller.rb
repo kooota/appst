@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   # before_action :render_preview_if, only: %w[create update]
 
-
   def index
     @post = Post.includes(:user).all.order("created_at DESC").page(params[:page]).per(9)
     @likes = Like.all
@@ -31,11 +30,12 @@ class PostsController < ApplicationController
       c.user_id = current_user.id
     end
     @post.save
+    notice_slack("#{@post.title}が投稿されました！")
   end
 
   def show
     @post = Post.find(params[:id])
-    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("likes_count DESC").limit(5)
+    @posts = Post.where(category_id: @post.category_id).where.not(id: @post.id).order("RAND()").limit(5)
     @comments = @post.comments.includes(:user)
     @likes = Like.all
     @like = Like.where(post_id: params[:post_id])

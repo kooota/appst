@@ -70,3 +70,5 @@ gem 'bootsnap', require: false
 gem 'toastr-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'haml-rails'
+gem "slack-notifier"
