@@ -1,8 +1,6 @@
 - if current_user
   = form_tag("/posts/#{post.id}/comments", method: :post) do
     %textarea#userComment{:cols => "30", :name => "content", :placeholder => "このプロダクトについての感想をコメントする", :required => "required", :rows => "2"}
-    = succeed "\">" do
-      .commentSubmit
     %input.commentSubmit-btn{:type => "submit", :value => "送信"}
 - else
   .comment-notice
