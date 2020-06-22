@@ -6,20 +6,20 @@
     %input.commentSubmit-btn{:type => "submit", :value => "送信"}
 - else
   .comment-notice
-    %h2 &#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3059;&#x308B;&#x306B;&#x306F;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
-    = link_to ログイン, new_user_session_path
+    %h2 コメントをするにはログインが必要です。
+    = link_to "ログイン", url: new_user_session_path
     \/
-    \#{link_to アカウント登録, new_user_registration_path}
+    \#{link_to "アカウント登録", new_user_registration_path}
 - if comments
   - comments.each do |comment|
     .comment_area
       .spotlight.clearfix
         .box-userImg
           .userImg
-            = link_to /users/#{comment.user.id} do
+            = link_to "/users/#{comment.user.id}" do
               = image_tag comment.user.image.url
         .userInfo.clearfix
-          = link_to /users/#{comment.user.id} do
+          = link_to "/users/#{comment.user.id}" do
             .username
               %span= comment.user.name
           %div
@@ -32,4 +32,4 @@
         - if user_signed_in?
           - if comment.user_id == current_user.id
             .destroy
-              = link_to コメントを削除する, /posts/#{post.id}/comments/#{comment.id}, method: :delete
+              = link_to "コメントを削除する", "/posts/#{post.id}/comments/#{comment.id}", method: :delete

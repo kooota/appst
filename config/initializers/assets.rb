@@ -30,4 +30,5 @@ Rails.application.config.assets.precompile += %w( users.css.scss )
 
 Rails.application.config.assets.precompile += %w( comments.css.scss )
 
+Rails.application.config.assets.precompile += %w( comments.css.scss )
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
