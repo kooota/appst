@@ -55,12 +55,13 @@ gem 'pry-rails'
 gem 'compass-rails'
 gem 'sprockets'
 gem 'devise'
-gem 'carrierwave'
+gem "carrierwave", ">= 2.1.1"
 gem 'fog'
 gem 'mini_magick'
 
 gem 'kaminari'
 
+gem "oauth", ">= 0.5.5"
 gem 'omniauth'
 gem 'omniauth-twitter'
 
@@ -72,3 +73,5 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'haml-rails'
 gem "slack-notifier"
+
+gem "mimemagic", "~> 0.3.10"
