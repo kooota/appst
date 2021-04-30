@@ -35,6 +35,7 @@ config/master.key
 /.bundle
 .buble
 /vendor/bundle
+vendor/
 
 /certbot
 # these should all be checked in to normalize the environment:
@@ -83,3 +84,6 @@ yarn-debug.log*
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/database.yml
+
+/log/*
+*DS_Store
